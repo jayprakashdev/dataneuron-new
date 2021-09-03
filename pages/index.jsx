@@ -205,12 +205,13 @@ export default function Home() {
 							<div className="text-gray-400">
 								Using DataNeuron
 							</div>
-							<div className="w-1/2 border-r-2 border-dashed border-gray-500">
+						
+							
 								<div className="text-gray-400">
 									% Time Reduction
 								</div>
 								<div className="text-gray-400">ROI</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>
