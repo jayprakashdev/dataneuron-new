@@ -1,3 +1,4 @@
+import Game from "../components/game"
 import Layout from "../components/layout"
 import PostThumbnail from "../components/postThumbnail"
 import style from "../styles/homepage.module.css"
@@ -11,7 +12,7 @@ export default function Home() {
 					training, prediction & lifecycle management.
 				</div>
 			</div>
-			<img className={"w-full"} src="/img/demo.svg" alt="demo image" />
+			<Game />
 			<div className={"text-gray-500 my-3"}>
 				Our Product (Placeholder)
 			</div>
