@@ -1,5 +1,6 @@
 import Navbar from "./navbar"
 import Head from 'next/head'
+import Footer from "./footer";
 
 const Layout = ({children}) => {
     return ( 
@@ -8,9 +9,10 @@ const Layout = ({children}) => {
                 <title>DataNeuron</title>
             </Head>
             <Navbar />
-            <div style={{padding : 50}}>
+            <div style={{padding : 50 }}>
             {children}
             </div>
+            <Footer />
         </div>
      );
 }

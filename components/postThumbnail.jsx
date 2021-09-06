@@ -11,10 +11,10 @@ const PostThumbnail = () => {
 				How well does the DataNeuron ALP handle the Finance Use Case?
 			</div>
             <div className="flex justify-between">
-                <div className="text-sm text-gray-300">
+                <div className="text-sm text-gray-500">
                     2021
                 </div>
-                <div className="text-sm text-gray-300">
+                <div className="text-sm text-gray-500">
                     FINANCE
                 </div>
             </div>

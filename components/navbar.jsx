@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ButtonComponent from './buttonComponent';
 
 const Navbar = () => {
     return ( 
@@ -19,6 +20,12 @@ const Navbar = () => {
                 <Link href={"/resources"}>
                     <a className={"p-3"}>Resources</a>
                 </Link>
+                <Link href={"/contact"}>
+                    <a className={"p-3"}>Contact</a>
+                </Link>
+                <ButtonComponent filled={false} text={"Get started"}>
+                    Get Started
+                </ButtonComponent>
             </div>
         </div>
      );

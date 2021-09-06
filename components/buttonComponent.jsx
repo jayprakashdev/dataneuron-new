@@ -1,6 +1,6 @@
 import React from 'react'
-const ButtonComponent = (props) => {
-    const {icon, src, text, filled}=props;
+const ButtonComponent = ({icon, src, text, filled}) => {
+  
     return (
         <div 
         className="flex py-2 px-4 rounded-3xl bg-white justify-center" 
