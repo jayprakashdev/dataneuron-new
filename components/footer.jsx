@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 let Footer = () => {
 	return (
 		<div className={"w-full flex border-t-2 border-b-2 border-gray-500"}>
@@ -33,8 +35,7 @@ let Footer = () => {
 						}
 						style={{ fontSize: 20 }}
 					>
-						
-                        Resouces
+						Resouces
 					</div>
 					<div
 						className={
@@ -69,9 +70,13 @@ let Footer = () => {
 					mail@dataneuron.ai
 				</div>
 				<div className="flex">
-					<div className="w-1/2 p-3 text-center text-gray-500">
-						Privary Policy
-					</div>
+					<Link href={"/privacy"}>
+						<a>
+							<div className="w-1/2 p-3 text-center text-gray-500">
+								Privary Policy
+							</div>
+						</a>
+					</Link>
 					<div className="w-1/2 p-3 text-center border-l-2 border-black text-gray-500">
 						Copyright © 2021 Precily, Inc.
 					</div>

@@ -1,14 +1,14 @@
-const PostThumbnail = () => {
+const PostThumbnail = ({title , imageUrl}) => {
 	return (
-		<div className={"w-80"}>
+		<div style={{width : 270}}>
 			<img
-				src="/img/placeholder.jpg"
+				src={imageUrl}
 				alt="placeholder"
 				className="w-full"
 				height={100}
 			/>
 			<div className="my-3">
-				How well does the DataNeuron ALP handle the Finance Use Case?
+				{title}
 			</div>
             <div className="flex justify-between">
                 <div className="text-sm text-gray-500">

@@ -1,16 +1,16 @@
 import React from 'react'
 
-const ImageCard=()=>{
+const ImageCard=({title , imageUrl})=>{
     return(
         <div className={"w-full"}>
 			<img
-				src="/img/placeholder.jpg"
+				src={imageUrl}
 				alt="placeholder"
 				className="w-full"
 				// height={auto}
 			/>
 			<div className="my-3">
-				How well does the DataNeuron ALP handle the Finance Use Case?
+                    {title}
 			</div>
             <div className="flex justify-between">
                 <div className="text-sm text-gray-300">

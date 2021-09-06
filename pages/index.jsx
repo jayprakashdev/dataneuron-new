@@ -1,9 +1,11 @@
 import Game from "../components/game"
 import Layout from "../components/layout"
 import PostThumbnail from "../components/postThumbnail"
+import { getAllPosts } from "../lib/graphcms"
 import style from "../styles/homepage.module.css"
+import Link from 'next/link'
 
-export default function Home() {
+function Home({ posts }) {
 	return (
 		<Layout>
 			<div className="flex justify-center w-full">
@@ -206,24 +208,29 @@ export default function Home() {
 							<div className="text-gray-400">
 								Using DataNeuron
 							</div>
-						
-							
-								<div className="text-gray-400">
-									% Time Reduction
-								</div>
-								<div className="text-gray-400">ROI</div>
-							
+
+							<div className="text-gray-400">
+								% Time Reduction
+							</div>
+							<div className="text-gray-400">ROI</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="mt-3 text-gray-400">Our Articles</div>
 			<div className="flex w-full overflow-x-scroll space-x-6 p-3">
-				<PostThumbnail />
-				<PostThumbnail />
-				<PostThumbnail />
-				<PostThumbnail />
-				
+				{posts.map((post) => {
+					return (
+						<Link key={post.id} href={`/posts/${post.slug}`}>
+							<a>
+								<PostThumbnail
+									title={post.title}
+									imageUrl={post.coverImage.url}
+								/>
+							</a>
+						</Link>
+					)
+				})}
 			</div>
 			<div className="flex">
 				<div
@@ -237,3 +244,15 @@ export default function Home() {
 		</Layout>
 	)
 }
+
+export async function getStaticProps({ params, preview = false }) {
+	let appPosts = await getAllPosts()
+
+	return {
+		props: {
+			posts: appPosts.posts || [],
+		},
+	}
+}
+
+export default Home

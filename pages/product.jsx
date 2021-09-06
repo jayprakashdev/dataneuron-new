@@ -261,6 +261,7 @@ const Product = () => {
 					{tabs.map((tab, i) => {
 						return (
 							<div
+								key={i * Math.random()}
 								onClick={() => setActive(i)}
 								style={{
 									color: active === i ? "blue" : "black",
