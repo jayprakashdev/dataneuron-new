@@ -43,7 +43,7 @@ const PostDetails = ({ post, morePosts, preview }) => {
 					<div className="flex">
 						{morePosts.map((_post) => {
 							return (
-								<Link href={`/posts/${_post.slug}`}>
+								<Link key={_post.key} href={`/posts/${_post.slug}`}>
 									<a style={{ width: 400 }} className={"m-3"}>
 										<ImageCard
 											imageUrl={_post.coverImage.url}

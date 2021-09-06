@@ -250,8 +250,8 @@ const Product = () => {
 						"flex space-x-3 flex-wrap justify-center space-x-3 space-y-3"
 					}
 				>
-					{pipeline.map((imgUrl) => {
-						return <img src={imgUrl} />
+					{pipeline.map((imgUrl , i) => {
+						return <img key={i * Math.random()} src={imgUrl} />
 					})}
 				</div>
 			</div>
@@ -302,9 +302,10 @@ const Product = () => {
 				Why choose DataNeuron?
 			</div>
 			<div className="flex justify-center flex-wrap">
-				{why_schoose.map((data) => {
+				{why_schoose.map((data , i) => {
 					return (
 						<div
+							key={i * Math.random()}
 							style={{ width: 325 }}
 							className={"p-3 m-3 border-2 border-gray-300 py-6"}
 						>

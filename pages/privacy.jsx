@@ -65,10 +65,10 @@ const PrivacyPage=()=>{
                         The cookies used for the above stated purposes may be of various types, such as:
                         </p>
                         <p className="mb-10">
-                        "Strictly necessary" cookies which need to be enabled for you to access the Website or Services "Preference" or "Functionality" cookies which help the Website to remember your preferences while visiting and using the Website or Services
+                        &quot Strictly necessary &quot cookies which need to be enabled for you to access the Website or Services &quotPreference&quot or &quotFunctionality&quot cookies which help the Website to remember your preferences while visiting and using the Website or Services
                         </p>
                         <p className="mb-10">
-                        "Performance" or "Statistics" cookies that allow us to analyse how our Website is being used and improve performance
+                        &quot Performance &quot or &quot Statistics &quot cookies that allow us to analyse how our Website is being used and improve performance
                         </p>
                         <p className="mb-10">
                             You can control whether and how cookies from the Website are stored on your computer, by selecting “Enable/Disable Cookies” or similar settings on Your web browser. However, disabling certain cookies may prevent you from accessing or using the Website or Services.

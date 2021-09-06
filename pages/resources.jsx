@@ -55,10 +55,9 @@ const ResourcePage = ({ posts }) => {
 					<div className="mt-14 w-full flex justify-between flex-wrap">
 						{posts.map((post) => {
 							return (
-								<Link href={`/posts/${post.slug}`}>
+								<Link key={post.id} href={`/posts/${post.slug}`}>
 									<a>
 										<div
-											key={post.id}
 											style={{ width: 400, margin: 10 }}
 										>
 											<div
