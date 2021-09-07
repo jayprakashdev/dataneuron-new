@@ -89,9 +89,29 @@ const Product = () => {
 			),
 		},
 		{
+			id: 2757,
+			title: "AutoML",
+			imageUrl: "/img/howitworks/work4.gif",
+			para: (
+				<>
+					<p>
+						DataNeuron automates pre-processing, model creation,
+						validation of the accuracy check and confidence level.
+					</p>
+					<br />
+
+					<p>
+						Additionally, the platform efficiently generates a
+						Summary Report on the training accuracy for every single
+						attribute on the master-list.
+					</p>
+				</>
+			),
+		},
+		{
 			id: 1743,
 			title: "Export, Deploy & Predict.",
-			imageUrl: "/img/howitworks/work4.gif",
+			imageUrl: "/img/howitworks/predict.svg",
 			para: (
 				<>
 					<p>
@@ -118,7 +138,7 @@ const Product = () => {
 		{
 			id: 8146,
 			title: "Iterate the Process",
-			imageUrl: "/img/howitworks/work1.gif",
+			imageUrl: "/img/howitworks/process.svg",
 			para: (
 				<>
 					<p>
@@ -141,7 +161,7 @@ const Product = () => {
 		{
 			id: 1747,
 			title: "DataNeuron’s Intuitive Interface",
-			imageUrl: "/img/howitworks/work1.gif",
+			imageUrl: "/img/howitworks/interface.svg",
 			para: (
 				<>
 					<p>
@@ -250,7 +270,7 @@ const Product = () => {
 						"flex space-x-3 flex-wrap justify-center space-x-3 space-y-3"
 					}
 				>
-					{pipeline.map((imgUrl , i) => {
+					{pipeline.map((imgUrl, i) => {
 						return <img key={i * Math.random()} src={imgUrl} />
 					})}
 				</div>
@@ -302,7 +322,7 @@ const Product = () => {
 				Why choose DataNeuron?
 			</div>
 			<div className="flex justify-center flex-wrap">
-				{why_schoose.map((data , i) => {
+				{why_schoose.map((data, i) => {
 					return (
 						<div
 							key={i * Math.random()}

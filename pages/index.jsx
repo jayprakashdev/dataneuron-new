@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import PostThumbnail from "../components/postThumbnail"
 import { getAllPosts } from "../lib/graphcms"
 import style from "../styles/homepage.module.css"
-import Link from 'next/link'
+import Link from "next/link"
 
 function Home({ posts }) {
 	return (
@@ -33,17 +33,24 @@ function Home({ posts }) {
 			<div className={"text-gray-500 my-3"}>
 				Our Mission (Placeholder)
 			</div>
-			<div className="text-3xl">
-				Our Aim is to accelerate the development of AI <br /> models and
-				provide explainability of AI.
-			</div>
-			<div className={"flex"}>
-				<div
-					className={
-						"border-2 border-blue-600 px-3 py-1 my-3 rounded-full text-blue-600"
-					}
-				>
-					Learn More
+			<div className="flex justify-between">
+				<div>
+					<div className="text-3xl">
+						Our Aim is to accelerate the development of AI <br />{" "}
+						models and provide explainability of AI.
+					</div>
+					<div className={"flex"}>
+						<div
+							className={
+								"border-2 border-blue-600 px-3 py-1 my-3 rounded-full text-blue-600"
+							}
+						>
+							Learn More
+						</div>
+					</div>
+				</div>
+				<div>
+					<img src="/img/cir_ani.gif" alt="circle animation" />
 				</div>
 			</div>
 			<div className="mt-6 text-gray-500">Infinite Solutions</div>
