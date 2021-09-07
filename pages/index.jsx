@@ -107,8 +107,8 @@ function Home({ posts }) {
 	}, [classes, paras])
 	return (
 		<Layout>
-			<div className="flex justify-center w-full">
-				<div className={"w-4/5 text-center text-3xl"}>
+			<div className="flex justify-center w-full pt-14 md:pt-0">
+				<div className={"md:w-4/5 text-center md:text-3xl text-2xl w-full"}>
 					An advanced platform for complex data annotations, model
 					training, prediction & lifecycle management.
 				</div>
