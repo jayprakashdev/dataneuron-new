@@ -9,7 +9,6 @@ import { useEffect, useState } from "react"
 function Home({ posts }) {
 	let annotation_accuracy = 0.5
 	let prediction_api_usage_estimate = 10000
-	let total_number_of_paras_in_database = 10000
 	let time_taken_for_thousand_paras_manual_validation = 15
 	let annotation_cost_for_every_correct_validation = 0.1
 	let prediction_cost_per_para = 0.05 
@@ -42,8 +41,9 @@ function Home({ posts }) {
 		}
 	}
 	const updateValue=()=>{
-		let number_of_classes = paras
-		let para_per_class_for_training = classes
+		let number_of_classes = classes
+		let para_per_class_for_training = 50
+		let total_number_of_paras_in_database = paras;
 
 		let paras_to_be_validated_per_class_by_user = para_per_class_for_training/annotation_accuracy
 		let Annotation_cost = number_of_classes*para_per_class_for_training*annotation_cost_for_every_correct_validation
@@ -57,7 +57,7 @@ function Home({ posts }) {
 		let team_cost_per_week = single_DS_cost_per_week*data_science_team_size
 		let total_in_house_team_cost = team_cost_per_week+Annotator_SME_house_cost
 
-		let ROI = (total_in_house_team_cost-Total_Dataneuron_ALP_cost)/Total_Dataneuron_ALP_cost
+		let ROI = (total_in_house_team_cost-Total_Dataneuron_ALP_cost)*100/Total_Dataneuron_ALP_cost
 		let total_paras = number_of_classes*paras_to_be_validated_per_class_by_user
 		let total_time_data_neuron_tool = (time_taken_for_thousand_paras_manual_validation/1000)*total_paras
 		let total_time_in_house = (total_number_of_paras_in_database*time_taken_for_thousand_paras_manual_validation)/1000
@@ -251,15 +251,13 @@ function Home({ posts }) {
 								onChange={(e)=>handleChange(e)}
 								value={classes}
 							/>
+							<div className="flex w-full justify-between">
+								<p>0</p>
+								<p>100</p>
+							</div>
 						</div>
-						<div className={"w-14"}>
-							<input
-								className={"w-14 p-1 border-2 border-gray-400"}
-								type="text"
-								name="classes"
-								onChange={(e)=>handleChange(e)}
-								value={classes}
-							/>
+						<div className={"border-2 border-black px-2 py-2"} style={{width:"85px"}}>
+							<div>{classes}</div>
 						</div>
 					</div>
 					<br />
@@ -269,21 +267,19 @@ function Home({ posts }) {
 							<input
 								type="range"
 								className={style.slider}
-								min={1}
-								max={100}
+								min={10000}
+								max={1000000}
 								name="paras"
 								onChange={(e)=>handleChange(e)}
 								value={paras}
 							/>
+							<div className="flex w-full justify-between mr-3">
+								<p style={{marginLeft:"-18px"}}>10000</p>
+								<p style={{marginLeft:"18px"}}>1000000</p>
+							</div>
 						</div>
-						<div className={"w-14"}>
-							<input
-								className={"p-1 w-14 border-2 border-gray-400"}
-								type="text"
-								name="paras"
-								onChange={(e)=>handleChange(e)}
-								value={paras}
-							/>
+						<div className={"border-2 border-black px-2 py-2"} style={{width:'85px'}}>
+							<div>{paras}</div>
 						</div>
 					</div>
 				</div>
