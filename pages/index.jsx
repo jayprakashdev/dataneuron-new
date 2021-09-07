@@ -9,7 +9,6 @@ import { useEffect, useState } from "react"
 function Home({ posts }) {
 	let annotation_accuracy = 0.5
 	let prediction_api_usage_estimate = 10000
-	let total_number_of_paras_in_database = 10000
 	let time_taken_for_thousand_paras_manual_validation = 15
 	let annotation_cost_for_every_correct_validation = 0.1
 	let prediction_cost_per_para = 0.05
@@ -41,9 +40,10 @@ function Home({ posts }) {
 			}
 		}
 	}
-	const updateValue = () => {
-		let number_of_classes = paras
-		let para_per_class_for_training = classes
+	const updateValue=()=>{
+		let number_of_classes = classes
+		let para_per_class_for_training = 50
+		let total_number_of_paras_in_database = paras;
 
 		let paras_to_be_validated_per_class_by_user =
 			para_per_class_for_training / annotation_accuracy
@@ -78,7 +78,7 @@ function Home({ posts }) {
 			team_cost_per_week + Annotator_SME_house_cost
 
 		let ROI =
-			(total_in_house_team_cost - Total_Dataneuron_ALP_cost) /
+			(total_in_house_team_cost - Total_Dataneuron_ALP_cost)*100 /
 			Total_Dataneuron_ALP_cost
 		let total_paras =
 			number_of_classes * paras_to_be_validated_per_class_by_user
@@ -96,8 +96,8 @@ function Home({ posts }) {
 			100
 
 		setOutput({
-			roi: Math.round(ROI),
-			time_reduction: Math.round(time_reduction),
+			roi: ROI.toFixed(2),
+			time_reduction: time_reduction.toFixed(2),
 			dataNeuron_time: Math.round(Total_Dataneuron_ALP_cost),
 			manual_time: Math.round(total_in_house_team_cost),
 		})
@@ -282,15 +282,13 @@ function Home({ posts }) {
 								onChange={(e) => handleChange(e)}
 								value={classes}
 							/>
+							<div className="flex w-full justify-between">
+								<p>0</p>
+								<p>100</p>
+							</div>
 						</div>
-						<div className={"w-14"}>
-							<input
-								className={"w-14 p-1 border-2 border-gray-400"}
-								type="text"
-								name="classes"
-								onChange={(e) => handleChange(e)}
-								value={classes}
-							/>
+						<div className={"border-2 border-black px-2 py-2"} style={{width:"85px"}}>
+							<div>{classes}</div>
 						</div>
 					</div>
 					<br />
@@ -300,23 +298,19 @@ function Home({ posts }) {
 							<input
 								type="range"
 								className={style.slider}
-								min={1}
-								max={10000}
+								min={10000}
+								max={1000000}
 								name="paras"
 								onChange={(e) => handleChange(e)}
 								value={paras}
 							/>
+							<div className="flex w-full justify-between mr-3">
+								<p style={{marginLeft:"-18px"}}>10000</p>
+								<p style={{marginLeft:"18px"}}>1000000</p>
+							</div>
 						</div>
-						<div className={"w-14"}>
-							<input
-								className={"p-1 w-14 border-2 border-gray-400"}
-								type="text"
-								min={1}
-								max={10000}
-								name="paras"
-								onChange={(e) => handleChange(e)}
-								value={paras}
-							/>
+						<div className={"border-2 border-black px-2 py-2"} style={{width:'85px'}}>
+							<div>{paras}</div>
 						</div>
 					</div>
 				</div>
@@ -325,11 +319,11 @@ function Home({ posts }) {
 						<div className="w-1/2 border-r-2 border-dashed border-gray-500 px-2 h-full">
 							<div className="py-3 px-3 flex w-full justify-between text-blue-600">
 								<p>Time taken to build an Solution</p>
-								<p>{output.manual_time}</p>
+								<p>{output.manual_time} hrs</p>
 							</div>
 							<div className="py-3 px-3 flex w-full justify-between text-blue-600">
 								<p>Using DataNeuron</p>
-								<p>{output.dataNeuron_time}</p>
+								<p>{output.dataNeuron_time} hrs</p>
 							</div>
 						</div>
 						<div className="w-1/2 px-2 h-full">
