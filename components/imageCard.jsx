@@ -2,24 +2,16 @@ import React from 'react'
 
 const ImageCard=({title , imageUrl})=>{
     return(
-        <div className={"w-full"}>
+        <div className={"w-full py-5"}>
 			<img
 				src={imageUrl}
 				alt="placeholder"
 				className="w-full"
-				// height={auto}
+				style={{height:"420px"}}
 			/>
-			<div className="my-3">
-                    {title}
+			<div className="my-3" style={{fontSize:"23px", lineHeight:"27px"}}>
+                {title}
 			</div>
-            <div className="flex justify-between">
-                <div className="text-sm text-gray-300">
-                    2021
-                </div>
-                <div className="text-sm text-gray-300">
-                    FINANCE
-                </div>
-            </div>
             
 		</div>
     )

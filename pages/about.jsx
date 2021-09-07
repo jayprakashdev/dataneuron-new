@@ -5,7 +5,7 @@ const About = () => {
 	return (
 		<div style={{ width: "100%" }}>
 			<Layout>
-				<div style={{ margin: "-50px 0 20px 20px" }}>
+				<div style={{ margin: "30px 0 20px 20px" }}>
 					<p className="mb-2 text-gray-500">About DataNeuron</p>
 					<p className="my-2 text-4xl">
 						At DataNeuron, our aim is to accelerate the development

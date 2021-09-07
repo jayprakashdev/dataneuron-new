@@ -1,7 +1,9 @@
 import Link from "next/link"
+import {useRouter} from "next/router"
 import ButtonComponent from "./buttonComponent"
 
 const Navbar = () => {
+	const router =useRouter();
 	return (
 		<div
 			style={{ padding: "52px 70px" }}
@@ -10,28 +12,28 @@ const Navbar = () => {
 			<Link href={"/"}>
 				<a>
 					{" "}
-					<div className="text-2xl font-bold">DataNeuron</div>
+					<div className="font-bold" style={{fontSize:"40px"}}>DataNeuron</div>
 				</a>
 			</Link>
 			<div className="flex">
-				<Link href={"/product"}>
-					<a className={"p-3"}>Product</a>
-				</Link>
-				<Link href={"/about"}>
-					<a className={"p-3"}>About</a>
-				</Link>
-				<Link href={"/pricing"}>
-					<a className={"p-3"}>Pricing</a>
-				</Link>
-				<Link href={"/resources"}>
-					<a className={"p-3"}>Resources</a>
-				</Link>
-				<Link href={"/contact"}>
-					<a className={"p-3"}>Contact</a>
-				</Link>
-				<ButtonComponent filled={false} text={"Get started"}>
+				<div onClick={()=>router.push("/product")} className="mx-8 my-2 cursor-pointer">
+					<a className={"py-2 px-5 text-xl"}>Product</a>
+				</div>
+				<div onClick={()=>router.push("/about")} className="mx-8 my-2 cursor-pointer">
+					<a className={"py-2 px-5 text-xl"}>About</a>
+				</div>
+				<div onClick={()=>router.push("/pricing")} className="mx-8 my-2 cursor-pointer">
+					<a className={"py-2 px-5 text-xl"}>Pricing</a>
+				</div>
+				<div onClick={()=>router.push("/resources")} className="mx-8 my-2 cursor-pointer">
+					<a className={"py-2 px-5 text-xl"}>Resources</a>
+				</div>
+				<div onClick={()=>router.push("/contact")} className="mx-8 my-2 cursor-pointer">
+					<a className={"py-2 px-5 text-xl"}>Contact</a>
+				</div>
+				<div  className="ml-5 px-14  py-3 rounded-full border border-blue-600 text-xl text-blue-600">
 					Get Started
-				</ButtonComponent>
+				</div>
 			</div>
 		</div>
 	)

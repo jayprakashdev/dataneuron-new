@@ -3,10 +3,12 @@ import Layout from "../components/layout"
 import PostThumbnail from "../components/postThumbnail"
 import { getAllPosts } from "../lib/graphcms"
 import style from "../styles/homepage.module.css"
-import Link from "next/link"
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import ImageCard from "../components/imageCard"
 
 function Home({ posts }) {
+	const router=useRouter();
 	let annotation_accuracy = 0.5
 	let prediction_api_usage_estimate = 10000
 	let time_taken_for_thousand_paras_manual_validation = 15
@@ -108,40 +110,31 @@ function Home({ posts }) {
 	return (
 		<Layout>
 			<div className="flex justify-center w-full">
-				<div className={"w-4/5 text-center text-3xl"}>
+				<div className={"w-4/5 text-center text-5xl"} style={{ lineHeight:"48px"}}>
 					An advanced platform for complex data annotations, model
 					training, prediction & lifecycle management.
 				</div>
 			</div>
 			<Game />
-			<div className={"text-gray-500 my-3"}>
-				Our Product (Placeholder)
+			<div className={"text-gray-500 mt-14 mb-2 text-lg"}>
+				What is DataNeuron?
 			</div>
-			<p>
-				DataNeuron’s highly differentiated Automated Learning Platform
-				(ALP) enables ML/ AI teams to collect and prepare datasets for
-				faster deployment of supervised AI models on any domain by
-				defining attributes (parameters/master list) and ingesting
-				relevant data. DataNeuron’s ALP performs guided and automated
-				annotation on the data with respect to the parameters. <br />
-				<br />
-				DataNeuron’s prediction service provides highly accurate
-				context-based predictions on the ingested data or database in
-				near real time without writing any code.
+			<p style={{fontSize:"35px", lineHeight:"40px"}}>
+			DataNeuron helps you accelerate and automate human-in-loop labeling for developing AI solutions. Powered by a data-centric platform, we automate data labeling, the creation of models, and end-to-end lifecycle management of ML.
 			</p>
-			<div className={"text-gray-500 my-3"}>
+			<div className={"text-gray-500 mt-14 mb-2 text-lg"} >
 				Our Mission (Placeholder)
 			</div>
-			<div className="flex justify-between items-center">
+			<div className="flex justify-between" >
 				<div>
-					<div className="text-3xl">
+					<div style={{fontSize:"40px", lineHeight:"48px"}}>
 						Our Aim is to accelerate the development of AI <br />{" "}
 						models and provide explainability of AI.
 					</div>
-					<div className={"flex"}>
+					<div className={"flex my-5"}>
 						<div
 							className={
-								"border-2 border-blue-600 px-3 py-1 my-3 rounded-full text-blue-600"
+								"border border-blue-600 px-8 py-1 my-3 rounded-full text-blue-600"
 							}
 						>
 							Learn More
@@ -153,16 +146,17 @@ function Home({ posts }) {
 				</div>
 			</div>
 
-			<div className="mt-6 text-gray-500">Infinite Solutions</div>
-			<div className="my-3">
+			<div className="mt-6 text-gray-500 text-lg">Infinite Applications</div>
+			{/* <div className="my-3">
 				Legal/Tax, Finance, Healthcare, Insurance, News, Data Science,
 				ITeS, Chatbot, Job Portals, CRM Providers
-			</div>
-			<div className="flex flex-wrap justify-center">
+			</div> */}
+			<div className="flex flex-wrap  my-3">
 				<div
 					className={
-						"flex m-3 rounded-lg text-blue-600 w-72 justify-center py-3 border-2 border-blue-600"
+						"flex m-3 rounded-lg text-blue-600 justify-center py-3 border-2 border-blue-600"
 					}
+					style={{width:"20%"}}
 				>
 					<img
 						width={20}
@@ -176,6 +170,7 @@ function Home({ posts }) {
 					className={
 						"flex m-3 rounded-lg text-blue-600 w-72 justify-center py-3 border-2 border-blue-600"
 					}
+					style={{width:"20%"}}
 				>
 					<img
 						width={20}
@@ -189,6 +184,7 @@ function Home({ posts }) {
 					className={
 						"flex m-3 rounded-lg text-blue-600 w-72 justify-center py-3 border-2 border-blue-600"
 					}
+					style={{width:"20%"}}
 				>
 					<img
 						width={20}
@@ -202,6 +198,7 @@ function Home({ posts }) {
 					className={
 						"flex m-3 rounded-lg text-blue-600 w-72 justify-center py-3 border-2 border-blue-600"
 					}
+					style={{width:"20%"}}
 				>
 					<img
 						width={20}
@@ -215,6 +212,7 @@ function Home({ posts }) {
 					className={
 						"flex m-3 rounded-lg text-blue-600 w-72 justify-center py-3 border-2 border-blue-600"
 					}
+					style={{width:"20%"}}
 				>
 					<img
 						width={20}
@@ -228,6 +226,7 @@ function Home({ posts }) {
 					className={
 						"flex m-3 rounded-lg text-blue-600 w-72 justify-center py-3 border-2 border-blue-600"
 					}
+					style={{width:"20%"}}
 				>
 					<img
 						width={20}
@@ -241,6 +240,7 @@ function Home({ posts }) {
 					className={
 						"flex m-3 rounded-lg text-blue-600 w-72 justify-center py-3 border-2 border-blue-600"
 					}
+					style={{width:"20%"}}
 				>
 					<img
 						width={20}
@@ -254,6 +254,7 @@ function Home({ posts }) {
 					className={
 						"flex m-3 rounded-lg text-blue-600 w-72 justify-center py-3 border-2 border-blue-600"
 					}
+					style={{width:"20%"}}
 				>
 					<img
 						width={20}
@@ -264,11 +265,11 @@ function Home({ posts }) {
 					ITes
 				</div>
 			</div>
-			<div className={"my-3 text-gray-500"}>
+			<div className={"mt-14 text-gray-500 text-xl"}>
 				Our Build vs Buy Calculator
 			</div>
-			<div className={"my-3  md:flex space-x-2"}>
-				<div className="md:w-1/2 w-full border-2 border-gray-300 p-6">
+			<div className={"my-3 md:flex space-x-2"} >
+				<div className="md:w-1/2 w-full border border-gray-300 p-6" style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
 					<div className="text-blue-500">IF YOU USE DATANEURON</div>
 					<div className="flex space-x-3">
 						<div className="w-2/5">NUMBER OF CLASSES</div>
@@ -287,12 +288,12 @@ function Home({ posts }) {
 								<p>100</p>
 							</div>
 						</div>
-						<div className={"border-2 border-black px-2 py-2"} style={{width:"85px"}}>
+						<div className={"border-2 border-gray-300 px-2 py-2"} style={{width:"85px"}}>
 							<div>{classes}</div>
 						</div>
 					</div>
 					<br />
-					<div className="flex space-x-3">
+					<div className="flex space-x-3" >
 						<div className="w-2/5">NUMBER OF PARAGRAPHS</div>
 						<div className={"w-3/6"}>
 							<input
@@ -309,14 +310,14 @@ function Home({ posts }) {
 								<p style={{marginLeft:"18px"}}>1000000</p>
 							</div>
 						</div>
-						<div className={"border-2 border-black px-2 py-2"} style={{width:'85px'}}>
+						<div className={"border-2 border-gray-300 px-2 py-2"} style={{width:'85px'}}>
 							<div>{paras}</div>
 						</div>
 					</div>
 				</div>
-				<div className="md:w-1/2 w-full border-2 border-gray-300 p-6">
+				<div className="md:w-1/2 w-full border border-gray-300 p-6" style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
 					<div className="flex h-full">
-						<div className="w-1/2 border-r-2 border-dashed border-gray-500 px-2 h-full">
+						<div className="w-1/2 border-r-2 border-dotted border-gray-500 px-2 h-full">
 							<div className="py-3 px-3 flex w-full justify-between text-blue-600">
 								<p>Time taken to build an Solution</p>
 								<p>{output.manual_time} hrs</p>
@@ -339,26 +340,40 @@ function Home({ posts }) {
 					</div>
 				</div>
 			</div>
-			<div className="mt-3 text-gray-400">Our Articles</div>
-			<div className="flex w-full overflow-x-scroll space-x-6 p-3">
+			<div className="mt-14 text-gray-500 text-xl">Our Articles</div>
+			<div className="flex w-full p-3 justify-between">
 				{posts.map((post) => {
+					console.log(post);
 					return (
-						<Link key={post.id} href={`/posts/${post.slug}`}>
-							<a>
-								<PostThumbnail
-									title={post.title}
-									imageUrl={post.coverImage.url}
+						<div key={post.id} 
+						onClick={()=>router.push(`/posts/${post.slug}`)}
+						style={{width:"30%"}} 
+						className="cursor-pointer py-2 border-t border-b border-gray-300">
+							<p className="text-gray-400">CASE STUDY</p>
+							<div className="flex flex-col justify-between" style={{height:"550px"}}>
+								<ImageCard
+								title={post.title}
+								imageUrl={post.coverImage.url}
 								/>
-							</a>
-						</Link>
+								<div className="flex justify-between">
+									<div className="text-sm text-gray-400">
+										2021
+									</div>
+									<div className="text-sm text-gray-400">
+										FINANCE
+									</div>
+								</div>
+							</div>
+						</div>
 					)
 				})}
 			</div>
 			<div className="flex">
 				<div
 					className={
-						"border-2 border-blue-600 rounded-full px-6 text-blue-600 py-2"
+						"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3"
 					}
+					style={{width:"177px"}}
 				>
 					View all
 				</div>

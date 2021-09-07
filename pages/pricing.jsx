@@ -3,11 +3,12 @@ import Layout from "../components/layout"
 
 const Pricing = () => {
 	return (
+		<div className="w-full" style={{background:"#E5E5E5"}}>
 		<Layout>
 			<div className="text-center text-4xl">
 				Ready to Start with DataNeuron?
 			</div>
-			<div className="text-gray-500 text-center">
+			<div className="text-gray-500 text-center mt-5 text-lg">
 				Use The Time Machine for AI to accelerate your model
 				development!
 			</div>
@@ -18,8 +19,8 @@ const Pricing = () => {
 				style={{ fontSize: 18 }}
 			>
 				<div
-					style={{ width: 400, height: 625 }}
-					className={"border-2 rounded-lg border-gray-500 p-3"}
+					style={{ width: 400, height: 625}}
+					className={"border-2 rounded-lg border-gray-500 p-4"}
 				>
 					<div className="text-green-500 text-xl">On-Demand</div>
 					<br />
@@ -29,7 +30,12 @@ const Pricing = () => {
 					</div>
 					<br />
 					<div className="flex justify-center">
-						<ButtonComponent text={"Get Started"} />
+						<div 
+						className="cursor-pointer py-3 rounded-full flex justify-center items-center border border-blue-600"
+						style={{width:"260px"}}
+						>
+							<p className="text-xl text-blue-600">Get Started</p>
+						</div>
 					</div>
 					<br />
 					<div>
@@ -65,7 +71,7 @@ const Pricing = () => {
 				</div>
 				<div
 					style={{ width: 400, height: 625 }}
-					className={"border-2 rounded-lg border-gray-500 p-3"}
+					className={"border-2 rounded-lg border-gray-500 p-4"}
 				>
 					<div className="text-pink-500 text-xl">Enterprise</div>
 					<br />
@@ -75,7 +81,12 @@ const Pricing = () => {
 					</div>
 					<br />
 					<div className="flex justify-center">
-						<ButtonComponent text={"Contact Sales"} />
+						<div 
+						className="cursor-pointer py-3 rounded-full flex justify-center items-center border border-blue-600"
+						style={{width:"260px"}}
+						>
+							<p className="text-xl text-blue-600">Contact Sales</p>
+						</div>
 					</div>
 					<br />
 					<div>
@@ -123,7 +134,7 @@ const Pricing = () => {
 				</div>
 				<div
 					style={{ width: 400, height: 625 }}
-					className={"border-2 rounded-lg border-gray-500 p-3"}
+					className={"border-2 rounded-lg border-gray-500 p-4"}
 				>
 					<div className="text-green-500 text-xl">
 						Natural Language Prediction
@@ -135,7 +146,12 @@ const Pricing = () => {
 					</div>
 					<br />
 					<div className="flex justify-center">
-						<ButtonComponent text={"Contact sales"} />
+						<div 
+						className="cursor-pointer py-3 rounded-full flex justify-center items-center border border-blue-600"
+						style={{width:"260px"}}
+						>
+							<p className="text-xl text-blue-600">Contact Sales</p>
+						</div>
 					</div>
 					<br />
 					<div>
@@ -241,6 +257,7 @@ const Pricing = () => {
 				</div>
 			</div>
 		</Layout>
+		</div>
 	)
 }
 

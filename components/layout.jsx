@@ -9,7 +9,7 @@ const Layout = ({children}) => {
                 <title>DataNeuron</title>
             </Head>
             <Navbar />
-            <div style={{padding : 50 }}>
+            <div style={{padding : "0 80px 50px 80px" }}>
             {children}
             </div>
             <Footer />

@@ -103,10 +103,10 @@ let Game = () => {
 	}, [scenePos, ballPos])
 
 	return (
-		<div className={"w-full h-72 overflow-x-hidden mt-6 "}>
+		<div className={"w-full h-72 overflow-x-hidden mt-14 "} style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", border:"1px solid #E0E0E0"}}>
 			<svg
 				style={{
-					width: "94%",
+					width: "90%",
 					position: "absolute",
 					transform: `translateY(183px)`,
 				}}
@@ -129,10 +129,10 @@ let Game = () => {
 				className={"w-full h-full flex justify-center duration-200"}
 				style={{ width: 2600, position: "relative", left: -scenePos }}
 			>
-				<div style={{ fontSize: 21, width: 400 }}>
-					This Journey will take you through the{" "}
-					<span style={{ color: "#0000FF" }}>DataNeuron</span>{" "}
-					Pipeline.
+				<div style={{ fontSize: 21, width:600}} className="px-5 py-6">
+					<p>This Journey will take you</p>
+					<p> through the{" "} <span style={{ color: "#0000FF" }}>DataNeuron</span>{" "}
+					Pipeline.</p>
 				</div>
 				{gameData.map((data) => {
 					return (
