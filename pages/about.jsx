@@ -11,71 +11,60 @@ const About = () => {
 						At DataNeuron, our aim is to accelerate the development
 						and provide explainability for AI.
 					</p>
-                    <br />
+					<br />
 					<p className="my-2">
 						The supervised learning approach is predominant in AI,
 						the need for labelled data has dramatically increased in
 						order to remove the constraints when developing AI
 						solutions. Companies moreover do not have a secure
 						platform for data exchange and model creation.
-						<span className={"text-blue-700"}>We strive to be that platform.</span>
+						<span className={"text-blue-700"}>
+							We strive to be that platform.
+						</span>
 					</p>
 					<div className="my-10">
 						<p className="my-3 text-gray-500 text-lg">Our Goals</p>
-						<div className="flex justify-between">
-							<divcl
-								style={{
-									background: "#fff",
-									width: "30%",
-									filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-								}}
-							>
-								<div
-									className="w-full flex justify-between mx-5"
-									style={{
-										height: "100px",
-										marginTop: "100px",
-										marginBottom: "30px",
-									}}
-								>
-									<img
-										src="/img/circle1.gif"
-										alt="loading"
-										width={60}
-									></img>
-									<img
-										src="/img/circle1.gif"
-										alt="loading"
-										width={60}
-									></img>
-									<img
-										src="/img/circle1.gif"
-										alt="loading"
-										width={60}
-									></img>
-									<img
-										src="/img/circle1.gif"
-										alt="loading"
-										width={60}
-									></img>
-									<img
-										src="/img/circle1.gif"
-										alt="loading"
-										width={60}
-									></img>
+						<div className="flex justify-center flex-wrap space-x-3">
+						<div className={"shadow-md p-3 flex flex-col items-center justify-center"} style={{width : 420}}>
+								<div className="flex space-x-3">
+									<img src="/img/circle.gif" alt="circle" width={60} height={60} />
+									<img src="/img/circle.svg" alt="circle" width={60} height={60} />
+									<img src="/img/circle.gif" alt="circle" width={60} height={60} />
+									<img src="/img/circle.svg" alt="circle" width={60} height={60} />
+									<img src="/img/circle.gif" alt="circle" width={60} height={60} />
 								</div>
-								<p className="">
-									Reduce Project Staffing by 70-90%.
-								</p>
-							</divcl>
-							<img src="/img/remove.svg"></img>
-							<img src="/img/remove.svg"></img>
+								<br />
+								<div className="text-center text-lg">
+									200%-400% customers’ ROI from DataNeuron’s
+									solution(s).
+								</div>
+							</div>
+							<div className={"shadow-md p-3 flex flex-col items-center justify-center"} style={{width :420}}>
+								<img src="/img/meter.gif" width={240} alt="meter" />
+								<br />
+								<div className="text-center text-lg">
+									200%-400% customers’ ROI from DataNeuron’s
+									solution(s).
+								</div>
+							</div>
+							<div className={"shadow-md p-3 flex flex-col items-center justify-center"} style={{width : 420}}>
+								<img src="/img/doc_ani.gif" alt="meter" />
+								<br />
+								<div className="text-center text-lg">
+									200%-400% customers’ ROI from DataNeuron’s
+									solution(s).
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div
 					className="text-white w-full border-2"
-					style={{ background: "#2C2C2C" , transform : "translateX(-50px)" , width : '98.93vw'}}
+					style={{
+						background: "#2C2C2C",
+						transform: "translateX(-50px)",
+						width: "98.93vw",
+					}}
 				>
 					<p className="w-full text-center py-10 text-lg">
 						Backed By The Best
