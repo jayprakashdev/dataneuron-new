@@ -4,8 +4,107 @@ import PostThumbnail from "../components/postThumbnail"
 import { getAllPosts } from "../lib/graphcms"
 import style from "../styles/homepage.module.css"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 function Home({ posts }) {
+	let annotation_accuracy = 0.5
+	let prediction_api_usage_estimate = 10000
+	let total_number_of_paras_in_database = 10000
+	let time_taken_for_thousand_paras_manual_validation = 15
+	let annotation_cost_for_every_correct_validation = 0.1
+	let prediction_cost_per_para = 0.05
+	let Masterlist_cost = 150
+	let Cost_of_manual_annotation_per_hour = 10
+	let data_science_team_size = 5
+	let avg_salary_of_each_data_scientist = 13494
+	let [paras, setParas] = useState(0)
+	let [classes, setClasses] = useState(0)
+	let [output, setOutput] = useState({
+		roi: 0,
+		time_reduction: 0,
+		dataNeuron_time: 0,
+		manual_time: 0,
+	})
+
+	const handleChange = (event) => {
+		if (event.target.name === "paras") {
+			if (isNaN(event.target.value)) {
+				setParas(0)
+			} else {
+				setParas(parseInt(event.target.value))
+			}
+		} else {
+			if (isNaN(event.target.value)) {
+				setClasses(parseInt(0))
+			} else {
+				setClasses(parseInt(event.target.value))
+			}
+		}
+	}
+	const updateValue = () => {
+		let number_of_classes = paras
+		let para_per_class_for_training = classes
+
+		let paras_to_be_validated_per_class_by_user =
+			para_per_class_for_training / annotation_accuracy
+		let Annotation_cost =
+			number_of_classes *
+			para_per_class_for_training *
+			annotation_cost_for_every_correct_validation
+		let Prediction_cost =
+			prediction_api_usage_estimate * prediction_cost_per_para
+		let Annotator_SME_cost =
+			(paras_to_be_validated_per_class_by_user *
+				number_of_classes *
+				time_taken_for_thousand_paras_manual_validation *
+				Cost_of_manual_annotation_per_hour) /
+			1000
+		let Total_Dataneuron_ALP_cost =
+			Masterlist_cost +
+			Annotation_cost +
+			Prediction_cost +
+			Annotator_SME_cost
+
+		let Annotator_SME_house_cost =
+			(total_number_of_paras_in_database *
+				time_taken_for_thousand_paras_manual_validation *
+				Cost_of_manual_annotation_per_hour) /
+			1000
+
+		let single_DS_cost_per_week = avg_salary_of_each_data_scientist / 12 / 4
+		let team_cost_per_week =
+			single_DS_cost_per_week * data_science_team_size
+		let total_in_house_team_cost =
+			team_cost_per_week + Annotator_SME_house_cost
+
+		let ROI =
+			(total_in_house_team_cost - Total_Dataneuron_ALP_cost) /
+			Total_Dataneuron_ALP_cost
+		let total_paras =
+			number_of_classes * paras_to_be_validated_per_class_by_user
+		let total_time_data_neuron_tool =
+			(time_taken_for_thousand_paras_manual_validation / 1000) *
+			total_paras
+		let total_time_in_house =
+			(total_number_of_paras_in_database *
+				time_taken_for_thousand_paras_manual_validation) /
+			1000
+
+		let time_reduction =
+			((total_time_in_house - total_time_data_neuron_tool) /
+				total_time_in_house) *
+			100
+
+		setOutput({
+			roi: Math.round(ROI),
+			time_reduction: Math.round(time_reduction),
+			dataNeuron_time: Math.round(Total_Dataneuron_ALP_cost),
+			manual_time: Math.round(total_in_house_team_cost),
+		})
+	}
+	useEffect(() => {
+		updateValue()
+	}, [classes, paras])
 	return (
 		<Layout>
 			<div className="flex justify-center w-full">
@@ -33,7 +132,7 @@ function Home({ posts }) {
 			<div className={"text-gray-500 my-3"}>
 				Our Mission (Placeholder)
 			</div>
-			<div className="flex justify-between">
+			<div className="flex justify-between items-center">
 				<div>
 					<div className="text-3xl">
 						Our Aim is to accelerate the development of AI <br />{" "}
@@ -50,9 +149,10 @@ function Home({ posts }) {
 					</div>
 				</div>
 				<div>
-					<img src="/img/cir_ani.gif" alt="circle animation" />
+					<img src="/img/cir_ani.gif" alt="goals" />
 				</div>
 			</div>
+
 			<div className="mt-6 text-gray-500">Infinite Solutions</div>
 			<div className="my-3">
 				Legal/Tax, Finance, Healthcare, Insurance, News, Data Science,
@@ -178,12 +278,18 @@ function Home({ posts }) {
 								className={style.slider}
 								min={1}
 								max={100}
+								name="classes"
+								onChange={(e) => handleChange(e)}
+								value={classes}
 							/>
 						</div>
 						<div className={"w-14"}>
 							<input
 								className={"w-14 p-1 border-2 border-gray-400"}
 								type="text"
+								name="classes"
+								onChange={(e) => handleChange(e)}
+								value={classes}
 							/>
 						</div>
 					</div>
@@ -195,31 +301,46 @@ function Home({ posts }) {
 								type="range"
 								className={style.slider}
 								min={1}
-								max={100}
+								max={10000}
+								name="paras"
+								onChange={(e) => handleChange(e)}
+								value={paras}
 							/>
 						</div>
 						<div className={"w-14"}>
 							<input
 								className={"p-1 w-14 border-2 border-gray-400"}
 								type="text"
+								min={1}
+								max={10000}
+								name="paras"
+								onChange={(e) => handleChange(e)}
+								value={paras}
 							/>
 						</div>
 					</div>
 				</div>
 				<div className="md:w-1/2 w-full border-2 border-gray-300 p-6">
-					<div className="flex">
-						<div className="w-1/2 border-r-2 border-dashed border-gray-500">
-							<div className="text-gray-400">
-								Time taken to build an Solution
+					<div className="flex h-full">
+						<div className="w-1/2 border-r-2 border-dashed border-gray-500 px-2 h-full">
+							<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+								<p>Time taken to build an Solution</p>
+								<p>{output.manual_time}</p>
 							</div>
-							<div className="text-gray-400">
-								Using DataNeuron
+							<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+								<p>Using DataNeuron</p>
+								<p>{output.dataNeuron_time}</p>
 							</div>
-
-							<div className="text-gray-400">
-								% Time Reduction
+						</div>
+						<div className="w-1/2 px-2 h-full">
+							<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+								<p>% Time Reduction</p>
+								<p>{output.time_reduction}</p>
 							</div>
-							<div className="text-gray-400">ROI</div>
+							<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+								<p>ROI</p>
+								<p>{output.roi}</p>
+							</div>
 						</div>
 					</div>
 				</div>
