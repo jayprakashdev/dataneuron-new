@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 let Game = () => {
 	let [scenePos, setScenePos] = useState(0)
@@ -101,6 +101,16 @@ let Game = () => {
 			window.onkeydown = null
 		}
 	}, [scenePos, ballPos])
+
+	useEffect(() => {
+		if(window.DeviceOrientationEvent){
+			window.addEventListener("deviceorientation" , (e) => {
+				console.log(e);
+			} , false)
+		}else{
+			console.log("device movement not supported");
+		}
+	} , [])
 
 	return (
 		<div className={"w-full h-72 overflow-x-hidden mt-6 "}>
