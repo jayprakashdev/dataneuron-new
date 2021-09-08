@@ -5,9 +5,9 @@ let Footer = () => {
 	let router = useRouter()
 
 	return (
-		<div className={"hidden md:block"}>
+		<div className={""}>
 			<div
-				className={"w-full flex border-t-2 border-b-2 border-gray-500"}
+				className={"w-full md:block flex border-t-2 border-b-2 border-gray-500"}
 			>
 				<div
 					onClick={() => {

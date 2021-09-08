@@ -3,13 +3,14 @@ import ButtonComponent from "../components/buttonComponent"
 import ImageCard from "../components/imageCard"
 import Layout from "../components/layout"
 import { getAllPosts } from "../lib/graphcms"
-import Link from "next/link"
+import {useRouter} from "next/router"
 
 const ResourcePage = ({ posts }) => {
+	const router=useRouter();
 	return (
 		<div
 			className="w-full"
-			style={{ background: "#ffffff", minHeight: "100vh" }}
+			style={{ background: "#E5E5E5", minHeight: "100vh" }}
 		>
 			<Layout>
 				<div className="w-full">
@@ -22,7 +23,7 @@ const ResourcePage = ({ posts }) => {
 					</p>
 					<div className="w-full flex justify-center">
 						<div
-							className="flex justify-between space-x-3"
+							className="flex flex-wrap justify-between space-y-3 md:space-y-0"
 							style={{ width: "50%" }}
 						>
 							<div style={{ minWidth: "180px" }}>
@@ -55,10 +56,10 @@ const ResourcePage = ({ posts }) => {
 					<div className="mt-14 w-full flex justify-between flex-wrap">
 						{posts.map((post) => {
 							return (
-								<Link key={post.id} href={`/posts/${post.slug}`}>
+								<div key={post.id} className="cursor-pointer" onClick={()=>router.push(`/posts/${post.slug}`)} style={{width:"30%"}}>
 									<a>
 										<div
-											style={{ width: 400, margin: 10 }}
+											style={{ width: "100%%", margin: 10 }}
 										>
 											<div
 												className="border-t-2 border-b-2 py-2"
@@ -69,19 +70,27 @@ const ResourcePage = ({ posts }) => {
 														"2px solid #E0E0E0",
 												}}
 											>
-												<p className="mb-4 text-xs">
+												<p className="mb-4 text-lg text-gray-400">
 													CASE STUDY
 												</p>
-												<ImageCard
+												<div className="flex flex-col justify-between" style={{height:"550px"}}>
+													<ImageCard
 													title={post.title}
-													imageUrl={
-														post.coverImage.url
-													}
-												/>
+													imageUrl={post.coverImage.url}
+													/>
+													<div className="flex justify-between">
+														<div className="text-sm text-gray-400">
+															2021
+														</div>
+														<div className="text-sm text-gray-400">
+															FINANCE
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</a>
-								</Link>
+								</div>
 							)
 						})}
 					</div>

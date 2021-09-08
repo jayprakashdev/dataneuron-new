@@ -1,13 +1,32 @@
+import React from "react";
 import Layout from "../components/layout"
 
 let Contact = () => {
+	const [contactDetails, setContactDetails]=React.useState({
+		name:"",
+		email:"",
+		organisation:"",
+		message:"",
+	})
+	const [isAgree, setIsAgree]=React.useState(false);
+	const handleChange=(e)=>{
+		setContactDetails({...contactDetails, [e.target.name]:e.target.value});
+	}
+	const handleSubmit=(e)=>{
+		e.preventDefault();
+		if(!isAgree){
+			alert('You need to check agree');
+		}else{
+			console.log(contactDetails);
+		}
+	}
 	return (
 		<Layout>
 			<div className="flex flex-wrap">
 				<div className=" md:w-1/2 w-full">
 					<div className="text-4xl">
 						How can we <br />
-						help you
+						help you &nbsp;
 						<span className="text-blue-500">Transform?</span>
 					</div>
 					<br />
@@ -22,6 +41,9 @@ let Contact = () => {
 									type="text"
 									className="w-full"
 									placeholder={"Name"}
+									name="name"
+									onChange={(e)=>handleChange(e)}
+									value={contactDetails.name}
 								/>
 							</div>
 							<div className={"w-1/2 m-3"}>
@@ -33,6 +55,9 @@ let Contact = () => {
 									type="text"
 									className="w-full"
 									placeholder={"Email"}
+									name="email"
+									onChange={(e)=>handleChange(e)}
+									value={contactDetails.email}
 								/>
 							</div>
 						</div>
@@ -46,6 +71,9 @@ let Contact = () => {
 									type="text"
 									className="w-full"
 									placeholder={"Organisation"}
+									name="organisation"
+									onChange={(e)=>handleChange(e)}
+									value={contactDetails.organisation}
 								/>
 							</div>
 						</div>
@@ -59,6 +87,9 @@ let Contact = () => {
 									type="text"
 									className="w-full"
 									placeholder={"Message"}
+									name="message"
+									onChange={(e)=>handleChange(e)}
+									value={contactDetails.message}
 								/>
 							</div>
 						</div>
@@ -72,10 +103,11 @@ let Contact = () => {
 								type="radio"
 								className="w-full"
 								placeholder={"Message"}
+								onChange={()=>setIsAgree(!isAgree)}
 							/>
 							I agree to the Terms & Conditions.
 						</div>
-                        <button className={"px-3 py-2 border-2 border-black w-40 m-3"}>
+                        <button className={"px-3 py-2 border-2 border-black w-40 m-3"} onClick={(e)=>handleSubmit(e)}>
                             Send
                         </button>
 					</form>

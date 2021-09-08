@@ -1,4 +1,5 @@
 import Link from "next/link"
+import {useRouter} from "next/router"
 import ButtonComponent from "./buttonComponent"
 import Hamburger from "hamburger-react"
 import { useEffect, useState } from "react"
@@ -22,7 +23,7 @@ let MobileNavbar = () => {
 
 	return (
 		<div
-			className={`w-full fixed bg-white z-50 md:hidden duration-500 ${
+			className={`w-full top-0 fixed bg-white z-50 md:hidden duration-500 ${
 				onTop === false && "shadow-md"
 			}`}
 		>
@@ -89,7 +90,7 @@ const Navbar = () => {
 							<div className="text-2xl font-bold">DataNeuron</div>
 						</a>
 					</Link>
-					<div className="flex">
+					<div className="flex items-center">
 						<Link href={"/product"}>
 							<a className={"p-3"}>Product</a>
 						</Link>

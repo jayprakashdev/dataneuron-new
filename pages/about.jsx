@@ -1,11 +1,12 @@
 import ButtonComponent from "../components/buttonComponent"
 import Layout from "../components/layout"
 
+
 const About = () => {
 	return (
 		<div style={{ width: "100%" }}>
 			<Layout>
-				<div style={{ margin: "-50px 0 20px 20px" }}>
+				<div style={{ margin: "30px 0 20px 20px" }}>
 					<p className="mb-2 text-gray-500">About DataNeuron</p>
 					<p className="my-2 text-4xl">
 						At DataNeuron, our aim is to accelerate the development
@@ -24,14 +25,44 @@ const About = () => {
 					</p>
 					<div className="my-10">
 						<p className="my-3 text-gray-500 text-lg">Our Goals</p>
-						<div className="flex justify-center flex-wrap space-x-3">
-						<div className={"shadow-md p-3 flex flex-col items-center justify-center"} style={{width : 420}}>
+						<div className="flex w-full items-center justify-center flex-wrap md:space-x-3">
+							<div
+								className={
+									"shadow-md p-3 flex flex-col items-center justify-center h-64 min-w-72 w-3/12"
+								}
+								style = {{minWidth : 400}}
+							>
 								<div className="flex space-x-3">
-									<img src="/img/circle.gif" alt="circle" width={60} height={60} />
-									<img src="/img/circle.svg" alt="circle" width={60} height={60} />
-									<img src="/img/circle.gif" alt="circle" width={60} height={60} />
-									<img src="/img/circle.svg" alt="circle" width={60} height={60} />
-									<img src="/img/circle.gif" alt="circle" width={60} height={60} />
+									<img
+										src="/img/circle.gif"
+										alt="circle"
+										width={60}
+										height={60}
+									/>
+									<img
+										src="/img/circle.svg"
+										alt="circle"
+										width={60}
+										height={60}
+									/>
+									<img
+										src="/img/circle.gif"
+										alt="circle"
+										width={60}
+										height={60}
+									/>
+									<img
+										src="/img/circle.svg"
+										alt="circle"
+										width={60}
+										height={60}
+									/>
+									<img
+										src="/img/circle.gif"
+										alt="circle"
+										width={60}
+										height={60}
+									/>
 								</div>
 								<br />
 								<div className="text-center text-lg">
@@ -39,16 +70,31 @@ const About = () => {
 									solution(s).
 								</div>
 							</div>
-							<div className={"shadow-md p-3 flex flex-col items-center justify-center"} style={{width :420}}>
-								<img src="/img/meter.gif" width={240} alt="meter" />
+							<div
+								className={
+									"shadow-md p-3 flex flex-col items-center justify-center h-64 min-w-72 w-3/12"
+								}
+								style = {{minWidth : 400}}
+								
+							>
+								<img
+									src="/img/meter.gif"
+									width={240}
+									alt="meter"
+								/>
 								<br />
 								<div className="text-center text-lg">
 									200%-400% customers’ ROI from DataNeuron’s
 									solution(s).
 								</div>
 							</div>
-							<div className={"shadow-md p-3 flex flex-col items-center justify-center"} style={{width : 420}}>
-								<img src="/img/doc_ani.gif" alt="meter" />
+							<div
+								className={
+									"shadow-md p-3 flex flex-col items-center justify-center h-64 min-w-72 w-3/12"
+								}
+								style = {{minWidth : 400}}
+							>
+								<img src="/img/doc_ani.gif" alt="meter" className={"relative top-6"} />
 								<br />
 								<div className="text-center text-lg">
 									200%-400% customers’ ROI from DataNeuron’s
@@ -62,8 +108,6 @@ const About = () => {
 					className="text-white w-full border-2"
 					style={{
 						background: "#2C2C2C",
-						transform: "translateX(-50px)",
-						width: "98.93vw",
 					}}
 				>
 					<p className="w-full text-center py-10 text-lg">
@@ -71,8 +115,7 @@ const About = () => {
 					</p>
 					<div className="flex justify-center mb-5 w-full">
 						<div
-							className="flex justify-between space-x-6"
-							style={{ width: "50%" }}
+							className="flex flex-wrap p-6 justify-between md:space-x-6 space-y-6 md:space-y-0"
 						>
 							<img
 								src="/img/aboutus1.svg"
@@ -87,22 +130,25 @@ const About = () => {
 					<p className="w-full text-center py-5 text-lg">
 						Our Company Leadership
 					</p>
-					<div className="flex justify-center mb-5 w-full">
+					<div className="md:flex justify-center mb-5 w-full">
 						<div
-							className="flex justify-between"
-							style={{ width: "50%" }}
+							className="md:flex md:space-x-12 justify-between"
 						>
-							<div>
+							<div className={"flex justify-center flex-col items-center"}>
 								<img
+									width={200}
+									height={200}
 									src="/img/bharath.svg"
 									alt="Windrose Captical"
-								></img>
+								/>
 								<p className="my-2 w-full text-center">
 									Bharath Rao
 								</p>
 							</div>
-							<div>
+							<div className={"flex justify-center flex-col items-center"}>
 								<img
+									width={200}
+									height={200}
 									src="/img/rohit_goyal.svg"
 									alt="Windrose Captical"
 								></img>
@@ -110,8 +156,10 @@ const About = () => {
 									Rohit Goyal
 								</p>
 							</div>
-							<div>
+							<div className={"flex justify-center flex-col items-center"}>
 								<img
+									width={200}
+									height={200}
 									src="/img/anil_advani.svg"
 									alt="Windrose Captical"
 								></img>
@@ -119,8 +167,10 @@ const About = () => {
 									Anil Advani
 								</p>
 							</div>
-							<div>
+							<div className={"flex justify-center flex-col items-center"}>
 								<img
+									width={200}
+									height={200}
 									src="/img/rohit_adhlaka.svg"
 									alt="Windrose Captical"
 								></img>

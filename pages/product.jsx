@@ -1,6 +1,7 @@
 import { useState } from "react"
 import ButtonComponent from "../components/buttonComponent"
 import Layout from "../components/layout"
+import style from '../styles/product.module.css'
 
 const Product = () => {
 	let pipeline = [
@@ -242,42 +243,43 @@ const Product = () => {
 
 	return (
 		<Layout>
-			<div className="text-center text-3xl">
+			<div className="text-center" style={{fontSize:"40px"}}>
 				Use the Time Machine for AI to accelerate your model deployment.
 			</div>
-			<div className="flex justify-center">
-				<div className="text-gray-500 text-center md:w-1/2 w-full">
+			<div className="flex justify-center my-3">
+				<div className="text-gray-500 text-center md:w-1/2 w-full text-xl">
 					Efficiently build machine learning models and use them to
 					make highly accurate context-based predictions in minutes
 					without writing any code!
 				</div>
 			</div>
 			<br />
-			<div className="flex justify-center space-x-6">
+			<div className="md:flex justify-center md:space-x-6">
 				<ButtonComponent filled={true} text={"Get started"} />
-				<ButtonComponent filled={false} text={"Get a demo"} />
+				<br />
+				<ButtonComponent fill={false} text={"View demo"} />
 			</div>
 			<div
-				className={"p-3 my-6"}
+				className={"p-5 my-14 shadow-md"}
 				style={{ border: "1px solid #E0E0E0", boxSizing: "border-box" }}
 			>
 				<div className="text-xl">The DataNeuron Pipeline</div>
-				<div className="text-md" style={{ color: "#0000FF" }}>
+				<div className="text-lg my-2" style={{ color: "#0000FF" }}>
 					90%+ first-pass machine accuracy.
 				</div>
 				<div
 					className={
-						"flex space-x-3 flex-wrap justify-center space-x-3 space-y-3"
+						"flex md:space-x-3 flex-wrap md:justify-between justify-center space-y-6"
 					}
 				>
 					{pipeline.map((imgUrl, i) => {
-						return <img key={i * Math.random()} src={imgUrl} />
+						return <img key={i * Math.random()} className={"w-5/6 md:w-40"} src={imgUrl} />
 					})}
 				</div>
 			</div>
-			<div className="text-gray-500 text-lg">How it Works ?</div>
+			<div className="text-gray-500 text-xl">How it Works ?</div>
 			<div className="flex justify-end">
-				<div className="flex space-x-3 p-3">
+				<div className={`flex space-x-10 p-3 my-5 overflow-scroll hide-scroll ${style.hide_scroll}`}>
 					{tabs.map((tab, i) => {
 						return (
 							<div
@@ -288,7 +290,7 @@ const Product = () => {
 									textDecoration:
 										active === i ? "underline" : "none",
 								}}
-								className={"text-md cursor-pointer"}
+								className={`text-xl cursor-pointer`}
 							>
 								{tab.text}
 							</div>
@@ -299,7 +301,7 @@ const Product = () => {
 
 			<div
 				style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
-				className="md:flex justify-center md:px-24 py-12"
+				className="md:flex justify-center md:px-24 py-12 border border-gray-400"
 			>
 				<div className="md:w-1/2">
 					<img
@@ -312,22 +314,21 @@ const Product = () => {
 						"md:w-1/2 p-3 flex flex-col justify-center items-center"
 					}
 				>
-					<div className="font-bold text-lg w-full">
+					<div className="font-bold text-2xl w-full">
 						{how_it_works[active].title}
 					</div>
-					<div>{how_it_works[active].para}</div>
+					<div className="text-lg m-2">{how_it_works[active].para}</div>
 				</div>
 			</div>
 			<div className="text-gray-500 text-xl my-6">
 				Why choose DataNeuron?
 			</div>
-			<div className="flex justify-center flex-wrap">
+			<div className="flex justify-between flex-wrap">
 				{why_schoose.map((data, i) => {
 					return (
 						<div
 							key={i * Math.random()}
-							style={{ width: 325 }}
-							className={"p-3 m-3 border-2 border-gray-300 py-6"}
+							className={"p-3 m-3 md:w-80 w-full border-2 border-gray-300 py-6"}
 						>
 							<img
 								width={35}
@@ -335,8 +336,8 @@ const Product = () => {
 								src={data.imageUrl}
 								alt={data.title}
 							/>
-							<div>{data.title}</div>
-							<div className="text-sm text-gray-500">
+							<div className="text-2xl my-1">{data.title}</div>
+							<div className="text-lg my-1 text-gray-500">
 								{data.para}
 							</div>
 						</div>

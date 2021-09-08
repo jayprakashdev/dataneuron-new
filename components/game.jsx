@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 let Game = () => {
+	
 	let [scenePos, setScenePos] = useState(0)
 	let [ballPos, setBallPos] = useState(100)
 

@@ -3,23 +3,24 @@ import Layout from "../components/layout"
 
 const Pricing = () => {
 	return (
+		<div className="w-full" style={{background:"#ffffff"}}>
 		<Layout>
 			<div className="text-center text-4xl">
 				Ready to Start with DataNeuron?
 			</div>
-			<div className="text-gray-500 text-center">
+			<div className="text-gray-500 text-center mt-5 text-lg">
 				Use The Time Machine for AI to accelerate your model
 				development!
 			</div>
 			<br />
 			<br />
 			<div
-				className="flex flex-wrap space-x-6 justify-center"
+				className="flex flex-wrap md:space-x-6 space-y-6 justify-center"
 				style={{ fontSize: 18 }}
 			>
 				<div
-					style={{ width: 400, height: 625 }}
-					className={"border-2 rounded-lg border-gray-500 p-3"}
+					style={{ width: 400, height: 625}}
+					className={"border-2 rounded-lg border-gray-500 p-4"}
 				>
 					<div className="text-green-500 text-xl">On-Demand</div>
 					<br />
@@ -29,7 +30,12 @@ const Pricing = () => {
 					</div>
 					<br />
 					<div className="flex justify-center">
-						<ButtonComponent text={"Get Started"} />
+						<div 
+						className="cursor-pointer py-3 rounded-full flex justify-center items-center border border-blue-600"
+						style={{width:"260px"}}
+						>
+							<p className="text-xl text-blue-600">Get Started</p>
+						</div>
 					</div>
 					<br />
 					<div>
@@ -65,7 +71,7 @@ const Pricing = () => {
 				</div>
 				<div
 					style={{ width: 400, height: 625 }}
-					className={"border-2 rounded-lg border-gray-500 p-3"}
+					className={"border-2 rounded-lg border-gray-500 p-4"}
 				>
 					<div className="text-pink-500 text-xl">Enterprise</div>
 					<br />
@@ -75,7 +81,12 @@ const Pricing = () => {
 					</div>
 					<br />
 					<div className="flex justify-center">
-						<ButtonComponent text={"Contact Sales"} />
+						<div 
+						className="cursor-pointer py-3 rounded-full flex justify-center items-center border border-blue-600"
+						style={{width:"260px"}}
+						>
+							<p className="text-xl text-blue-600">Contact Sales</p>
+						</div>
 					</div>
 					<br />
 					<div>
@@ -123,7 +134,7 @@ const Pricing = () => {
 				</div>
 				<div
 					style={{ width: 400, height: 625 }}
-					className={"border-2 rounded-lg border-gray-500 p-3"}
+					className={"border-2 rounded-lg border-gray-500 p-4"}
 				>
 					<div className="text-green-500 text-xl">
 						Natural Language Prediction
@@ -135,7 +146,12 @@ const Pricing = () => {
 					</div>
 					<br />
 					<div className="flex justify-center">
-						<ButtonComponent text={"Contact sales"} />
+						<div 
+						className="cursor-pointer py-3 rounded-full flex justify-center items-center border border-blue-600"
+						style={{width:"260px"}}
+						>
+							<p className="text-xl text-blue-600">Contact Sales</p>
+						</div>
 					</div>
 					<br />
 					<div>
@@ -184,7 +200,7 @@ const Pricing = () => {
 			<br />
 			<div className="flex flex-wrap justify-center space-x-3">
 				<div
-					className="p-3 border-r-2 border-gray-300"
+					className="p-3 md:border-r-2 border-b-2 md:border-b-0 border-gray-300"
 					style={{ width: 240 }}
 				>
 					<img src="/img/why2/why1.svg" alt="why2 image" />
@@ -197,7 +213,7 @@ const Pricing = () => {
 					</div>
 				</div>
 				<div
-					className="p-3 border-r-2 border-gray-300"
+					className="p-3 md:border-r-2 border-b-2 md:border-b-0 border-gray-300"
 					style={{ width: 240 }}
 				>
 					<img src="/img/why2/why2.svg" alt="why2 image" />
@@ -210,7 +226,7 @@ const Pricing = () => {
 					</div>
 				</div>
 				<div
-					className="p-3 border-r-2 border-gray-300"
+					className="p-3 md:border-r-2 border-b-2 md:border-b-0 border-gray-300"
 					style={{ width: 240 }}
 				>
 					<img src="/img/why2/why3.svg" alt="why2 image" />
@@ -223,7 +239,7 @@ const Pricing = () => {
 					</div>
 				</div>
 				<div
-					className="p-3 border-r-2 border-gray-300"
+					className="p-3 md:border-r-2 border-b-2 md:border-b-0 border-gray-300"
 					style={{ width: 240 }}
 				>
 					<img src="/img/why2/why4.svg" alt="why2 image" />
@@ -241,6 +257,7 @@ const Pricing = () => {
 				</div>
 			</div>
 		</Layout>
+		</div>
 	)
 }
 
