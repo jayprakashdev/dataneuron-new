@@ -1,5 +1,4 @@
 import Link from "next/link"
-import {useRouter} from "next/router"
 import ButtonComponent from "./buttonComponent"
 import Hamburger from "hamburger-react"
 import { useEffect, useState } from "react"
@@ -85,26 +84,34 @@ const Navbar = () => {
 					className={"w-full flex justify-between"}
 				>
 					<Link href={"/"}>
-						<a>
-							{" "}
+						<a className={"flex items-center"}>
+							<img src="/img/logo.svg" alt="logo" />
+							<svg width={10} height={50}>
+								<path
+									d={"M 5 0 L 5 50"}
+									fill={"transparent"}
+									stroke={"black"}
+									strokeWidth={2}
+								/>
+							</svg>
 							<div className="text-2xl font-bold">DataNeuron</div>
 						</a>
 					</Link>
 					<div className="flex items-center">
 						<Link href={"/product"}>
-							<a className={"p-3"}>Product</a>
+							<a className="font-thin" style={{marginLeft : 60 , fontSize : 22}}>Product</a>
 						</Link>
 						<Link href={"/about"}>
-							<a className={"p-3"}>About</a>
+							<a className="font-thin" style={{marginLeft : 60 , fontSize : 22}}>About</a>
 						</Link>
 						<Link href={"/pricing"}>
-							<a className={"p-3"}>Pricing</a>
+							<a className="font-thin" style={{marginLeft : 60 , fontSize : 22}}>Pricing</a>
 						</Link>
 						<Link href={"/resources"}>
-							<a className={"p-3"}>Resources</a>
+							<a className="font-thin" style={{marginLeft : 60 , fontSize : 22}}>Resources</a>
 						</Link>
 						<Link href={"/contact"}>
-							<a className={"p-3"}>Contact</a>
+							<a className="font-thin" style={{marginLeft : 60 , marginRight : 60 , fontSize : 22}}>Contact</a>
 						</Link>
 						<ButtonComponent filled={false} text={"Get started"}>
 							Get Started

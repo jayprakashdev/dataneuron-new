@@ -9,8 +9,8 @@ const Layout = ({children}) => {
                 <title>DataNeuron</title>
             </Head>
             <Navbar />
-            <div className={"mt-20 md:mt-0 p-6"}>
-            {children}
+            <div>
+                {children}
             </div>
             {/* <Footer /> */}
         </div>

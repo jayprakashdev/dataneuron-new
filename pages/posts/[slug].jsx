@@ -25,7 +25,7 @@ const PostDetails = ({ post, morePosts, preview }) => {
 
 					<div className="flex justify-center">
 						<div
-							className={`text-xl mt-6 md:w-4/6 flex flex-col space-y-6 items-center`}
+							className={`text-xl mt-6 md:w-4/6 flex flex-col space-y-6`}
 							dangerouslySetInnerHTML={{
 								__html: post.content?.html,
 							}}

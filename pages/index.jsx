@@ -111,20 +111,17 @@ function Home({ posts }) {
 	return (
 		<Layout>
 			<div className="flex justify-center w-full md:pt-0">
-				<div className={"md:w-4/5 text-center text-3xl md:text-4xl w-full"}>
-					An advanced platform for complex
-					<br />
-					<Typewriter
-						words={[
-							"data annotations",
-							"model training",
-							"prediction",
-							"lifecycle management",
-						]}
-					/>
-					.
+				<div
+					className={
+						"md:w-4/5 text-center text-3xl md:text-4xl w-full"
+					}
+				>
+					An advanced platform for complex data annotations, model
+					training, prediction & lifecycle management.
 				</div>
 			</div>
+			<br />
+			<br />
 			<Game />
 			<Fade>
 				<div className={"text-gray-500 mt-14 mb-2 text-lg"}>

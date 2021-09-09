@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
+import style from '../styles/product.module.css'
 
 let Game = () => {
-	
 	let [scenePos, setScenePos] = useState(0)
 	let [ballPos, setBallPos] = useState(100)
 
@@ -63,10 +63,13 @@ let Game = () => {
 			show: false,
 		},
 	])
+	
+
+	let [windowWidth , setWindowWidth] = useState(0) 
 
 	useEffect(() => {
 		for (let i = 0; i < 6; i++) {
-			if ((ballPos + scenePos) - 100 > 400 * i) {
+			if (ballPos + scenePos - 100 > 400 * i) {
 				gameData[i].show = true
 				setGameData(gameData)
 			} else {
@@ -75,6 +78,25 @@ let Game = () => {
 			}
 		}
 	}, [ballPos, scenePos])
+
+	useEffect(() => {
+		setWindowWidth(window.innerWidth)
+	} , [])
+
+	// useEffect(() => {
+	// 	setInterval(() => {
+	// 		if (ballPos < window.innerWidth / 2) {
+	// 			setBallPos(ballPos + 10)
+	// 		} else {
+	// 			if (scenePos < 1900) {
+	// 				setScenePos(scenePos + 10)
+	// 			}
+	// 		}
+	// 	}, 500)
+	// 	return () => {
+	// 		clearInterval()
+	// 	}
+	// }, [])
 
 	useEffect(() => {
 		window.onkeydown = (e) => {
@@ -100,21 +122,26 @@ let Game = () => {
 
 		return () => {
 			window.onkeydown = null
+			clearInterval()
 		}
 	}, [scenePos, ballPos])
 
 	useEffect(() => {
-		if(window.DeviceOrientationEvent){
-			window.addEventListener("deviceorientation" , (e) => {
-				console.log(e);
-			} , false)
-		}else{
-			console.log("device movement not supported");
+		if (window.DeviceOrientationEvent) {
+			window.addEventListener(
+				"deviceorientation",
+				(e) => {
+					console.log(e)
+				},
+				false
+			)
+		} else {
+			console.log("device movement not supported")
 		}
-	} , [])
+	}, [])
 
 	return (
-		<div className={"w-full h-72 overflow-x-hidden mt-6 "}>
+		<div className={`w-full h-72 overflow-y-hidden mt-6 p-6 ${style.hide_scroll}`} style={{boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)`}}>
 			<svg
 				style={{
 					width: "94%",
@@ -126,7 +153,7 @@ let Game = () => {
 					stroke={"black"}
 					strokeWidth={2}
 					fill={"transparent"}
-					d={"M 10 10 L 1900 10"}
+					d={`M 10 10 L ${windowWidth - 220} 10`}
 				/>
 			</svg>
 			<div
@@ -140,7 +167,7 @@ let Game = () => {
 				className={"w-full h-full flex justify-center duration-200"}
 				style={{ width: 2600, position: "relative", left: -scenePos }}
 			>
-				<div style={{ fontSize: 21, width: 400 }}>
+				<div style={{ fontSize: 21, width: 500 }}>
 					This Journey will take you through the{" "}
 					<span style={{ color: "#0000FF" }}>DataNeuron</span>{" "}
 					Pipeline.
@@ -153,7 +180,9 @@ let Game = () => {
 							style={{
 								width: 400,
 								opacity: data.show ? 1 : 0,
-								transform : `translateY(${data.show ? 0 : -50}px)`
+								transform: `translateY(${
+									data.show ? 0 : -50
+								}px)`,
 							}}
 						>
 							<div className={"p-3"}>
@@ -181,6 +210,7 @@ let Game = () => {
 					)
 				})}
 			</div>
+			<img title={"Click left or right arrow to move the ball"} src="/img/eye.svg" alt="eye icon" />
 		</div>
 	)
 }
