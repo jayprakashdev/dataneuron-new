@@ -1,7 +1,7 @@
 name: Data Neuron official Deploymet
 
-on:
-  [push]
+#on:
+  #[push]
 
 env:
   AZURE_WEBAPP_NAME: eng-dataneuron-official    # set this to your application's name
