@@ -1,13 +1,14 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
+import Marquee from "react-fast-marquee"
 
 let Footer = () => {
 	let router = useRouter()
 
 	return (
-		<div className={""}>
+		<div>
 			<div
-				className={"w-full md:block flex border-t-2 border-b-2 border-gray-500"}
+				className={"w-full flex border-t-2 border-b-2 border-gray-500"}
 			>
 				<div
 					onClick={() => {
@@ -92,6 +93,11 @@ let Footer = () => {
 					</div>
 				</div>
 				<div className="flex-grow flex flex-col justify-end">
+					<div>
+						<Marquee style={{width : 500}} direction={"right"}>
+							<img src="/img/flow.svg" alt="flow image" />
+						</Marquee>
+					</div>
 					<div className="border-r-2 border-t-2 border-b-2 border-black p-4 text-center">
 						mail@dataneuron.ai
 					</div>

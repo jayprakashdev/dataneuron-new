@@ -2,13 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+@font-face {font-family: "Sk-Modernist-Regular";
+  src: url("/fonts/d8a28611cf5f5d635071f2d90d9e9cc8.eot"); /* IE9*/
+  src: url("/fonts/d8a28611cf5f5d635071f2d90d9e9cc8.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("/fonts/d8a28611cf5f5d635071f2d90d9e9cc8.woff2") format("woff2"), /* chrome、firefox */
+  url("/fonts/d8a28611cf5f5d635071f2d90d9e9cc8.woff") format("woff"), /* chrome、firefox */
+  url("/fonts/d8a28611cf5f5d635071f2d90d9e9cc8.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("/fonts/d8a28611cf5f5d635071f2d90d9e9cc8.svg#Sk-Modernist-Regular") format("svg"); /* iOS 4.1- */
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Sk-Modernist', sans-serif;
+  font-family:"Sk-Modernist-Regular"!important;
 }
 
 a {
