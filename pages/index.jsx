@@ -110,305 +110,321 @@ function Home({ posts }) {
 	}, [classes, paras])
 	return (
 		<Layout>
-			<div className="flex justify-center w-full md:pt-0">
-				<div className={"md:w-4/5 text-center text-3xl md:text-4xl w-full"}>
-					An advanced platform for complex
-					<br />
-					<Typewriter
-						words={[
-							"data annotations",
-							"model training",
-							"prediction",
-							"lifecycle management",
-						]}
-					/>
-					.
+			<div style={{padding : "0px 80px"}}>
+				<div className="flex justify-center w-full md:pt-0">
+					<div
+						style={{fontSize : 40}}
+						className={
+							"md:w-4/5 text-center md:text-4xl w-full"
+						}
+					>
+						An advanced platform for complex data annotations, model
+						training, prediction & lifecycle management.
+					</div>
 				</div>
-			</div>
-			<Game />
-			<Fade>
-				<div className={"text-gray-500 mt-14 mb-2 text-lg"}>
-					What is DataNeuron?
-				</div>
-				<p style={{ fontSize: "35px", lineHeight: "40px" }}>
-					DataNeuron helps you accelerate and automate human-in-loop
-					labeling for developing AI solutions. Powered by a
-					data-centric platform, we automate data labeling, the
-					creation of models, and end-to-end lifecycle management of
-					ML.
-				</p>
-			</Fade>
-			<Fade>
-				<div className={"text-gray-500 mt-14 mb-2 text-lg"}>
-					Our Mission
-				</div>
-				<div className="md:flex justify-between">
-					<div>
-						<div style={{ fontSize: "40px", lineHeight: "48px" }}>
-							Our Aim is to accelerate the development of AI{" "}
-							<br /> models and provide explainability of AI.
-						</div>
-						<div className={"flex my-5"}>
+				<br />
+				<br />
+				<Game />
+				<Fade>
+					<div className={"text-gray-500 mt-14 mb-2 text-lg"}>
+						What is DataNeuron?
+					</div>
+					<p style={{ fontSize: "35px", lineHeight: "40px" }}>
+						DataNeuron helps you accelerate and automate
+						human-in-loop labeling for developing AI solutions.
+						Powered by a data-centric platform, we automate data
+						labeling, the creation of models, and end-to-end
+						lifecycle management of ML.
+					</p>
+				</Fade>
+				<Fade>
+					<div className={"text-gray-500 mt-14 mb-2"} style={{fontSize : 25}}>
+						Our Mission
+					</div>
+					<div className="md:flex justify-between">
+						<div>
 							<div
-								className={
-									"border border-blue-600 px-8 py-1 my-3 rounded-full text-blue-600"
-								}
+								style={{ fontSize: "40px", lineHeight: "48px" }}
 							>
-								Learn More
+								Our Aim is to accelerate the development of AI{" "}
+								<br /> models and provide explainability of AI.
+							</div>
+							<div className={"flex my-5"}>
+								<div
+									className={
+										"border border-blue-600 px-8 py-1 my-3 rounded-full text-blue-600"
+									}
+								>
+									Learn More
+								</div>
 							</div>
 						</div>
+						<div>
+							<img src="/img/cir_ani.gif" alt="goals" />
+						</div>
 					</div>
-					<div>
-						<img src="/img/cir_ani.gif" alt="goals" />
-					</div>
-				</div>
-			</Fade>
+				</Fade>
 
-			<Fade>
-				<div className="mt-6 text-gray-500 text-lg">
-					Infinite Applications
-				</div>
-				{/* <div className="my-3">
+				<Fade>
+					<div className="mt-6 text-gray-500 text-lg">
+						Infinite Applications
+					</div>
+					{/* <div className="my-3">
 				Legal/Tax, Finance, Healthcare, Insurance, News, Data Science,
 				ITeS, Chatbot, Job Portals, CRM Providers
 			</div> */}
-				<div className="flex flex-wrap my-3 justify-center">
-					<div
-						className={
-							"flex w-full m-3 rounded-lg text-blue-600 md:w-72 justify-center py-3 border-2 border-blue-600"
-						}
-					>
-						<img
-							width={20}
-							className={"mr-2"}
-							src="/img/sol_card1.svg"
-							alt="sol card 1"
-						/>
-						Finance
-					</div>
-					<div
-						className={
-							"flex w-full m-3 rounded-lg text-blue-600 md:w-72 justify-center py-3 border-2 border-blue-600"
-						}
-					>
-						<img
-							width={20}
-							className={"mr-2"}
-							src="/img/sol_card2.svg"
-							alt="sol card 2"
-						/>
-						Science & Technology
-					</div>
-					<div
-						className={
-							"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-3 border-2 border-blue-600"
-						}
-					>
-						<img
-							width={20}
-							className={"mr-2"}
-							src="/img/sol_card3.svg"
-							alt="sol card 3"
-						/>
-						Emotion
-					</div>
-					<div
-						className={
-							"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-3 border-2 border-blue-600"
-						}
-					>
-						<img
-							width={20}
-							className={"mr-2"}
-							src="/img/sol_card4.svg"
-							alt="sol card 4"
-						/>
-						Media
-					</div>
-					<div
-						className={
-							"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-3 border-2 border-blue-600"
-						}
-					>
-						<img
-							width={20}
-							className={"mr-2"}
-							src="/img/sol_card5.svg"
-							alt="sol card 5"
-						/>
-						Healthcare
-					</div>
-					<div
-						className={
-							"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-3 border-2 border-blue-600"
-						}
-					>
-						<img
-							width={20}
-							className={"mr-2"}
-							src="/img/sol_card6.svg"
-							alt="sol card 6"
-						/>
-						Legal & Tax
-					</div>
-					<div
-						className={
-							"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-3 border-2 border-blue-600"
-						}
-					>
-						<img
-							width={20}
-							className={"mr-2"}
-							src="/img/sol_card7.svg"
-							alt="sol card 7"
-						/>
-						Philosophy
-					</div>
-					<div
-						className={
-							"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-3 border-2 border-blue-600"
-						}
-					>
-						<img
-							width={20}
-							className={"mr-2"}
-							src="/img/sol_card8.svg"
-							alt="sol card 8"
-						/>
-						ITes
-					</div>
-				</div>
-			</Fade>
-			<Fade>
-				<div className={"mt-14 text-gray-500 text-xl"}>
-					Our Build vs Buy Calculator
-				</div>
-				<div className={"my-3 md:flex md:space-x-2 md:space-y-6"}>
-					<div
-						className="md:w-1/2 h-56 w-full border border-gray-300 p-6"
-						style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
-					>
-						<div className="text-blue-500">
-							IF YOU USE DATANEURON
-						</div>
-						<div className="flex space-x-3">
-							<div className="w-2/5">NUMBER OF CLASSES</div>
-							<div className={"w-3/6"}>
-								<input
-									type="range"
-									className={style.slider}
-									min={1}
-									max={100}
-									name="classes"
-									onChange={(e) => handleChange(e)}
-									value={classes}
-								/>
-								<div className="flex w-full justify-between">
-									<p>0</p>
-									<p>100</p>
-								</div>
-							</div>
-							<div
-								className={"border-2 border-gray-300 px-2 py-2"}
-								style={{ width: "85px" }}
-							>
-								<div>{classes}</div>
-							</div>
-						</div>
-						<br />
-						<div className="flex space-x-3">
-							<div className="w-2/5">NUMBER OF PARAGRAPHS</div>
-							<div className={"w-3/6"}>
-								<input
-									type="range"
-									className={style.slider}
-									min={10000}
-									max={1000000}
-									name="paras"
-									onChange={(e) => handleChange(e)}
-									value={paras}
-								/>
-								<div className="flex w-full justify-between mr-3">
-									<p style={{ marginLeft: "-18px" }}>10000</p>
-									<p style={{ marginLeft: "18px" }}>
-										1000000
-									</p>
-								</div>
-							</div>
-							<div
-								className={"border-2 border-gray-300 px-2 py-2"}
-								style={{ width: "85px" }}
-							>
-								<div>{paras}</div>
-							</div>
-						</div>
-					</div>
-					<div
-						className="md:w-1/2 relative md:-top-6 h-56 w-full border border-gray-300 p-6"
-						style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
-					>
-						<div className="flex h-full">
-							<div className="w-1/2 border-r-2 border-dotted border-gray-500 px-2 h-full">
-								<div className="py-3 px-3 flex w-full justify-between text-blue-600">
-									<p>Time taken to build an Solution</p>
-									<p>{output.manual_time} hrs</p>
-								</div>
-								<div className="py-3 px-3 flex w-full justify-between text-blue-600">
-									<p>Using DataNeuron</p>
-									<p>{output.dataNeuron_time} hrs</p>
-								</div>
-							</div>
-							<div className="w-1/2 px-2 h-full">
-								<div className="py-3 px-3 flex w-full justify-between text-blue-600">
-									<p>% Time Reduction</p>
-									<p>{output.time_reduction}</p>
-								</div>
-								<div className="py-3 px-3 flex w-full justify-between text-blue-600">
-									<p>ROI</p>
-									<p>{output.roi}</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</Fade>
-			<div className="mt-14 text-gray-500 text-xl">Our Articles</div>
-			<div className="flex space-x-6 flex-wrap w-full p-3 justify-center">
-				{posts.map((post) => {
-					return (
+					<div className="flex flex-wrap my-3 justify-center md:justify-between">
 						<div
-							key={post.id}
-							onClick={() => router.push(`/posts/${post.slug}`)}
-							style={{ width: 330 }}
-							className="cursor-pointer border-t border-b border-gray-300"
+							className={
+								"flex w-full m-3 rounded-lg text-blue-600 md:w-72 justify-center py-6 border-2 border-blue-600"
+							}
 						>
-							<p className="text-gray-400">CASE STUDY</p>
-							<div className="flex flex-col justify-between">
-								<ImageCard
-									title={post.title}
-									imageUrl={post.coverImage.url}
-								/>
-								<div className="flex justify-between">
-									<div className="text-sm text-gray-400">
-										2021
+							<img
+								width={20}
+								className={"mr-2"}
+								src="/img/sol_card1.svg"
+								alt="sol card 1"
+							/>
+							Finance
+						</div>
+						<div
+							className={
+								"flex w-full  m-3 rounded-lg text-blue-600 md:w-72 justify-center py-6 border-2 border-blue-600"
+							}
+						>
+							<img
+								width={20}
+								className={"mr-2"}
+								src="/img/sol_card2.svg"
+								alt="sol card 2"
+							/>
+							Science & Technology
+						</div>
+						<div
+							className={
+								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+							}
+						>
+							<img
+								width={20}
+								className={"mr-2"}
+								src="/img/sol_card3.svg"
+								alt="sol card 3"
+							/>
+							Emotion
+						</div>
+						<div
+							className={
+								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+							}
+						>
+							<img
+								width={20}
+								className={"mr-2"}
+								src="/img/sol_card4.svg"
+								alt="sol card 4"
+							/>
+							Media
+						</div>
+						<div
+							className={
+								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+							}
+						>
+							<img
+								width={20}
+								className={"mr-2"}
+								src="/img/sol_card5.svg"
+								alt="sol card 5"
+							/>
+							Healthcare
+						</div>
+						<div
+							className={
+								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+							}
+						>
+							<img
+								width={20}
+								className={"mr-2"}
+								src="/img/sol_card6.svg"
+								alt="sol card 6"
+							/>
+							Legal & Tax
+						</div>
+						<div
+							className={
+								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+							}
+						>
+							<img
+								width={20}
+								className={"mr-2"}
+								src="/img/sol_card7.svg"
+								alt="sol card 7"
+							/>
+							Philosophy
+						</div>
+						<div
+							className={
+								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+							}
+						>
+							<img
+								width={20}
+								className={"mr-2"}
+								src="/img/sol_card8.svg"
+								alt="sol card 8"
+							/>
+							ITes
+						</div>
+					</div>
+				</Fade>
+				<Fade>
+					<div className={"mt-14 text-gray-500 text-xl"}>
+						Our Build vs Buy Calculator
+					</div>
+					<div className={"my-3 md:flex md:space-x-2 md:space-y-6"}>
+						<div
+							className="md:w-1/2 h-56 w-full border border-gray-300 p-6"
+							style={{
+								boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+							}}
+						>
+							<div className="text-blue-500">
+								IF YOU USE DATANEURON
+							</div>
+							<div className="flex space-x-3">
+								<div className="w-2/5">NUMBER OF CLASSES</div>
+								<div className={"w-3/6"}>
+									<input
+										type="range"
+										className={style.slider}
+										min={1}
+										max={100}
+										name="classes"
+										onChange={(e) => handleChange(e)}
+										value={classes}
+									/>
+									<div className="flex w-full justify-between">
+										<p>0</p>
+										<p>100</p>
 									</div>
-									<div className="text-sm text-gray-400">
-										FINANCE
+								</div>
+								<div
+									className={
+										"border-2 border-gray-300 px-2 py-2"
+									}
+									style={{ width: "85px" }}
+								>
+									<div>{classes}</div>
+								</div>
+							</div>
+							<br />
+							<div className="flex space-x-3">
+								<div className="w-2/5">
+									NUMBER OF PARAGRAPHS
+								</div>
+								<div className={"w-3/6"}>
+									<input
+										type="range"
+										className={style.slider}
+										min={10000}
+										max={1000000}
+										name="paras"
+										onChange={(e) => handleChange(e)}
+										value={paras}
+									/>
+									<div className="flex w-full justify-between mr-3">
+										<p style={{ marginLeft: "-18px" }}>
+											10000
+										</p>
+										<p style={{ marginLeft: "18px" }}>
+											1000000
+										</p>
+									</div>
+								</div>
+								<div
+									className={
+										"border-2 border-gray-300 px-2 py-2"
+									}
+									style={{ width: "85px" }}
+								>
+									<div>{paras}</div>
+								</div>
+							</div>
+						</div>
+						<div
+							className="md:w-1/2 relative md:-top-6 h-56 w-full border border-gray-300 p-6"
+							style={{
+								boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+							}}
+						>
+							<div className="flex h-full">
+								<div className="w-1/2 border-r-2 border-dotted border-gray-500 px-2 h-full">
+									<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+										<p>Time taken to build an Solution</p>
+										<p>{output.manual_time} hrs</p>
+									</div>
+									<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+										<p>Using DataNeuron</p>
+										<p>{output.dataNeuron_time} hrs</p>
+									</div>
+								</div>
+								<div className="w-1/2 px-2 h-full">
+									<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+										<p>% Time Reduction</p>
+										<p>{output.time_reduction}</p>
+									</div>
+									<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+										<p>ROI</p>
+										<p>{output.roi}</p>
 									</div>
 								</div>
 							</div>
 						</div>
-					)
-				})}
-			</div>
-			<div className="flex m-6 w-full justify-center md:justify-start">
-				<div
-					className={
-						"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3"
-					}
-					style={{ width: "177px" }}
-				>
-					View all
+					</div>
+				</Fade>
+				<div className="mt-14 text-gray-500 text-xl">Our Articles</div>
+				<div className="flex space-x-6 flex-wrap w-full p-3 justify-center md:justify-start">
+					{posts.map((post) => {
+						return (
+							<div
+								key={post.id}
+								onClick={() =>
+									router.push(`/posts/${post.slug}`)
+								}
+								style={{ width: 330 }}
+								className="cursor-pointer border-t border-b border-gray-300"
+							>
+								<p className="text-gray-400">CASE STUDY</p>
+								<div className="flex flex-col justify-between">
+									<ImageCard
+										title={post.title}
+										imageUrl={post.coverImage.url}
+									/>
+									<div className="flex justify-between">
+										<div className="text-sm text-gray-400">
+											2021
+										</div>
+										<div className="text-sm text-gray-400">
+											FINANCE
+										</div>
+									</div>
+								</div>
+							</div>
+						)
+					})}
+				</div>
+				<div className="flex m-6 w-full justify-center md:justify-start">
+					<div
+						className={
+							"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3"
+						}
+						style={{ width: "177px" }}
+					>
+						View all
+					</div>
 				</div>
 			</div>
 		</Layout>
