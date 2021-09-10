@@ -204,7 +204,7 @@ const Pricing = () => {
 					</div>
 				</div>
 				<br />
-				<div style={{ padding: "0px 70px" }}>
+				<div style={{ padding: 70 }}>
 					<div className="text-3xl text-gray-500">
 						Why DataNeuron?
 					</div>

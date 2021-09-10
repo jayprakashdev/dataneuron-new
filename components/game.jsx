@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import style from '../styles/product.module.css'
+import style from "../styles/product.module.css"
 
 let Game = () => {
 	let [scenePos, setScenePos] = useState(0)
@@ -63,9 +63,10 @@ let Game = () => {
 			show: false,
 		},
 	])
-	
 
-	let [windowWidth , setWindowWidth] = useState(0) 
+	let [windowWidth, setWindowWidth] = useState(0)
+
+	let [interaction, setInteraction] = useState(false)
 
 	useEffect(() => {
 		for (let i = 0; i < 6; i++) {
@@ -81,26 +82,32 @@ let Game = () => {
 
 	useEffect(() => {
 		setWindowWidth(window.innerWidth)
-	} , [])
+	}, [])
 
-	// useEffect(() => {
-	// 	setInterval(() => {
-	// 		if (ballPos < window.innerWidth / 2) {
-	// 			setBallPos(ballPos + 10)
-	// 		} else {
-	// 			if (scenePos < 1900) {
-	// 				setScenePos(scenePos + 10)
-	// 			}
-	// 		}
-	// 	}, 500)
-	// 	return () => {
-	// 		clearInterval()
-	// 	}
-	// }, [])
+	useEffect(() => {
+		let interval = null
+		if (interaction === false) {
+			interval = setInterval(() => {
+				if (ballPos < window.innerWidth / 2 - 100) {
+					setBallPos(ballPos + 2)
+				} else {
+					if (scenePos < 1900) {
+						setScenePos(scenePos + 1)
+					}
+				}
+			}, 10)
+		}
+		return () => {
+			if (interval !== null) {
+				clearInterval(interval)
+			}
+		}
+	}, [ballPos, scenePos])
 
 	useEffect(() => {
 		window.onkeydown = (e) => {
 			if (e.key === "ArrowRight") {
+				setInteraction(true)
 				if (ballPos < window.innerWidth / 2) {
 					setBallPos(ballPos + 30)
 				} else {
@@ -110,6 +117,7 @@ let Game = () => {
 				}
 			}
 			if (e.key === "ArrowLeft") {
+				setInteraction(true)
 				if (scenePos < 0) {
 					if (ballPos > 100) {
 						setBallPos(ballPos - 30)
@@ -141,7 +149,10 @@ let Game = () => {
 	}, [])
 
 	return (
-		<div className={`w-full h-72 overflow-y-hidden mt-6 p-6 ${style.hide_scroll}`} style={{boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)`}}>
+		<div
+			className={`w-full h-72 overflow-y-hidden mt-6 p-6 ${style.hide_scroll}`}
+			style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}
+		>
 			<svg
 				style={{
 					width: "94%",
@@ -210,7 +221,20 @@ let Game = () => {
 					)
 				})}
 			</div>
-			<img title={"Click left or right arrow to move the ball"} src="/img/eye.svg" alt="eye icon" />
+			<div style={{transitionDuration : 400}} className="flex items-center relative bottom-5">
+				<img
+					width={30}
+					height={30}
+					title={"Click left or right arrow to move the ball"}
+					src="/img/eye.svg"
+					alt="eye icon"
+				/>
+				<img title={"Play from start"} onClick={() => {
+					setScenePos(0)
+					setBallPos(100)
+					setInteraction(false)
+				}} src="/img/play.svg" className={"ml-3"} alt="play btn" width={20} height={20} />
+			</div>
 		</div>
 	)
 }

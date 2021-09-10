@@ -22,7 +22,7 @@ let Contact = () => {
 	}
 	return (
 		<Layout>
-			<div className="flex flex-wrap" style={{padding : "0px 80px"}}>
+			<div className="flex flex-wrap" style={{padding : "20px 80px"}}>
 				<div className=" md:w-1/2 w-full">
 					<div className="text-4xl">
 						How can we <br />

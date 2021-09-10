@@ -1,5 +1,6 @@
 import { useState } from "react"
 import ButtonComponent from "../components/buttonComponent"
+import ImageSequence from "../components/ImageSequence"
 import Layout from "../components/layout"
 import style from "../styles/product.module.css"
 
@@ -30,7 +31,7 @@ const Product = () => {
 		{
 			id: 3525,
 			title: "Data Ingestion",
-			imageUrl: "/img/howitworks/work1.gif",
+			imageUrl: ["/img/howitworks/work1.gif"],
 			para: (
 				<>
 					<p>Users can upload the data without any pre-processing.</p>
@@ -47,7 +48,11 @@ const Product = () => {
 		{
 			id: 3777,
 			title: "Dynamic Masterlist",
-			imageUrl: "/img/howitworks/work2.gif",
+			imageUrl: [
+				"img/animation/masterlist/master1.png",
+				"img/animation/masterlist/master2.png",
+				"img/animation/masterlist/master3.png",
+			],
 			para: (
 				<>
 					<p>
@@ -69,7 +74,12 @@ const Product = () => {
 		{
 			id: 2757,
 			title: "Explainable Data Validation",
-			imageUrl: "/img/howitworks/work3.gif",
+			imageUrl: [
+				"img/animation/validate/validate1.png",
+				"img/animation/validate/validate2.png",
+				"img/animation/validate/validate3.png",
+				"img/animation/validate/validate4.png",
+			],
 			para: (
 				<>
 					<p>
@@ -92,7 +102,7 @@ const Product = () => {
 		{
 			id: 2757,
 			title: "AutoML",
-			imageUrl: "/img/howitworks/work4.gif",
+			imageUrl: ["/img/howitworks/work4.gif"],
 			para: (
 				<>
 					<p>
@@ -112,7 +122,7 @@ const Product = () => {
 		{
 			id: 1743,
 			title: "Export, Deploy & Predict.",
-			imageUrl: "/img/howitworks/predict.svg",
+			imageUrl: ["/img/howitworks/predict.svg"],
 			para: (
 				<>
 					<p>
@@ -139,7 +149,7 @@ const Product = () => {
 		{
 			id: 8146,
 			title: "Iterate the Process",
-			imageUrl: "/img/howitworks/process.svg",
+			imageUrl: ["/img/howitworks/process.svg"],
 			para: (
 				<>
 					<p>
@@ -162,7 +172,7 @@ const Product = () => {
 		{
 			id: 1747,
 			title: "DataNeuron’s Intuitive Interface",
-			imageUrl: "/img/howitworks/interface.svg",
+			imageUrl: ["/img/howitworks/interface.svg"],
 			para: (
 				<>
 					<p>
@@ -243,7 +253,7 @@ const Product = () => {
 
 	return (
 		<Layout>
-			<div>
+			<div style={{padding : "80px 0px"}}>
 				<div className="text-center" style={{ fontSize: "40px" }}>
 					Use the Time Machine for AI to accelerate your model
 					deployment.
@@ -335,9 +345,8 @@ const Product = () => {
 						className="md:flex justify-center md:px-24 py-12"
 					>
 						<div className="md:w-1/2">
-							<img
-								src={how_it_works[active].imageUrl}
-								alt={how_it_works[active].para}
+							<ImageSequence
+								images={how_it_works[active].imageUrl}
 							/>
 						</div>
 						<div
@@ -361,7 +370,10 @@ const Product = () => {
 					</div>
 				</div>
 				<div style={{ margin: "0px 60px" }}>
-					<div className="my-6" style={{fontSize : 25 , color : '#7a7a7a'}}>
+					<div
+						className="my-6"
+						style={{ fontSize: 25, color: "#7a7a7a" }}
+					>
 						Why choose DataNeuron?
 					</div>
 					<div className="flex justify-between flex-wrap">

@@ -8,7 +8,9 @@ let Footer = () => {
 	return (
 		<div>
 			<div
-				className={"w-full flex border-t-2 border-b-2 border-gray-500"}
+				className={
+					"w-full hidden md:flex border-t-2 border-b-2 border-gray-500"
+				}
 			>
 				<div
 					onClick={() => {
@@ -94,7 +96,7 @@ let Footer = () => {
 				</div>
 				<div className="flex-grow flex flex-col justify-end">
 					<div>
-						<Marquee style={{width : 500}} direction={"right"}>
+						<Marquee style={{ width: 500 }} direction={"right"}>
 							<img src="/img/flow.svg" alt="flow image" />
 						</Marquee>
 					</div>
@@ -112,6 +114,30 @@ let Footer = () => {
 						<div className="w-1/2 p-3 text-center border-l-2 border-black text-gray-500">
 							Copyright © 2021 Precily, Inc.
 						</div>
+					</div>
+				</div>
+			</div>
+			<div className="md:hidden w-full">
+				<div className="w-full font-bold text-center text-2xl p-3 border-2 border-black">
+					DataNeuron
+				</div>
+				<div className="flex">
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Product</div>
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>About</div>
+				</div>
+				<div className="flex">
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Resources</div>
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Pricing</div>
+				</div>
+				<div className="flex">
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Contact</div>
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Careers</div>
+				</div>
+				<div className={"p-3 text-center font-bold"} style={{fontSize : 18}}>mail@dataneuron.ai</div>
+				<div className="flex">
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Privacy Policy</div>
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18}}>
+						Copyright © 2021 Precily, Inc.
 					</div>
 				</div>
 			</div>
