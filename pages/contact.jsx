@@ -162,7 +162,7 @@ let Contact = () => {
 								<img src="/img/linkedin.svg" alt="linkedin" />
 							</a>
 
-							<a href="mailto:mail@precily.com" target="_blank" rel="noopener noreferrer">
+							<a href="mailto:mail@precily.com"  rel="noopener noreferrer">
 								<img src="/img/email.svg" alt="email" />
 							</a>
 							<img src="/img/medium.svg" alt="medium" />

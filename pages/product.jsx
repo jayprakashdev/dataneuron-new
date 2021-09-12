@@ -378,7 +378,7 @@ const Product = () => {
 						</div>
 					</div>
 				</div>
-				<div style={{ margin: "0px 60px" }}>
+				<div className={"p-3 md:px-20"}>
 					<div
 						className="my-6"
 						style={{ fontSize: 25, color: "#7a7a7a" }}
