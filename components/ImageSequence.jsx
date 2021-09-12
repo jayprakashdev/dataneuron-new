@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 let ImageSequence = ({ images, ...rest }) => {
-	const time = 500 // in mili seconds
+	const time = 1500 // in mili seconds
 	let [currentImagePos, setCurrentImagePos] = useState(0)
 
 	useEffect(() => {

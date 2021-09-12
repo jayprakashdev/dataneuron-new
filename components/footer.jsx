@@ -41,7 +41,7 @@ let Footer = () => {
 								router.push("/about")
 							}}
 							className={
-								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-r-2 border-black"
+								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-r-2 border-black border-b-2"
 							}
 							style={{ fontSize: 20 }}
 						>
@@ -54,7 +54,7 @@ let Footer = () => {
 								router.push("/resources")
 							}}
 							className={
-								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-l-2 border-black"
+								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-l-2 border-black border-r-2"
 							}
 							style={{ fontSize: 20 }}
 						>
@@ -65,7 +65,7 @@ let Footer = () => {
 								router.push("/pricing")
 							}}
 							className={
-								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-2 border-black"
+								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-r-2 border-black"
 							}
 							style={{ fontSize: 20 }}
 						>
@@ -86,7 +86,7 @@ let Footer = () => {
 						</div>
 						<div
 							className={
-								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-b-2 border-r-2 border-black"
+								"w-1/2 p-6 cursor-pointer text-gray-500 flex border-t-2 justify-center items-center border-b-2 border-r-2 border-black"
 							}
 							style={{ fontSize: 20 }}
 						>
@@ -96,7 +96,8 @@ let Footer = () => {
 				</div>
 				<div className="flex-grow flex flex-col justify-end">
 					<div>
-						<Marquee style={{ width: 500 }} direction={"right"}>
+						<Marquee style={{ width: 500 }} direction={
+"left"}>
 							<img src="/img/flow.svg" alt="flow image" />
 						</Marquee>
 					</div>
@@ -105,13 +106,13 @@ let Footer = () => {
 					</div>
 					<div className="flex">
 						<Link href={"/privacy"}>
-							<a>
-								<div className="w-1/2 p-3 text-center text-gray-500">
+							<a className={"w-1/2"}>
+								<div className="p-3 text-center text-gray-500">
 									Privary Policy
 								</div>
 							</a>
 						</Link>
-						<div className="w-1/2 p-3 text-center border-l-2 border-black text-gray-500">
+						<div className="w-1/2 p-3 flex justify-center items-center text-center border-l-2 border-black text-gray-500">
 							Copyright © 2021 Precily, Inc.
 						</div>
 					</div>

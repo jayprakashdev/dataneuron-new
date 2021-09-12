@@ -31,7 +31,11 @@ const Product = () => {
 		{
 			id: 3525,
 			title: "Data Ingestion",
-			imageUrl: ["/img/howitworks/work1.gif"],
+			imageUrl: [
+				"/img/animation/upload/upload1.svg",
+				"/img/animation/upload/upload2.svg",
+				"/img/animation/upload/upload3.svg",
+			],
 			para: (
 				<>
 					<p>Users can upload the data without any pre-processing.</p>
@@ -219,41 +223,41 @@ const Product = () => {
 	let use_cases = [
 		{
 			title: "Automated Data Labelling",
-			imageUrl: "/uses/use1.svg",
+			imageUrl: "img/uses/use1.svg",
 		},
 		{
 			title: "Document Classification",
-			imageUrl: "/uses/use2.svg",
+			imageUrl: "img/uses/use2.svg",
 		},
 		{
 			title: "Sentiment Analysis",
-			imageUrl: "/uses/use3.svg",
+			imageUrl: "img/uses/use3.svg",
 		},
 		{
 			title: "Intent Classification",
-			imageUrl: "/uses/use4.svg",
+			imageUrl: "img/uses/use4.svg",
 		},
 		{
 			title: "Contextual Search",
-			imageUrl: "/uses/use5.svg",
+			imageUrl: "img/uses/use5.svg",
 		},
 		{
 			title: "Hierarchial Text Classification",
-			imageUrl: "/uses/use6.svg",
+			imageUrl: "img/uses/use6.svg",
 		},
 		{
 			title: "Knowledge Management",
-			imageUrl: "/uses/use7.svg",
+			imageUrl: "img/uses/use7.svg",
 		},
 		{
 			title: "Topic Detection",
-			imageUrl: "",
+			imageUrl: "img/uses/use8.svg",
 		},
 	]
 
 	return (
 		<Layout>
-			<div style={{padding : "80px 0px"}}>
+			<div style={{ padding: "80px 0px" }}>
 				<div className="text-center" style={{ fontSize: "40px" }}>
 					Use the Time Machine for AI to accelerate your model
 					deployment.
@@ -287,9 +291,7 @@ const Product = () => {
 					}}
 				>
 					<div className="text-xl">The DataNeuron Pipeline</div>
-					<div className="text-lg my-2" style={{ color: "#4361EE" }}>
-						90%+ first-pass machine accuracy.
-					</div>
+
 					<div
 						className={
 							"flex md:space-x-3 flex-wrap md:justify-between justify-center space-y-6"
@@ -401,6 +403,29 @@ const Product = () => {
 								</div>
 							)
 						})}
+					</div>
+					<div>
+						<div
+							className="my-6"
+							style={{ fontSize: 25, color: "#7a7a7a" }}
+						>
+							User Cases
+						</div>
+						<div className="flex flex-wrap justify-center">
+							{use_cases.map((use) => {
+								return (
+									<div style={{width : "23%" , minWidth : 315}} className=" rounded-md flex border-2 border-blue-600 p-3 items-center justify-center space-x-3 m-3">
+										<img
+											src={use.imageUrl}
+											alt={use.imageUrl}
+										/>
+										<div className={"text-blue-800"}>
+										{use.title}
+										</div>
+									</div>
+								)
+							})}
+						</div>
 					</div>
 				</div>
 			</div>

@@ -2,6 +2,8 @@ import { useRouter } from "next/dist/client/router"
 import React from "react"
 import Layout from "../../components/layout"
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/graphcms"
+import { RichText } from '@graphcms/rich-text-react-renderer'
+
 
 const PostDetails = ({ post, morePosts, preview }) => {
 	let router = useRouter()
@@ -23,11 +25,16 @@ const PostDetails = ({ post, morePosts, preview }) => {
 						<br />
 						<hr />
 
-						<div className="flex justify-center">
-							<div
-								className={`text-xl mt-6 space-y-6`}
-								dangerouslySetInnerHTML={{
-									__html: post.content?.html,
+						<div className="">
+							<RichText
+								content={post.content.raw.children}
+								renderers={{
+									img : (props) => <div style={{display : 'flex', width : "100%" , justifyContent : "center"}}><img src={props.src} /></div>,
+									p : (props) => <div> <p style={{fontSize : 18}}>{props.children}</p><br/> </div>,
+									h3 : (props) => <div style={{fontWeight : "bold" , fontSize : 26}}>{props.children}</div>,
+									table : (props) => <table style={{border : "1px solid #000"}}>{props.children}</table>,
+									table_row : (props) => <tr style={{border : "1px solid #000"}}>{props.children}</tr>,
+									table_cell : (props) => <td style={{border : "1px solid #000"}}>{props.children}</td>,
 								}}
 							/>
 						</div>
