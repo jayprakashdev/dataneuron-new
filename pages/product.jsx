@@ -257,7 +257,14 @@ const Product = () => {
 
 	return (
 		<Layout>
-			<div style={{ padding: "80px 0px" }}>
+			<dir className={"md:hidden"}>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+			</dir>
+			<div className={"px-10 md:pt-20"}>
 				<div className="text-center" style={{ fontSize: "40px" }}>
 					Use the Time Machine for AI to accelerate your model
 					deployment.
@@ -308,7 +315,7 @@ const Product = () => {
 						})}
 					</div>
 				</div>
-				<div style={{ margin: 60 }}>
+				<div className={"m-3 md:m-14"}>
 					<div className="text-gray-500" style={{ fontSize: 25 }}>
 						How it Works ?
 					</div>
@@ -414,13 +421,16 @@ const Product = () => {
 						<div className="flex flex-wrap justify-center">
 							{use_cases.map((use) => {
 								return (
-									<div style={{width : "23%" , minWidth : 315}} className=" rounded-md flex border-2 border-blue-600 p-3 items-center justify-center space-x-3 m-3">
+									<div
+										style={{ width: "23%", minWidth: 315 }}
+										className=" rounded-md flex border-2 border-blue-600 p-3 items-center justify-center space-x-3 m-3"
+									>
 										<img
 											src={use.imageUrl}
 											alt={use.imageUrl}
 										/>
 										<div className={"text-blue-800"}>
-										{use.title}
+											{use.title}
 										</div>
 									</div>
 								)

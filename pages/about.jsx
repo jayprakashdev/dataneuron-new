@@ -4,7 +4,12 @@ import Layout from "../components/layout"
 const About = () => {
 	return (
 		<Layout>
-			<div style={{ padding: "0px 70px" }}>
+			<dir className={"md:hidden"}>
+				<br />
+				<br />
+				<br />
+			</dir>
+			<div className={"p-3 md:px-3"}>
 				<div style={{ margin: "30px 0 20px 20px" }}>
 					<p className="mb-2 text-gray-500" style={{ fontSize: 25 }}>
 						About DataNeuron
