@@ -111,7 +111,7 @@ function Home({ posts }) {
 	}, [classes, paras])
 	return (
 		<Layout>
-			<div style={{padding : "0px 80px"}}>
+			<div className={"px-5 md:px-14 pt-24 md:pt-0"}>
 				<div className="flex justify-center w-full md:pt-0">
 					<div
 						style={{fontSize : 40}}

@@ -5,6 +5,13 @@ const Pricing = () => {
 	return (
 		<div className="w-full" style={{ background: "#fafafa" }}>
 			<Layout>
+				<dir className={"md:hidden"}>
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</dir>
 				<div
 					className="text-center"
 					style={{ fontSize: 40, marginBottom: 25 }}
@@ -21,14 +28,17 @@ const Pricing = () => {
 				<br />
 				<br />
 				<div
-					className="flex w-full justify-center md:space-x-6"
+					className="flex p-6 md:p-0 flex-wrap space-y-6 md:space-y-0 w-full justify-center md:space-x-6"
 					style={{ fontSize: 18 }}
 				>
 					<div
 						style={{ width: 400, height: 625 }}
 						className={"border-2 rounded-lg border-gray-500 p-4"}
 					>
-						<div className="text-xl" style={{ color: "#0BA360"  , fontSize : 24 }}>
+						<div
+							className="text-xl"
+							style={{ color: "#0BA360", fontSize: 24 }}
+						>
 							On-Demand
 						</div>
 						<br />
@@ -81,7 +91,10 @@ const Pricing = () => {
 						style={{ width: 400, height: 625 }}
 						className={"border-2 rounded-lg border-gray-500 p-4"}
 					>
-						<div className="text-xl" style={{ color: "#EE0979"  , fontSize : 24 }}>
+						<div
+							className="text-xl"
+							style={{ color: "#EE0979", fontSize: 24 }}
+						>
 							Enterprise
 						</div>
 						<br />
@@ -145,7 +158,10 @@ const Pricing = () => {
 						style={{ width: 400, height: 625 }}
 						className={"border-2 rounded-lg border-gray-500 p-4"}
 					>
-						<div className="text-xl" style={{color : "#2575FC" , fontSize : 24}}>
+						<div
+							className="text-xl"
+							style={{ color: "#2575FC", fontSize: 24 }}
+						>
 							Natural Language Prediction
 						</div>
 						<br />

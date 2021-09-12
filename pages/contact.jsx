@@ -26,7 +26,14 @@ let Contact = () => {
 	}
 	return (
 		<Layout>
-			<div className="flex flex-wrap" style={{ padding: "20px 80px" }}>
+			<dir className={"md:hidden"}>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+			</dir>
+			<div className="flex flex-wrap space-y-6 md:space-y-0 py-5 px-5 md:px-20">
 				<div className=" md:w-1/2 w-full">
 					<div className="text-4xl">
 						How can we <br />
@@ -155,7 +162,7 @@ let Contact = () => {
 								<img src="/img/linkedin.svg" alt="linkedin" />
 							</a>
 
-							<a href="mailto:mail@precily.com" target="_blank">
+							<a href="mailto:mail@precily.com" target="_blank" rel="noopener noreferrer">
 								<img src="/img/email.svg" alt="email" />
 							</a>
 							<img src="/img/medium.svg" alt="medium" />

@@ -154,20 +154,15 @@ let Game = () => {
 			className={`w-full h-80 overflow-y-hidden mt-6 p-6 ${style.hide_scroll}`}
 			style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}
 		>
-			<svg
+			<div
+				className={"w-10/12 md:w-11/12"}
 				style={{
-					width: "94%",
-					position: "absolute",
-					transform: `translateY(218px)`,
+					position: "absolute", 
+					transform: `translateY(226px)`,
 				}}
 			>
-				<path
-					stroke={"black"}
-					strokeWidth={2}
-					fill={"transparent"}
-					d={`M 10 10 L ${windowWidth - 220} 10`}
-				/>
-			</svg>
+				<div className={"border-b-2 border-black"}></div>
+			</div>
 			<div
 				id={"ball"}
 				className="absolute w-5 h-5 rounded-full border-2 border-blue-800 duration-200 "
@@ -176,7 +171,7 @@ let Game = () => {
 				}}
 			></div>
 			<div
-				className={"w-60 h-60 flex justify-center duration-200"}
+				className={"w-60 h-60 flex justify-center duration-200 overflow-hidden"}
 				style={{ width: 2600, position: "relative", left: -scenePos }}
 			>
 				<div style={{ fontSize: 21, width: 500 }}>

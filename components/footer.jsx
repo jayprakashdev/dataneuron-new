@@ -96,8 +96,7 @@ let Footer = () => {
 				</div>
 				<div className="flex-grow flex flex-col justify-end">
 					<div>
-						<Marquee style={{ width: 500 }} direction={
-"left"}>
+						<Marquee style={{ width: 500 }} direction={"left"}>
 							<img src="/img/flow.svg" alt="flow image" />
 						</Marquee>
 					</div>
@@ -119,25 +118,86 @@ let Footer = () => {
 				</div>
 			</div>
 			<div className="md:hidden w-full">
-				<div className="w-full font-bold text-center text-2xl p-3 border-2 border-black">
-					DataNeuron
-				</div>
+				<Link href={"/"}>
+					<a>
+						<div className="w-full font-bold text-center text-2xl p-3 border-2 border-black">
+							DataNeuron
+						</div>
+					</a>
+				</Link>
 				<div className="flex">
-					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Product</div>
-					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>About</div>
+					<div
+						className={
+							"w-1/2 text-center p-3 border-l-2 border-r-2 border-black"
+						}
+						style={{ color: "#7a7a7a", fontSize: 18 }}
+					>
+						Product
+					</div>
+					<div
+						className={
+							"w-1/2 text-center p-3 border-r-2 border-black"
+						}
+						style={{ color: "#7a7a7a", fontSize: 18 }}
+					>
+						About
+					</div>
 				</div>
-				<div className="flex">
-					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Resources</div>
-					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Pricing</div>
+				<div className="flex border-b-2 border-2 border-black">
+					<div
+						className={
+							"w-1/2 text-center p-3 border-r-2 border-black "
+						}
+						style={{ color: "#7a7a7a", fontSize: 18 }}
+					>
+						Resources
+					</div>
+					<div
+						className={"w-1/2 text-center p-3"}
+						style={{ color: "#7a7a7a", fontSize: 18 }}
+					>
+						Pricing
+					</div>
 				</div>
-				<div className="flex">
-					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Contact</div>
-					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Careers</div>
+				<div className="flex border-b-2 border-black">
+					<div
+						className={
+							"w-1/2 text-center p-3 border-r-2 border-l-2 border-black"
+						}
+						style={{ color: "#7a7a7a", fontSize: 18 }}
+					>
+						Contact
+					</div>
+					<div
+						className={
+							"w-1/2 text-center p-3 border-r-2 border-black"
+						}
+						style={{ color: "#7a7a7a", fontSize: 18 }}
+					>
+						Careers
+					</div>
 				</div>
-				<div className={"p-3 text-center font-bold"} style={{fontSize : 18}}>mail@dataneuron.ai</div>
-				<div className="flex">
-					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Privacy Policy</div>
-					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18}}>
+				<div
+					className={
+						"p-3 text-center font-bold border-b-2 border-r-2 border-l-2 border-black"
+					}
+					style={{ fontSize: 18 }}
+				>
+					mail@dataneuron.ai
+				</div>
+				<div className="flex border-l-2 border-r-2 border-b-2 border-black">
+					<div
+						className={
+							"w-1/2 text-center p-3 border-r-2 border-black"
+						}
+						style={{ color: "#7a7a7a", fontSize: 18 }}
+					>
+						Privacy Policy
+					</div>
+					<div
+						className={"w-1/2 text-center p-3"}
+						style={{ color: "#7a7a7a", fontSize: 18 }}
+					>
 						Copyright © 2021 Precily, Inc.
 					</div>
 				</div>
