@@ -419,9 +419,10 @@ const Product = () => {
 							User Cases
 						</div>
 						<div className="flex flex-wrap justify-center">
-							{use_cases.map((use) => {
+							{use_cases.map((use , i) => {
 								return (
 									<div
+										key={Math.random() * i}
 										style={{ width: "23%", minWidth: 315 }}
 										className=" rounded-md flex border-2 border-blue-600 p-3 items-center justify-center space-x-3 m-3"
 									>
