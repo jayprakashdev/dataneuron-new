@@ -28,7 +28,7 @@ const Pricing = () => {
 				<br />
 				<br />
 				<div
-					className="flex flex-wrap space-y-6 md:space-y-0 w-full justify-center md:space-x-6"
+					className="flex p-6 md:p-0 flex-wrap space-y-6 md:space-y-0 w-full justify-center md:space-x-6"
 					style={{ fontSize: 18 }}
 				>
 					<div
