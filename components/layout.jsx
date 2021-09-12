@@ -10,7 +10,7 @@ const Layout = ({children}) => {
                 <link rel="icon" type="image/png" href="/favicon.png" />
             </Head>
             <Navbar />
-            <div style={{paddingBottom : 100}}>
+            <div style={{paddingBottom : 100 , overflowX : "hidden" , width : "100%"}}>
                 {children}
             </div>
             <Footer />
