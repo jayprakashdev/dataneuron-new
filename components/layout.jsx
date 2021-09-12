@@ -7,9 +7,10 @@ const Layout = ({children}) => {
         <div>
             <Head>
                 <title>DataNeuron</title>
+                <link rel="icon" type="image/png" href="/favicon.png" />
             </Head>
             <Navbar />
-            <div>
+            <div style={{paddingBottom : 100}}>
                 {children}
             </div>
             <Footer />

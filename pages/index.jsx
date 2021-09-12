@@ -7,6 +7,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import ImageCard from "../components/imageCard"
 import { Fade } from "react-reveal"
+import { PostTypes } from "./resources"
 
 function Home({ posts }) {
 	const router = useRouter()
@@ -397,7 +398,7 @@ function Home({ posts }) {
 								style={{ width: 330 }}
 								className="cursor-pointer border-t border-b border-gray-300"
 							>
-								<p className="text-gray-400">CASE STUDY</p>
+								<p className="text-gray-400">{post.postType === PostTypes.CASE_STUDY ? "CASE STUDY" : post.postType === PostTypes.WHITEPAPERS ? "WHITEPAPER" : "FEATURE CATUALOG"}</p>
 								<div className="flex flex-col justify-between">
 									<ImageCard
 										title={post.title}

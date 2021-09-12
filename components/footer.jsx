@@ -8,7 +8,9 @@ let Footer = () => {
 	return (
 		<div>
 			<div
-				className={"w-full flex border-t-2 border-b-2 border-gray-500"}
+				className={
+					"w-full hidden md:flex border-t-2 border-b-2 border-gray-500"
+				}
 			>
 				<div
 					onClick={() => {
@@ -39,7 +41,7 @@ let Footer = () => {
 								router.push("/about")
 							}}
 							className={
-								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-r-2 border-black"
+								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-r-2 border-black border-b-2"
 							}
 							style={{ fontSize: 20 }}
 						>
@@ -52,7 +54,7 @@ let Footer = () => {
 								router.push("/resources")
 							}}
 							className={
-								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-l-2 border-black"
+								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-l-2 border-black border-r-2"
 							}
 							style={{ fontSize: 20 }}
 						>
@@ -63,7 +65,7 @@ let Footer = () => {
 								router.push("/pricing")
 							}}
 							className={
-								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-2 border-black"
+								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-r-2 border-black"
 							}
 							style={{ fontSize: 20 }}
 						>
@@ -84,7 +86,7 @@ let Footer = () => {
 						</div>
 						<div
 							className={
-								"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-b-2 border-r-2 border-black"
+								"w-1/2 p-6 cursor-pointer text-gray-500 flex border-t-2 justify-center items-center border-b-2 border-r-2 border-black"
 							}
 							style={{ fontSize: 20 }}
 						>
@@ -94,7 +96,8 @@ let Footer = () => {
 				</div>
 				<div className="flex-grow flex flex-col justify-end">
 					<div>
-						<Marquee style={{width : 500}} direction={"right"}>
+						<Marquee style={{ width: 500 }} direction={
+"left"}>
 							<img src="/img/flow.svg" alt="flow image" />
 						</Marquee>
 					</div>
@@ -103,15 +106,39 @@ let Footer = () => {
 					</div>
 					<div className="flex">
 						<Link href={"/privacy"}>
-							<a>
-								<div className="w-1/2 p-3 text-center text-gray-500">
+							<a className={"w-1/2"}>
+								<div className="p-3 text-center text-gray-500">
 									Privary Policy
 								</div>
 							</a>
 						</Link>
-						<div className="w-1/2 p-3 text-center border-l-2 border-black text-gray-500">
+						<div className="w-1/2 p-3 flex justify-center items-center text-center border-l-2 border-black text-gray-500">
 							Copyright © 2021 Precily, Inc.
 						</div>
+					</div>
+				</div>
+			</div>
+			<div className="md:hidden w-full">
+				<div className="w-full font-bold text-center text-2xl p-3 border-2 border-black">
+					DataNeuron
+				</div>
+				<div className="flex">
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Product</div>
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>About</div>
+				</div>
+				<div className="flex">
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Resources</div>
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Pricing</div>
+				</div>
+				<div className="flex">
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Contact</div>
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Careers</div>
+				</div>
+				<div className={"p-3 text-center font-bold"} style={{fontSize : 18}}>mail@dataneuron.ai</div>
+				<div className="flex">
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18 , }}>Privacy Policy</div>
+					<div className={"w-1/2 p-3"} style={{color : "#7a7a7a" , fontSize : 18}}>
+						Copyright © 2021 Precily, Inc.
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import style from '../styles/product.module.css'
+import style from "../styles/product.module.css"
 
 let Game = () => {
 	let [scenePos, setScenePos] = useState(0)
@@ -63,13 +63,15 @@ let Game = () => {
 			show: false,
 		},
 	])
-	
 
-	let [windowWidth , setWindowWidth] = useState(0) 
+	let [windowWidth, setWindowWidth] = useState(0)
+
+	let [interaction, setInteraction] = useState(false)
 
 	useEffect(() => {
-		for (let i = 0; i < 6; i++) {
-			if (ballPos + scenePos - 100 > 400 * i) {
+		console.log((ballPos + scenePos));
+		for (let i = 0; i < 7; i++) {
+			if ((ballPos + scenePos - 100) > (300 * i)) {
 				gameData[i].show = true
 				setGameData(gameData)
 			} else {
@@ -81,35 +83,42 @@ let Game = () => {
 
 	useEffect(() => {
 		setWindowWidth(window.innerWidth)
-	} , [])
+	}, [])
 
 	// useEffect(() => {
-	// 	setInterval(() => {
-	// 		if (ballPos < window.innerWidth / 2) {
-	// 			setBallPos(ballPos + 10)
-	// 		} else {
-	// 			if (scenePos < 1900) {
-	// 				setScenePos(scenePos + 10)
+	// 	let interval = null
+	// 	if (interaction === false) {
+	// 		interval = setInterval(() => {
+	// 			if (ballPos < window.innerWidth / 2 - 100) {
+	// 				setBallPos(ballPos + 2)
+	// 			} else {
+	// 				if (scenePos < 1900) {
+	// 					setScenePos(scenePos + 1)
+	// 				}
 	// 			}
-	// 		}
-	// 	}, 500)
-	// 	return () => {
-	// 		clearInterval()
+	// 		}, 10)
 	// 	}
-	// }, [])
+	// 	return () => {
+	// 		if (interval !== null) {
+	// 			clearInterval(interval)
+	// 		}
+	// 	}
+	// }, [ballPos, scenePos])
 
 	useEffect(() => {
 		window.onkeydown = (e) => {
 			if (e.key === "ArrowRight") {
+				setInteraction(true)
 				if (ballPos < window.innerWidth / 2) {
 					setBallPos(ballPos + 30)
 				} else {
-					if (scenePos < 1900) {
+					if (scenePos < 2400) {
 						setScenePos(scenePos + 30)
 					}
 				}
 			}
 			if (e.key === "ArrowLeft") {
+				setInteraction(true)
 				if (scenePos < 0) {
 					if (ballPos > 100) {
 						setBallPos(ballPos - 30)
@@ -141,12 +150,15 @@ let Game = () => {
 	}, [])
 
 	return (
-		<div className={`w-full h-72 overflow-y-hidden mt-6 p-6 ${style.hide_scroll}`} style={{boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)`}}>
+		<div
+			className={`w-full h-80 overflow-y-hidden mt-6 p-6 ${style.hide_scroll}`}
+			style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}
+		>
 			<svg
 				style={{
 					width: "94%",
 					position: "absolute",
-					transform: `translateY(183px)`,
+					transform: `translateY(218px)`,
 				}}
 			>
 				<path
@@ -160,11 +172,11 @@ let Game = () => {
 				id={"ball"}
 				className="absolute w-5 h-5 rounded-full border-2 border-blue-800 duration-200 "
 				style={{
-					transform: `translateX(${ballPos}px) translateY(173px)`,
+					transform: `translateX(${ballPos}px) translateY(208px)`,
 				}}
 			></div>
 			<div
-				className={"w-full h-full flex justify-center duration-200"}
+				className={"w-60 h-60 flex justify-center duration-200"}
 				style={{ width: 2600, position: "relative", left: -scenePos }}
 			>
 				<div style={{ fontSize: 21, width: 500 }}>
@@ -176,29 +188,39 @@ let Game = () => {
 					return (
 						<div
 							key={data.id}
-							className={"flex duration-500"}
+							className={"flex"}
 							style={{
 								width: 400,
-								opacity: data.show ? 1 : 0,
-								transform: `translateY(${
-									data.show ? 0 : -50
-								}px)`,
 							}}
 						>
-							<div className={"p-3"}>
+							<div
+								className={"p-3 flex flex-col justify-between"}
+							>
 								<div
-									className="text-gray-500"
-									style={{ fontSize: 15 }}
+									className={"duration-500"}
+									style={{
+										opacity: data.show ? 1 : 0,
+										transform: `translateY(${
+											data.show ? "0" : "-50px"
+										})`,
+									}}
 								>
-									{data.number}
+									<div
+										className="text-gray-500"
+										style={{ fontSize: 15 }}
+									>
+										{data.number}
+									</div>
+									<div
+										className="font-bold"
+										style={{ fontSize: 15 }}
+									>
+										{data.title}
+									</div>
+									<div style={{ fontSize: 17 }}>
+										{data.para}
+									</div>
 								</div>
-								<div
-									className="font-bold"
-									style={{ fontSize: 15 }}
-								>
-									{data.title}
-								</div>
-								<div style={{ fontSize: 17 }}>{data.para}</div>
 								<img
 									className={"mt-3"}
 									src={data.imageUrl}
@@ -210,7 +232,20 @@ let Game = () => {
 					)
 				})}
 			</div>
-			<img title={"Click left or right arrow to move the ball"} src="/img/eye.svg" alt="eye icon" />
+
+			<img
+				title={"Play from start"}
+				onClick={() => {
+					setScenePos(0)
+					setBallPos(100)
+					setInteraction(false)
+				}}
+				src="/img/play.svg"
+				className={"m-3"}
+				alt="play btn"
+				width={20}
+				height={20}
+			/>
 		</div>
 	)
 }
