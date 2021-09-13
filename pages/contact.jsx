@@ -39,7 +39,7 @@ let Contact = () => {
 				console.log(data)
 				setShowMsg(true)
 			} catch (err) {
-				console.error(errr)
+				console.error(err)
 			}
 		}
 	}
