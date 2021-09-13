@@ -89,7 +89,7 @@ const About = () => {
 								}
 							>
 								<img
-									src="/img/meter.gif"
+									src="/img/meter1.gif"
 									width={240}
 									alt="meter"
 								/>

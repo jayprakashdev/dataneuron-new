@@ -176,7 +176,7 @@ function Home({ posts }) {
 				Legal/Tax, Finance, Healthcare, Insurance, News, Data Science,
 				ITeS, Chatbot, Job Portals, CRM Providers
 			</div> */}
-					<div className="flex flex-wrap my-3 justify-center lg:justify-between">
+					<div className="flex flex-wrap my-3 justify-center">
 						<div
 							className={
 								"flex w-full m-3 rounded-lg text-blue-600 lg:w-72 justify-center py-6 border-2 border-blue-600"

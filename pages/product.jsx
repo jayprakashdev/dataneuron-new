@@ -262,8 +262,6 @@ const Product = () => {
 				<br />
 				<br />
 				<br />
-				<br />
-				<br />
 			</dir>
 			<div className={"px-3 md:px-5 lg:px-10 lg:pt-20"}>
 				<div className="text-center" style={{ fontSize: "40px" }}>
