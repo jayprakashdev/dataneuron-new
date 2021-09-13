@@ -48,12 +48,19 @@ const Pricing = () => {
 							flexibility to pay as you go.
 						</div>
 						<br />
-						<div className="flex justify-center">
-							<ButtonComponent
-								style={{ width: "80%", padding: 10 }}
-								text={"Get started"}
-								filled={false}
-							/>
+						<div className="flex justify-center ">
+							<Link
+								href={
+									"https://alpclientofficial.azurewebsites.net/"
+								}
+							>
+								<a style={{ width: "80%", padding: 10 }}>
+									<ButtonComponent
+										text={"Get started"}
+										filled={false}
+									/>
+								</a>
+							</Link>
 						</div>
 						<br />
 						<div>
@@ -183,7 +190,6 @@ const Pricing = () => {
 									/>
 								</a>
 							</Link>
-							
 						</div>
 						<br />
 						<div>

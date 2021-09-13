@@ -3,6 +3,7 @@ import ButtonComponent from "../components/buttonComponent"
 import ImageSequence from "../components/ImageSequence"
 import Layout from "../components/layout"
 import style from "../styles/product.module.css"
+import Link from 'next/link'
 
 const Product = () => {
 	let pipeline = [
@@ -285,9 +286,15 @@ const Product = () => {
 				</div>
 				<br />
 				<div className="flex flex-col md:flex-row p-5 justify-center md:space-x-6">
-					<ButtonComponent filled={true} text={"Get started"} />
+					<a href="https://alpclientofficial.azurewebsites.net/">
+						<ButtonComponent filled={true} text={"Get Started"} />
+					</a>
 					<br />
-					<ButtonComponent fill={false} text={"View demo"} />
+					<Link href={"/contact"}>
+						<a>
+							<ButtonComponent fill={false} text={"View demo"} />
+						</a>
+					</Link>
 				</div>
 				<div
 					className={"p-2 md:p-3 lg:p-6 my-14"}
@@ -308,7 +315,7 @@ const Product = () => {
 							return (
 								<img
 									key={i * Math.random()}
-									style={{ margin : 10}}
+									style={{ margin: 10 }}
 									src={imgUrl}
 									className={"w-full md:w-36 lg:w-40"}
 								/>
@@ -354,7 +361,7 @@ const Product = () => {
 						style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
 						className="lg:flex justify-center lg:px-24 py-12"
 					>
-						<div className="lg:w-1/2">
+						<div className="lg:w-1/2 flex justify-center">
 							<ImageSequence
 								images={how_it_works[active].imageUrl}
 							/>
@@ -420,9 +427,10 @@ const Product = () => {
 							User Cases
 						</div>
 						<div className="flex flex-wrap justify-center">
-							{use_cases.map((use , i) => {
+							{use_cases.map((use, i) => {
 								return (
 									<div
+										style={{maxWidth : 290}}
 										key={Math.random() * i}
 										className="w-full lg:w-96 rounded-md flex border-2 border-blue-600 p-3 items-center justify-center md:space-x-3 m-3"
 									>

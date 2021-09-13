@@ -40,10 +40,10 @@ const About = () => {
 						>
 							Our Goals
 						</p>
-						<div className="flex w-full items-center lg:justify-between justify-center flex-wrap lg:space-x-3">
+						<div className="flex w-full items-center space-x-3 md:justify-between justify-center flex-wrap md:space-x-3">
 							<div
 								className={
-									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-64"
+									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-72"
 								}
 							>
 								<div className="flex justify-center space-x-1">
@@ -85,7 +85,7 @@ const About = () => {
 							</div>
 							<div
 								className={
-									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-64"
+									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-72"
 								}
 							>
 								<img
@@ -101,7 +101,7 @@ const About = () => {
 							</div>
 							<div
 								className={
-									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-64"
+									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-72"
 								}
 							>
 								<img
@@ -234,7 +234,7 @@ const About = () => {
 					}
 				>
 					<a>
-						<div style={{ width: "220px" }}>
+						<div>
 							<ButtonComponent
 								icon={true}
 								src={"/img/job_opening.svg"}

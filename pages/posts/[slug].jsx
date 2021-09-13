@@ -33,9 +33,9 @@ const PostDetails = ({ post, morePosts, preview }) => {
 									img : (props) => <div style={{display : 'flex', width : "100%" , justifyContent : "center"}}><img src={props.src} /></div>,
 									p : (props) => <div> <p style={{fontSize : 18}}>{props.children}</p><br/> </div>,
 									h3 : (props) => <div style={{fontWeight : "bold" , fontSize : 26}}>{props.children}</div>,
-									table : (props) => <table style={{border : "1px solid #000"}}>{props.children}</table>,
+									table : (props) => <div style={{overflowX : "auto"}}><table style={{border : "1px solid #000"}}>{props.children}</table></div>,
 									table_row : (props) => <tr style={{border : "1px solid #000"}}>{props.children}</tr>,
-									table_cell : (props) => <td style={{border : "1px solid #000"}}>{props.children}</td>,
+									table_cell : (props) => <td style={{border : "1px solid #000" , textAlign : "center"}}>{props.children}</td>,
 								}}
 							/>
 						</div>
