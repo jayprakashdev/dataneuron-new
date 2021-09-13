@@ -155,8 +155,9 @@ function Home({ posts }) {
 							<div className={"flex my-5"}>
 								<div
 									className={
-										"border border-blue-600 px-8 py-1 my-3 rounded-full text-blue-600"
+										"border border-blue-600 px-8 py-1 my-3 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white cursor-pointer"
 									}
+									onClick={()=>router.push("/about")}
 								>
 									Learn More
 								</div>
@@ -431,7 +432,7 @@ function Home({ posts }) {
 						<a
 							style={{ width: "177px" }}
 							className={
-								"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3"
+								"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3 hover:bg-blue-600 hover:text-white"
 							}
 						>
 							<div >View all</div>

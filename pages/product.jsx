@@ -284,13 +284,21 @@ const Product = () => {
 				</div>
 				<br />
 				<div className="flex flex-col md:flex-row p-5 justify-center md:space-x-6">
-					<a href="https://alpclientofficial.azurewebsites.net/">
-						<ButtonComponent filled={true} text={"Get Started"} />
+					<a href="https://alpclientofficial.azurewebsites.net/" target="_blank">
+						<button 
+						className="bg-blue-600 text-white  border border-blue-600 hover:bg-white hover:text-blue-600 py-2 px-7 rounded-full text-lg"
+						>
+							Get Started
+						</button>
 					</a>
 					<br />
 					<Link href={"/contact"}>
 						<a>
-							<ButtonComponent fill={false} text={"View demo"} />
+							<button 
+							className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg"
+							>
+								View Demo
+							</button>
 						</a>
 					</Link>
 				</div>

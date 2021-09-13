@@ -40,6 +40,10 @@ a {
   overflow: hidden;
   pointer-events: none;
 }
+.btn-hover{
+  background-color: #0000FF;
+  color:#FFF;
+}
 
 
 

@@ -33,8 +33,8 @@ const Pricing = () => {
 					style={{ fontSize: 18 }}
 				>
 					<div
-						style={{ width: 400, height: 625 }}
-						className={"border-2 rounded-lg border-gray-500 p-4"}
+						style={{ width: 400, height: 625,border:'1px solid #C4C4C4' }}
+						className={"rounded-lg p-4"}
 					>
 						<div
 							className="text-xl"
@@ -54,11 +54,13 @@ const Pricing = () => {
 									"https://alpclientofficial.azurewebsites.net/"
 								}
 							>
-								<a style={{ width: "80%", padding: 10 }}>
-									<ButtonComponent
-										text={"Get started"}
-										filled={false}
-									/>
+								<a style={{padding:'10px 0'}}>
+									<button 
+									className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 rounded-full text-lg"
+									style={{width:'200px'}}
+									>
+										Get Started
+									</button>
 								</a>
 							</Link>
 						</div>
@@ -96,8 +98,8 @@ const Pricing = () => {
 						</div>
 					</div>
 					<div
-						style={{ width: 400, height: 625 }}
-						className={"border-2 rounded-lg border-gray-500 p-4"}
+						style={{ width: 400, height: 625,border:'1px solid #C4C4C4' }}
+						className={"rounded-lg p-4"}
 					>
 						<div
 							className="text-xl"
@@ -113,11 +115,13 @@ const Pricing = () => {
 						<br />
 						<div className="flex justify-center">
 							<Link href={"/contact"}>
-								<a style={{ width: "80%", padding: 10 }}>
-									<ButtonComponent
-										text={"Contact sales"}
-										filled={false}
-									/>
+								<a style={{padding:'10px 0'}}>
+								<button 
+									className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 rounded-full text-lg"
+									style={{width:'200px'}}
+									>
+										Contact Sales
+									</button>
 								</a>
 							</Link>
 						</div>
@@ -166,8 +170,8 @@ const Pricing = () => {
 						</div>
 					</div>
 					<div
-						style={{ width: 400, height: 625 }}
-						className={"border-2 rounded-lg border-gray-500 p-4"}
+						style={{ width: 400, height: 625, border:'1px solid #C4C4C4' }}
+						className={"rounded-lg p-4"}
 					>
 						<div
 							className="text-xl"
@@ -183,12 +187,14 @@ const Pricing = () => {
 						<br />
 						<div className="flex justify-center">
 							<Link href={"/contact"}>
-								<a style={{ width: "80%", padding: 10 }}>
-									<ButtonComponent
-										text={"Contact sales"}
-										filled={false}
-									/>
-								</a>
+								<a style={{padding:'10px 0'}}>
+									<button 
+										className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 rounded-full text-lg"
+										style={{width:'200px'}}
+										>
+											Contact Sales
+										</button>
+									</a>
 							</Link>
 						</div>
 						<br />

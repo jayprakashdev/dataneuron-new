@@ -146,13 +146,14 @@ const Navbar = () => {
 								Contact
 							</a>
 						</Link>
-						<Link
+						<a
 							href={
 								"https://alpclientofficial.azurewebsites.net/"
 							}
+							target="_blank"
 						>
 							<a>
-								<ButtonComponent
+								{/* <ButtonComponent
 									style={{
 										minWidth: "150px",
 										display: "flex",
@@ -162,9 +163,14 @@ const Navbar = () => {
 									text={"Get started"}
 								>
 									Get Started
-								</ButtonComponent>
+								</ButtonComponent> */}
+								<button 
+								className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg"
+								>
+									Get Started
+								</button>
 							</a>
-						</Link>
+						</a>
 					</div>
 				</div>
 			</div>

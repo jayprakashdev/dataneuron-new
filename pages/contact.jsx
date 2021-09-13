@@ -57,7 +57,7 @@ let Contact = () => {
 						How can we <br />
 						help you &nbsp;
 						<span style={{ color: "#0047FF" }}>
-							<Typewriter words={["Transform?"]} />
+							<Typewriter words={["Transform?", "Build?", "Solve?"]} />
 						</span>
 					</div>
 					<br />
@@ -158,7 +158,7 @@ let Contact = () => {
 								placeholder={"Message"}
 								onChange={() => setIsAgree(!isAgree)}
 							/>
-							I agree to the Terms & Conditions.
+							I agree to the <a href={"/privacy"} className="text-blue-600">Terms & Conditions.</a>
 						</div>
 						<button
 							className={
@@ -183,7 +183,7 @@ let Contact = () => {
 						<div className="flex">
 							<img src="/img/america.svg" alt="america markder" />
 							<div className={"text-xl ml-3"}>
-								HQ Stanford Research Park, 3260, Hillview Ave,
+								HQ-Stanford Research Park, 3260, Hillview Ave,
 								Palo Alto, CA - 94304
 							</div>
 						</div>
@@ -198,7 +198,7 @@ let Contact = () => {
 
 						<br />
 						<div className="flex space-x-6">
-							<a href="https://in.linkedin.com/company/precily">
+							<a href="https://in.linkedin.com/company/precily" target="_blank">
 								<img src="/img/linkedin.svg" alt="linkedin" />
 							</a>
 
