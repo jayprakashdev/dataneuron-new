@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import ImageCard from "../components/imageCard"
 import { Fade } from "react-reveal"
 import { PostTypes } from "./resources"
+import Link from 'next/link'
 
 function Home({ posts }) {
 	const router = useRouter()
@@ -111,13 +112,11 @@ function Home({ posts }) {
 	}, [classes, paras])
 	return (
 		<Layout>
-			<div className={"px-5 md:px-14 pt-24 md:pt-0"}>
-				<div className="flex justify-center w-full md:pt-0">
+			<div className={"px-5 lg:px-14 pt-24 lg:pt-0"}>
+				<div className="flex justify-center w-full lg:pt-0">
 					<div
-						style={{fontSize : 40}}
-						className={
-							"md:w-4/5 text-center md:text-4xl w-full"
-						}
+						style={{ fontSize: 40 }}
+						className={"lg:w-4/5 text-center lg:text-4xl w-full"}
 					>
 						An advanced platform for complex data annotations, model
 						training, prediction & lifecycle management.
@@ -139,10 +138,13 @@ function Home({ posts }) {
 					</p>
 				</Fade>
 				<Fade>
-					<div className={"text-gray-500 mt-14 mb-2"} style={{fontSize : 25}}>
+					<div
+						className={"text-gray-500 mt-14 mb-2"}
+						style={{ fontSize: 25 }}
+					>
 						Our Mission
 					</div>
-					<div className="md:flex justify-between">
+					<div className="lg:flex justify-between">
 						<div>
 							<div
 								style={{ fontSize: "40px", lineHeight: "48px" }}
@@ -174,10 +176,10 @@ function Home({ posts }) {
 				Legal/Tax, Finance, Healthcare, Insurance, News, Data Science,
 				ITeS, Chatbot, Job Portals, CRM Providers
 			</div> */}
-					<div className="flex flex-wrap my-3 justify-center md:justify-between">
+					<div className="flex flex-wrap my-3 justify-center lg:justify-between">
 						<div
 							className={
-								"flex w-full m-3 rounded-lg text-blue-600 md:w-72 justify-center py-6 border-2 border-blue-600"
+								"flex w-full m-3 rounded-lg text-blue-600 lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
 						>
 							<img
@@ -190,7 +192,7 @@ function Home({ posts }) {
 						</div>
 						<div
 							className={
-								"flex w-full  m-3 rounded-lg text-blue-600 md:w-72 justify-center py-6 border-2 border-blue-600"
+								"flex w-full  m-3 rounded-lg text-blue-600 lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
 						>
 							<img
@@ -203,7 +205,7 @@ function Home({ posts }) {
 						</div>
 						<div
 							className={
-								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
 						>
 							<img
@@ -216,7 +218,7 @@ function Home({ posts }) {
 						</div>
 						<div
 							className={
-								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
 						>
 							<img
@@ -229,7 +231,7 @@ function Home({ posts }) {
 						</div>
 						<div
 							className={
-								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
 						>
 							<img
@@ -242,7 +244,7 @@ function Home({ posts }) {
 						</div>
 						<div
 							className={
-								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
 						>
 							<img
@@ -255,7 +257,7 @@ function Home({ posts }) {
 						</div>
 						<div
 							className={
-								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
 						>
 							<img
@@ -268,7 +270,7 @@ function Home({ posts }) {
 						</div>
 						<div
 							className={
-								"flex m-3 rounded-lg text-blue-600 w-full md:w-72 justify-center py-6 border-2 border-blue-600"
+								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
 						>
 							<img
@@ -285,9 +287,9 @@ function Home({ posts }) {
 					<div className={"mt-14 text-gray-500 text-xl"}>
 						Our Build vs Buy Calculator
 					</div>
-					<div className={"my-3 md:flex md:space-x-2 md:space-y-6"}>
+					<div className={"my-3 lg:flex lg:space-x-2 lg:space-y-6"}>
 						<div
-							className="md:w-1/2 h-56 w-full border border-gray-300 p-6"
+							className="lg:w-1/2 h-56 w-full border border-gray-300 p-6"
 							style={{
 								boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 							}}
@@ -356,7 +358,7 @@ function Home({ posts }) {
 							</div>
 						</div>
 						<div
-							className="md:w-1/2 relative md:-top-6 h-56 w-full border border-gray-300 p-6"
+							className="lg:w-1/2 relative lg:-top-6 h-56 w-full border border-gray-300 p-6"
 							style={{
 								boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 							}}
@@ -387,7 +389,7 @@ function Home({ posts }) {
 					</div>
 				</Fade>
 				<div className="mt-14 text-gray-500 text-xl">Our Articles</div>
-				<div className="flex space-x-6 flex-wrap w-full p-3 justify-center md:justify-start">
+				<div className="flex space-x-6 flex-wrap w-full p-3 justify-center lg:justify-start">
 					{posts.map((post) => {
 						return (
 							<div
@@ -398,7 +400,14 @@ function Home({ posts }) {
 								style={{ width: 330 }}
 								className="cursor-pointer border-t border-b border-gray-300"
 							>
-								<p className="text-gray-400">{post.postType === PostTypes.CASE_STUDY ? "CASE STUDY" : post.postType === PostTypes.WHITEPAPERS ? "WHITEPAPER" : "FEATURE CATUALOG"}</p>
+								<p className="text-gray-400">
+									{post.postType === PostTypes.CASE_STUDY
+										? "CASE STUDY"
+										: post.postType ===
+										  PostTypes.WHITEPAPERS
+										? "WHITEPAPER"
+										: "FEATURE CATUALOG"}
+								</p>
 								<div className="flex flex-col justify-between">
 									<ImageCard
 										title={post.title}
@@ -417,15 +426,17 @@ function Home({ posts }) {
 						)
 					})}
 				</div>
-				<div className="flex m-6 w-full justify-center md:justify-start">
-					<div
-						className={
-							"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3"
-						}
-						style={{ width: "177px" }}
-					>
-						View all
-					</div>
+				<div className="flex m-6 w-full justify-center lg:justify-start">
+					<Link href={'/resources'}>
+						<a
+							style={{ width: "177px" }}
+							className={
+								"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3"
+							}
+						>
+							<div >View all</div>
+						</a>
+					</Link>
 				</div>
 			</div>
 		</Layout>

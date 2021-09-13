@@ -1,11 +1,12 @@
 import ButtonComponent from "../components/buttonComponent"
 import Layout from "../components/layout"
+import Link from "next/link"
 
 const Pricing = () => {
 	return (
 		<div className="w-full" style={{ background: "#fafafa" }}>
 			<Layout>
-				<dir className={"md:hidden"}>
+				<dir className={"lg:hidden"}>
 					<br />
 					<br />
 					<br />
@@ -28,7 +29,7 @@ const Pricing = () => {
 				<br />
 				<br />
 				<div
-					className="flex p-6 md:p-0 flex-wrap space-y-6 md:space-y-0 w-full justify-center md:space-x-6"
+					className="flex p-6 lg:p-0 flex-wrap space-y-6 lg:space-y-0 w-full justify-center lg:space-x-6"
 					style={{ fontSize: 18 }}
 				>
 					<div
@@ -104,11 +105,14 @@ const Pricing = () => {
 						</div>
 						<br />
 						<div className="flex justify-center">
-							<ButtonComponent
-								style={{ width: "80%", padding: 10 }}
-								text={"Contact sales"}
-								filled={false}
-							/>
+							<Link href={"/contact"}>
+								<a style={{ width: "80%", padding: 10 }}>
+									<ButtonComponent
+										text={"Contact sales"}
+										filled={false}
+									/>
+								</a>
+							</Link>
 						</div>
 						<br />
 						<div>
@@ -171,11 +175,15 @@ const Pricing = () => {
 						</div>
 						<br />
 						<div className="flex justify-center">
-							<ButtonComponent
-								style={{ width: "80%", padding: 10 }}
-								text={"Contact sales"}
-								filled={false}
-							/>
+							<Link href={"/contact"}>
+								<a style={{ width: "80%", padding: 10 }}>
+									<ButtonComponent
+										text={"Contact sales"}
+										filled={false}
+									/>
+								</a>
+							</Link>
+							
 						</div>
 						<br />
 						<div>
@@ -225,9 +233,9 @@ const Pricing = () => {
 						Why DataNeuron?
 					</div>
 					<br />
-					<div className="flex flex-wrap justify-center md:justify-between space-x-3">
+					<div className="flex flex-wrap justify-center lg:justify-between space-x-3">
 						<div
-							className="p-3 md:border-r-2 border-b-2 md:border-b-0 border-gray-300"
+							className="p-3 lg:border-r-2 border-b-2 lg:border-b-0 border-gray-300"
 							style={{ width: 240 }}
 						>
 							<img src="/img/why2/why1.svg" alt="why2 image" />
@@ -240,7 +248,7 @@ const Pricing = () => {
 							</div>
 						</div>
 						<div
-							className="p-3 md:border-r-2 border-b-2 md:border-b-0 border-gray-300"
+							className="p-3 lg:border-r-2 border-b-2 lg:border-b-0 border-gray-300"
 							style={{ width: 240 }}
 						>
 							<img src="/img/why2/why2.svg" alt="why2 image" />
@@ -253,7 +261,7 @@ const Pricing = () => {
 							</div>
 						</div>
 						<div
-							className="p-3 md:border-r-2 border-b-2 md:border-b-0 border-gray-300"
+							className="p-3 lg:border-r-2 border-b-2 lg:border-b-0 border-gray-300"
 							style={{ width: 240 }}
 						>
 							<img src="/img/why2/why3.svg" alt="why2 image" />
@@ -266,7 +274,7 @@ const Pricing = () => {
 							</div>
 						</div>
 						<div
-							className="p-3 md:border-r-2 border-b-2 md:border-b-0 border-gray-300"
+							className="p-3 lg:border-r-2 border-b-2 lg:border-b-0 border-gray-300"
 							style={{ width: 240 }}
 						>
 							<img src="/img/why2/why4.svg" alt="why2 image" />
