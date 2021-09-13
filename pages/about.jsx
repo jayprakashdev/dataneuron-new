@@ -1,16 +1,18 @@
 import ButtonComponent from "../components/buttonComponent"
 import Layout from "../components/layout"
+import Link from "next/link"
+import { Typewriter } from "react-simple-typewriter"
 
 const About = () => {
 	return (
 		<Layout>
-			<dir className={"md:hidden"}>
+			<dir className={"lg:hidden"}>
 				<br />
 				<br />
 				<br />
 			</dir>
-			<div className={"p-3 md:px-3"}>
-				<div style={{ margin: "30px 0 20px 20px" }}>
+			<div className={"p-3 lg:px-3"}>
+				<div className={"p-0 md:p-3 lg:p-6"}>
 					<p className="mb-2 text-gray-500" style={{ fontSize: 25 }}>
 						About DataNeuron
 					</p>
@@ -26,7 +28,9 @@ const About = () => {
 						solutions. Companies moreover do not have a secure
 						platform for data exchange and model creation.
 						<span className={"text-blue-700"}>
-							We strive to be that platform.
+							<Typewriter
+								words={["We strive to be that platform."]}
+							/>
 						</span>
 					</p>
 					<div className="my-10">
@@ -36,43 +40,42 @@ const About = () => {
 						>
 							Our Goals
 						</p>
-						<div className="flex w-full items-center md:justify-between justify-center flex-wrap md:space-x-3">
+						<div className="flex w-full items-center lg:justify-between justify-center flex-wrap lg:space-x-3">
 							<div
 								className={
-									"shadow-md p-3 flex flex-col items-center justify-center h-64 min-w-72 w-3/12"
+									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-64"
 								}
-								style={{ minWidth: 400 }}
 							>
-								<div className="flex space-x-3">
+								<div className="flex justify-center space-x-1">
 									<img
 										src="/img/circle.gif"
 										alt="circle"
-										width={60}
+										className={"w-2/12"}
 										height={60}
 									/>
 									<img
 										src="/img/circle.svg"
 										alt="circle"
-										width={60}
+										className={"w-2/12"}
 										height={60}
 									/>
 									<img
 										src="/img/circle.gif"
 										alt="circle"
-										width={60}
 										height={60}
+										className={"w-2/12"}
 									/>
 									<img
 										src="/img/circle.svg"
 										alt="circle"
-										width={60}
 										height={60}
+										className={"w-2/12"}
 									/>
 									<img
 										src="/img/circle.gif"
 										alt="circle"
-										width={60}
 										height={60}
+										className={"w-2/12"}
 									/>
 								</div>
 								<br />
@@ -82,9 +85,8 @@ const About = () => {
 							</div>
 							<div
 								className={
-									"shadow-md p-3 flex flex-col items-center justify-center h-64 min-w-72 w-3/12"
+									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-64"
 								}
-								style={{ minWidth: 400 }}
 							>
 								<img
 									src="/img/meter.gif"
@@ -99,9 +101,8 @@ const About = () => {
 							</div>
 							<div
 								className={
-									"shadow-md p-3 flex flex-col items-center justify-center h-64 min-w-72 w-3/12"
+									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-64"
 								}
-								style={{ minWidth: 400 }}
 							>
 								<img
 									src="/img/doc_ani.gif"
@@ -129,12 +130,14 @@ const About = () => {
 					Backed By The Best
 				</p>
 				<div className="flex justify-center w-full">
-					<div className="flex flex-wrap p-6 justify-between md:space-x-24 space-y-6 md:space-y-0">
+					<div className="md:flex">
 						<img
+							className={"m-3 w-11/12 md:w-auto"}
 							src="/img/aboutus1.svg"
 							alt="Windrose Captical"
 						></img>
 						<img
+							className={"m-3 w-11/12 md:w-auto"}
 							src="/img/aboutus2.svg"
 							alt="Windrose Captical"
 						></img>
@@ -143,8 +146,8 @@ const About = () => {
 				<p className="w-full text-center py-3 text-lg">
 					Our Company Leadership
 				</p>
-				<div className="md:flex justify-center mb-3 w-full">
-					<div className="md:flex md:space-x-12 justify-between">
+				<div className="lg:flex justify-center mb-3 w-full">
+					<div className="lg:flex lg:space-x-12 justify-between">
 						<a href="https://www.linkedin.com/in/bharrao/">
 							<div
 								className={
@@ -216,7 +219,7 @@ const About = () => {
 					</div>
 				</div>
 			</div>
-			<div className="w-full my-14" style={{ padding: "0 72px" }}>
+			<div className="w-full mt-6 p-3 md:p-4 lg:p-6">
 				<p className="my-3" style={{ color: "#7a7a7a", fontSize: 25 }}>
 					Join DataNeuron
 				</p>
@@ -225,13 +228,21 @@ const About = () => {
 					smart-working folks so feel free to take a look at our open
 					positions on LinkedIn.
 				</p>
-				<div style={{ width: "220px" }}>
-					<ButtonComponent
-						icon={true}
-						src={"/img/job_opening.svg"}
-						text="View Job Opening"
-					/>
-				</div>
+				<Link
+					href={
+						"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"
+					}
+				>
+					<a>
+						<div style={{ width: "220px" }}>
+							<ButtonComponent
+								icon={true}
+								src={"/img/job_opening.svg"}
+								text="View Job Opening"
+							/>
+						</div>
+					</a>
+				</Link>
 			</div>
 		</Layout>
 	)

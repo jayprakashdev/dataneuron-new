@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import { Typewriter } from "react-simple-typewriter"
 import Layout from "../components/layout"
+import { createContact } from "../lib/graphcms"
 
 let Contact = () => {
 	const [contactDetails, setContactDetails] = React.useState({
@@ -9,32 +10,50 @@ let Contact = () => {
 		organisation: "",
 		message: "",
 	})
-	const [isAgree, setIsAgree] = React.useState(false)
+	const [isAgree, setIsAgree] = useState(false)
+	const [showMsg, setShowMsg] = useState(false)
 	const handleChange = (e) => {
 		setContactDetails({
 			...contactDetails,
 			[e.target.name]: e.target.value,
 		})
 	}
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
 		if (!isAgree) {
 			alert("You need to check agree")
 		} else {
-			console.log(contactDetails)
+			try {
+				let data = await fetch("/api/createContact", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						name: contactDetails.name,
+						organisation: contactDetails.organisation,
+						emailId: contactDetails.email,
+						messsage: contactDetails.message,
+					}),
+				})
+				console.log(data)
+				setShowMsg(true)
+			} catch (err) {
+				console.error(err)
+			}
 		}
 	}
 	return (
 		<Layout>
-			<dir className={"md:hidden"}>
+			<dir className={"lg:hidden"}>
 				<br />
 				<br />
 				<br />
 				<br />
 				<br />
 			</dir>
-			<div className="flex flex-wrap space-y-6 md:space-y-0 py-5 px-5 md:px-20">
-				<div className=" md:w-1/2 w-full">
+			<div className="flex flex-wrap space-y-6 lg:space-y-0 py-5 px-5 lg:px-20">
+				<div className=" lg:w-1/2 w-full">
 					<div className="text-4xl">
 						How can we <br />
 						help you &nbsp;
@@ -43,6 +62,28 @@ let Contact = () => {
 						</span>
 					</div>
 					<br />
+					{showMsg && (
+						<div
+							className={
+								"p-3text-md text-blue-800 shadow-md p-3 flex justify-between mr-6"
+							}
+						>
+							<div>
+								Thank you for contacting us. <br /> We will get
+								back to you as soon as possible.
+							</div>
+							<div className={"flex items-center"}>
+								<img
+									onClick={() => setShowMsg(false)}
+									src="/img/close.svg"
+									className={"hover:bg-gray-300"}
+									alt="close icon"
+									width={30}
+									height={30}
+								/>
+							</div>
+						</div>
+					)}
 					<form action="GET">
 						<div className="w-11/12 flex">
 							<div className={"w-1/2 m-3"}>
@@ -131,7 +172,7 @@ let Contact = () => {
 					</form>
 				</div>
 
-				<div className="md:w-1/2 w-full">
+				<div className="lg:w-1/2 w-full">
 					<div className={"w-4/5"}>
 						<div className="text-3xl">Contact Information</div>
 						<br />
@@ -162,10 +203,13 @@ let Contact = () => {
 								<img src="/img/linkedin.svg" alt="linkedin" />
 							</a>
 
-							<a href="mailto:mail@precily.com"  rel="noopener noreferrer">
+							<a
+								href="mailto:mail@precily.com"
+								rel="noopener noreferrer"
+							>
 								<img src="/img/email.svg" alt="email" />
 							</a>
-							<img src="/img/medium.svg" alt="medium" />
+							
 						</div>
 					</div>
 				</div>

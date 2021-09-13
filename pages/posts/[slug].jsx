@@ -13,8 +13,9 @@ const PostDetails = ({ post, morePosts, preview }) => {
 			{router.isFallback ? (
 				<div className="text-xl">Loading ...</div>
 			) : (
-				<div className={"flex justify-center"}>
-					<main className={"md:w-4/6 flex flex-col space-y-6"}>
+				<div className={"md:flex justify-center p-6"}>
+				
+					<main className={"lg:w-4/6 pt-20 flex flex-col md:space-y-6"}>
 						<div className="text-4xl">{post.title}</div>
 						<div className={"text-gray-500"}>
 							Written by{" "}

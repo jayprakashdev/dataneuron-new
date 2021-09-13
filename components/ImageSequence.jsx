@@ -21,20 +21,22 @@ let ImageSequence = ({ images, ...rest }) => {
 				clearInterval(interval)
 			}
 		}
-	}, [images , currentImagePos])
+	}, [images, currentImagePos])
 
-	if(images.length === 1){
+	if (images.length === 1) {
 		return (
 			<img
-			src={images[0]}
-			alt={images[0]}
-			{...rest}
-		/>
+				className={"w-full"}
+				src={images[0]}
+				alt={images[0]}
+				{...rest}
+			/>
 		)
 	}
 
 	return (
 		<img
+			className={"w-full"}
 			src={images[currentImagePos]}
 			alt={images[currentImagePos]}
 			{...rest}

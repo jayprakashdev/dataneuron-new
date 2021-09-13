@@ -26,8 +26,8 @@ const ResourcePage = ({ posts }) => {
 			}}
 		>
 			<Layout>
-				<div className="w-full p-6 md:px-20">
-					<dir className={"md:hidden"}>
+				<div className="w-full p-6 lg:px-20">
+					<dir className={"lg:hidden"}>
 						<br />
 						<br />
 						<br />
@@ -48,7 +48,7 @@ const ResourcePage = ({ posts }) => {
 						</p>
 						<div className="w-full flex justify-center">
 							<div
-								className={`flex justify-between w-full overflow-x-scroll space-x-6 ${style.hide_scroll}`}
+								className={`flex justify-between md:justify-center w-full overflow-x-scroll space-x-6 ${style.hide_scroll}`}
 							>
 								<div style={{ minWidth: "180px" }}>
 									<ButtonComponent
@@ -108,7 +108,7 @@ const ResourcePage = ({ posts }) => {
 								</div>
 							</div>
 						</div>
-						<div className="mt-14 w-full flex justify-center md:justify-start flex-wrap space-x-6">
+						<div className="mt-14 w-full flex justify-center lg:justify-start flex-wrap md:space-x-6">
 							{currentPostType !== null
 								? posts
 										.filter(

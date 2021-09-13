@@ -69,9 +69,9 @@ let Game = () => {
 	let [interaction, setInteraction] = useState(false)
 
 	useEffect(() => {
-		console.log((ballPos + scenePos));
+		
 		for (let i = 0; i < 7; i++) {
-			if ((ballPos + scenePos - 100) > (300 * i)) {
+			if (ballPos + scenePos - 100 > 300 * i) {
 				gameData[i].show = true
 				setGameData(gameData)
 			} else {
@@ -135,112 +135,112 @@ let Game = () => {
 		}
 	}, [scenePos, ballPos])
 
-	useEffect(() => {
-		if (window.DeviceOrientationEvent) {
-			window.addEventListener(
-				"deviceorientation",
-				(e) => {
-					console.log(e)
-				},
-				false
-			)
-		} else {
-			console.log("device movement not supported")
-		}
-	}, [])
+	useEffect(() => {}, [])
 
 	return (
-		<div
-			className={`w-full h-80 overflow-y-hidden mt-6 p-6 ${style.hide_scroll}`}
-			style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}
-		>
+		<div>
 			<div
-				className={"w-10/12 md:w-11/12"}
+				onScroll={(e) => {
+					setScenePos(e.target.scrollLeft)
+				}}
+				className={`w-full h-80 overflow-y-hidden mt-6 p-6 ${style.hide_scroll}`}
+				style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}
+			>
+				<div
+					id={"ball"}
+					className="absolute w-5 h-5 rounded-full border-2 border-blue-800 duration-200 "
+					style={{
+						transform: `translateX(${ballPos}px) translateY(208px)`,
+					}}
+				></div>
+				<div
+					className={
+						"w-60 h-60 flex justify-center duration-200 overflow-hidden"
+					}
+					style={{
+						width: 2600,
+						position: "relative",
+						left: -scenePos,
+					}}
+				>
+					<div style={{ fontSize: 21, width: 500 }}>
+						This Journey will take you through the{" "}
+						<span style={{ color: "#0000FF" }}>DataNeuron</span>{" "}
+						Pipeline.
+					</div>
+					{gameData.map((data) => {
+						return (
+							<div
+								key={data.id}
+								className={"flex"}
+								style={{
+									width: 400,
+								}}
+							>
+								<div
+									className={
+										"p-3 flex flex-col justify-between"
+									}
+								>
+									<div
+										className={"duration-500"}
+										style={{
+											opacity: data.show ? 1 : 0,
+											transform: `translateY(${
+												data.show ? "0" : "-50px"
+											})`,
+										}}
+									>
+										<div
+											className="text-gray-500"
+											style={{ fontSize: 15 }}
+										>
+											{data.number}
+										</div>
+										<div
+											className="font-bold"
+											style={{ fontSize: 15 }}
+										>
+											{data.title}
+										</div>
+										<div style={{ fontSize: 17 }}>
+											{data.para}
+										</div>
+									</div>
+									<img
+										className={"mt-3"}
+										src={data.imageUrl}
+										alt="sign board 1"
+										width={50}
+									/>
+								</div>
+							</div>
+						)
+					})}
+				</div>
+
+				<img
+					title={"Play from start"}
+					onClick={() => {
+						setScenePos(0)
+						setBallPos(100)
+						setInteraction(false)
+					}}
+					src="/img/play.svg"
+					className={"m-3"}
+					alt="play btn"
+					width={20}
+					height={20}
+				/>
+			</div>
+			<div
 				style={{
-					position: "absolute", 
-					transform: `translateY(226px)`,
+					width: "100%",
+					transform: `translateY(-69px)`,
 				}}
 			>
 				<div className={"border-b-2 border-black"}></div>
 			</div>
-			<div
-				id={"ball"}
-				className="absolute w-5 h-5 rounded-full border-2 border-blue-800 duration-200 "
-				style={{
-					transform: `translateX(${ballPos}px) translateY(208px)`,
-				}}
-			></div>
-			<div
-				className={"w-60 h-60 flex justify-center duration-200 overflow-hidden"}
-				style={{ width: 2600, position: "relative", left: -scenePos }}
-			>
-				<div style={{ fontSize: 21, width: 500 }}>
-					This Journey will take you through the{" "}
-					<span style={{ color: "#0000FF" }}>DataNeuron</span>{" "}
-					Pipeline.
-				</div>
-				{gameData.map((data) => {
-					return (
-						<div
-							key={data.id}
-							className={"flex"}
-							style={{
-								width: 400,
-							}}
-						>
-							<div
-								className={"p-3 flex flex-col justify-between"}
-							>
-								<div
-									className={"duration-500"}
-									style={{
-										opacity: data.show ? 1 : 0,
-										transform: `translateY(${
-											data.show ? "0" : "-50px"
-										})`,
-									}}
-								>
-									<div
-										className="text-gray-500"
-										style={{ fontSize: 15 }}
-									>
-										{data.number}
-									</div>
-									<div
-										className="font-bold"
-										style={{ fontSize: 15 }}
-									>
-										{data.title}
-									</div>
-									<div style={{ fontSize: 17 }}>
-										{data.para}
-									</div>
-								</div>
-								<img
-									className={"mt-3"}
-									src={data.imageUrl}
-									alt="sign board 1"
-									width={50}
-								/>
-							</div>
-						</div>
-					)
-				})}
-			</div>
-
-			<img
-				title={"Play from start"}
-				onClick={() => {
-					setScenePos(0)
-					setBallPos(100)
-					setInteraction(false)
-				}}
-				src="/img/play.svg"
-				className={"m-3"}
-				alt="play btn"
-				width={20}
-				height={20}
-			/>
 		</div>
 	)
 }

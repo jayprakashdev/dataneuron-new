@@ -257,14 +257,14 @@ const Product = () => {
 
 	return (
 		<Layout>
-			<dir className={"md:hidden"}>
+			<dir className={"lg:hidden"}>
 				<br />
 				<br />
 				<br />
 				<br />
 				<br />
 			</dir>
-			<div className={"px-10 md:pt-20"}>
+			<div className={"px-3 md:px-5 lg:px-10 lg:pt-20"}>
 				<div className="text-center" style={{ fontSize: "40px" }}>
 					Use the Time Machine for AI to accelerate your model
 					deployment.
@@ -284,13 +284,13 @@ const Product = () => {
 					</div>
 				</div>
 				<br />
-				<div className="md:flex justify-center md:space-x-6">
+				<div className="flex flex-col md:flex-row p-5 justify-center md:space-x-6">
 					<ButtonComponent filled={true} text={"Get started"} />
 					<br />
 					<ButtonComponent fill={false} text={"View demo"} />
 				</div>
 				<div
-					className={"p-5 my-14"}
+					className={"p-2 md:p-3 lg:p-6 my-14"}
 					style={{
 						boxSizing: "border-box",
 						margin: "60px 30px",
@@ -301,21 +301,22 @@ const Product = () => {
 
 					<div
 						className={
-							"flex md:space-x-3 flex-wrap md:justify-between justify-center space-y-6"
+							"flex lg:space-x-3 flex-wrap lg:justify-between justify-center"
 						}
 					>
 						{pipeline.map((imgUrl, i) => {
 							return (
 								<img
 									key={i * Math.random()}
-									className={"w-5/6 md:w-40"}
+									style={{ margin : 10}}
 									src={imgUrl}
+									className={"w-full md:w-36 lg:w-40"}
 								/>
 							)
 						})}
 					</div>
 				</div>
-				<div className={"m-3 md:m-14"}>
+				<div className={"m-3 lg:m-14"}>
 					<div className="text-gray-500" style={{ fontSize: 25 }}>
 						How it Works ?
 					</div>
@@ -351,16 +352,16 @@ const Product = () => {
 
 					<div
 						style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
-						className="md:flex justify-center md:px-24 py-12"
+						className="lg:flex justify-center lg:px-24 py-12"
 					>
-						<div className="md:w-1/2">
+						<div className="lg:w-1/2">
 							<ImageSequence
 								images={how_it_works[active].imageUrl}
 							/>
 						</div>
 						<div
 							className={
-								"md:w-1/2 p-3 flex flex-col justify-center items-center"
+								"lg:w-1/2 p-3 flex flex-col justify-center items-center"
 							}
 						>
 							<div
@@ -378,14 +379,14 @@ const Product = () => {
 						</div>
 					</div>
 				</div>
-				<div className={"p-3 md:px-20"}>
+				<div className={"p-3 lg:px-20"}>
 					<div
 						className="my-6"
 						style={{ fontSize: 25, color: "#7a7a7a" }}
 					>
 						Why choose DataNeuron?
 					</div>
-					<div className="flex justify-between flex-wrap">
+					<div className="flex lg:justify-between flex-wrap justify-center">
 						{why_schoose.map((data, i) => {
 							return (
 								<div
@@ -393,7 +394,7 @@ const Product = () => {
 									className={
 										"p-3 mt-3 border-2 border-gray-300"
 									}
-									style={{ width: "24%", minWidth: 325 }}
+									style={{ width: "24%", minWidth: 234 }}
 								>
 									<img
 										width={35}
@@ -423,12 +424,12 @@ const Product = () => {
 								return (
 									<div
 										key={Math.random() * i}
-										style={{ width: "23%", minWidth: 315 }}
-										className=" rounded-md flex border-2 border-blue-600 p-3 items-center justify-center space-x-3 m-3"
+										className="w-full lg:w-96 rounded-md flex border-2 border-blue-600 p-3 items-center justify-center md:space-x-3 m-3"
 									>
 										<img
 											src={use.imageUrl}
 											alt={use.imageUrl}
+											className={"mr-3"}
 										/>
 										<div className={"text-blue-800"}>
 											{use.title}
