@@ -46,9 +46,9 @@ const ResourcePage = ({ posts }) => {
 							Find Resources for DataNeuron - Case Studies,
 							Whitepapers and Feature Catalog
 						</p>
-						<div className="w-full flex justify-center">
+						<div className="w-full flex justify-center ">
 							<div
-								className={`flex justify-between md:justify-center w-full overflow-x-scroll space-x-6 ${style.hide_scroll}`}
+								className={`flex justify-between lg:justify-center w-full overflow-x-scroll space-x-6 ${style.hide_scroll}`}
 							>
 								<div style={{ minWidth: "180px" }}>
 									<ButtonComponent
@@ -71,7 +71,8 @@ const ResourcePage = ({ posts }) => {
 											currentPostType ===
 											PostTypes.CASE_STUDY
 										}
-										src="/img/case_study.svg"
+										src={currentPostType ===
+											PostTypes.CASE_STUDY ? "/img/case_study_active.svg"  :"/img/case_study.svg"}
 									/>
 								</div>
 								<div style={{ minWidth: "180px" }}>
@@ -87,7 +88,8 @@ const ResourcePage = ({ posts }) => {
 											currentPostType ===
 											PostTypes.WHITEPAPERS
 										}
-										src="/img/whitepapers.svg"
+										src={currentPostType ===
+											PostTypes.WHITEPAPERS ? "/img/whitepapers_active.svg" : "/img/whitepapers.svg"}
 									/>
 								</div>
 								<div style={{ minWidth: "180px" }}>
@@ -103,7 +105,8 @@ const ResourcePage = ({ posts }) => {
 											currentPostType ===
 											PostTypes.FEATURE_CAT
 										}
-										src="/img/feature_catalog.svg"
+										src={currentPostType ===
+											PostTypes.FEATURE_CAT ? "/img/feature_catalog_active.svg" : "/img/feature_catalog.svg"}
 									/>
 								</div>
 							</div>

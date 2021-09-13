@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { Typewriter } from "react-simple-typewriter"
 import Layout from "../components/layout"
-import { createContact } from "../lib/graphcms"
 
 let Contact = () => {
 	const [contactDetails, setContactDetails] = React.useState({
@@ -18,7 +17,7 @@ let Contact = () => {
 			[e.target.name]: e.target.value,
 		})
 	}
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e) => {	
 		e.preventDefault()
 		if (!isAgree) {
 			alert("You need to check agree")

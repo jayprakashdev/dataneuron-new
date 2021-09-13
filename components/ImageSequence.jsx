@@ -26,7 +26,7 @@ let ImageSequence = ({ images, ...rest }) => {
 	if (images.length === 1) {
 		return (
 			<img
-				className={"w-full"}
+				style={{ maxWidth: 500 }}
 				src={images[0]}
 				alt={images[0]}
 				{...rest}
@@ -36,7 +36,7 @@ let ImageSequence = ({ images, ...rest }) => {
 
 	return (
 		<img
-			className={"w-full"}
+			style={{ maxWidth: 500 }}
 			src={images[currentImagePos]}
 			alt={images[currentImagePos]}
 			{...rest}
