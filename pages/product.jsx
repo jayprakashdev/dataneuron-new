@@ -290,6 +290,7 @@ const Product = () => {
 						<a
 							href="https://alpclientofficial.azurewebsites.net/"
 							target="_blank"
+							rel="noreferrer"
 						>
 							<button className="bg-blue-600 text-white  border border-blue-600 hover:bg-white hover:text-blue-600 py-2 px-7 rounded-full text-lg">
 								Get Started

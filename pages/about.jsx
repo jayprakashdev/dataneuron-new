@@ -134,14 +134,14 @@ const About = () => {
 				</p>
 				<div className="flex justify-center w-full">
 					<div className="md:flex">
-						<a href={"https://www.windrose.capital/"} target="_blank">
+						<a href={"https://www.windrose.capital/"} target="_blank" rel="noreferrer">
 							<img
 								className={"m-3 w-11/12 md:w-auto "}
 								src="/img/aboutus1.svg"
 								alt="Windrose Captical"
 							></img>
 						</a>
-						<a href={"https://www.inventuslaw.com/"} target="_blank">
+						<a href={"https://www.inventuslaw.com/"} target="_blank" rel="noreferrer">
 							<img
 								className={"m-3 w-11/12 md:w-auto"}
 								src="/img/aboutus2.svg"

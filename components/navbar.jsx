@@ -151,6 +151,7 @@ const Navbar = () => {
 								"https://alpclientofficial.azurewebsites.net/"
 							}
 							target="_blank"
+							rel="noreferrer"
 						>
 							<a>
 								{/* <ButtonComponent

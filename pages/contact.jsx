@@ -205,6 +205,7 @@ let Contact = () => {
 							<a
 								href="https://in.linkedin.com/company/precily"
 								target="_blank"
+								rel="noreferrer"
 							>
 								<img src="/img/linkedin.svg" alt="linkedin" />
 							</a>
