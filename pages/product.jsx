@@ -84,8 +84,8 @@ const Product = () => {
 			title: "Explainable Data Validation",
 			imageUrl: [
 				"img/animation/validate/validate1.png",
-				"img/animation/validate/validate2.png",
 				"img/animation/validate/validate3.png",
+				"img/animation/validate/validate2.png",
 				"img/animation/validate/validate4.png",
 			],
 			para: (
@@ -110,7 +110,11 @@ const Product = () => {
 		{
 			id: 2757,
 			title: "AutoML",
-			imageUrl: ["/img/howitworks/work4.gif"],
+			imageUrl: [
+				"/img/animation/train/train1.svg",
+				"/img/animation/train/train2.svg",
+				"/img/animation/train/train3.svg",
+			],
 			para: (
 				<>
 					<p>
@@ -393,7 +397,10 @@ const Product = () => {
 							>
 								{how_it_works.map((data, i) => {
 									return (
-										<div key={Math.random() * i} style={{ width: 340 }}>
+										<div
+											key={Math.random() * i}
+											style={{ width: 340 }}
+										>
 											<ImageSequence
 												width={320}
 												images={data.imageUrl}
@@ -484,9 +491,7 @@ const Product = () => {
 				</div>
 
 				<div className={"p-3 lg:px-20"}>
-					<div
-						className="my-6 text-center text-xl md:text-2xl md:text-left text-gray-600"
-					>
+					<div className="my-6 text-center text-xl md:text-2xl md:text-left text-gray-600">
 						Why choose DataNeuron?
 					</div>
 					<div className="md:flex md:space-x-6 pb-3 xl:justify-center scroll_custom md:overflow-x-auto">
@@ -523,10 +528,9 @@ const Product = () => {
 							Use Cases
 						</div>
 						<div className="flex md:items-stretch flex-col md:flex-row items-center justify-center xl:justify-start">
-							{use_cases.slice(0,4).map((use, i) => {
+							{use_cases.slice(0, 4).map((use, i) => {
 								return (
 									<div
-										
 										key={Math.random() * i}
 										className="w-full rounded-md flex border-2 border-blue-600 p-3 items-center justify-center md:space-x-3 m-3"
 									>
@@ -543,10 +547,9 @@ const Product = () => {
 							})}
 						</div>
 						<div className="flex flex-col md:items-stretch md:flex-row items-center justify-center xl:justify-start">
-							{use_cases.slice(4,8).map((use, i) => {
+							{use_cases.slice(4, 8).map((use, i) => {
 								return (
 									<div
-									
 										key={Math.random() * i}
 										className="w-full rounded-md flex border-2 border-blue-600 p-3 items-center justify-center md:space-x-3 m-3"
 									>
