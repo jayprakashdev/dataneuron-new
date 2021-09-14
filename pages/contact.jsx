@@ -177,17 +177,17 @@ let Contact = () => {
 
 				<div className="lg:w-1/2 w-full flex flex-col items-center">
 					<div className={"w-4/5"}>
-						<div className="text-3xl">Contact Information</div>
+						<div className="text-3xl text-center md:text-left">Contact Information</div>
 						<br />
 						<div className="text-gray-500 text-xl text-center md:text-left">
 							Fill out the form and our team will get back to you
 							as soon as possible.
 						</div>
 						<br />
-						<div className="flex flex-col md:flex-row justify-center items-center">
+						<div className="flex flex-col md:flex-row justify-center md:justify-start items-center">
 							<img src="/img/america.svg" alt="america markder" />
 							<div className={"text-xl ml-3 text-center md:text-left"}>
-								HQ-Stanford Research Park, 3260, Hillview Ave,
+								HQ - Stanford Research Park, 3260, Hillview Ave,
 								Palo Alto, CA - 94304
 							</div>
 						</div>
