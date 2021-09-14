@@ -67,7 +67,7 @@ let Game = () => {
 		},
 	])
 
-	let [interaction, setInteraction] = useState(false)
+	let [interaction, setInteraction] = useState(true)
 	let [backDown, setBackdown] = useState(false)
 	let [frontDown, setFrontDown] = useState(false)
 
@@ -104,7 +104,9 @@ let Game = () => {
 
 	let previousFrame = () => {
 		if (scenePos <= 0) {
-			setBallPos(ballPos - 10)
+			if(ballPos > 0){
+				setBallPos(ballPos - 10)
+			}
 		} else {
 			setScenePos(scenePos - 10)
 		}
@@ -113,13 +115,22 @@ let Game = () => {
 	useEffect(() => {
 		window.onkeydown = (e) => {
 			if (e.key === "ArrowRight") {
+				setFrontDown(false)
+				setBackdown(true)
 				setInteraction(true)
 				nextFrame()
 			}
 			if (e.key === "ArrowLeft") {
+				setFrontDown(true)
+				setBackdown(false)
 				setInteraction(true)
 				previousFrame()
 			}
+		}
+
+		window.onkeyup = (e) => {
+			setFrontDown(false)
+			setBackdown(false)
 		}
 
 		return () => {
@@ -137,7 +148,7 @@ let Game = () => {
 				} else {
 					previousFrame()
 				}
-			}, 50)
+			}, 155)
 		}
 		return () => {
 			if (interval !== null) {
@@ -240,13 +251,13 @@ let Game = () => {
 							setInteraction(true)
 						}
 					}}
-					src="/img/play.svg"
+					src={interaction === false ? "/img/play_blue.svg" : "/img/play_black.svg"}
 					className={"m-3"}
 					alt="play btn"
 					width={20}
 					height={20}
 				/>
-				<div className={"flex space-x-3 p-3"}>
+				<div className={"flex p-3"}>
 					<div
 						onTouchStart={() => {
 							setFrontDown(true)

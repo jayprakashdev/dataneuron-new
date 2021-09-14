@@ -112,6 +112,7 @@ function Home({ posts }) {
 	}, [classes, paras])
 	return (
 		<Layout>
+		
 			<div className={"px-5 lg:px-14 pt-24 lg:pt-0"}>
 				<div className="flex justify-center w-full lg:pt-0">
 					<div
@@ -145,16 +146,17 @@ function Home({ posts }) {
 					>
 						Our Mission
 					</div>
-					<div className="lg:flex justify-between">
+					<div className="xl:flex justify-between">
 						<div>
 							<div className={"text-2xl md:text-4xl"}>
 								Our Aim is to accelerate the development of AI{" "}
-								<br /> models and provide explainability of AI.
+								 models and provide explainability of AI.
 							</div>
+
 							<div className={"flex my-5"}>
 								<div
 									className={
-										"border border-blue-600 px-8 py-1 my-3 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white cursor-pointer"
+										"border duration-500 border-blue-600 px-8 py-2 my-3 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white cursor-pointer"
 									}
 									onClick={() => router.push("/about")}
 								>
@@ -163,7 +165,11 @@ function Home({ posts }) {
 							</div>
 						</div>
 						<div className={"flex justify-center"}>
-							<img src="/img/cir_ani.gif" alt="goals" />
+							<img
+								width={400}
+								src="/img/animation.gif"
+								alt="goals"
+							/>
 						</div>
 					</div>
 				</Fade>
@@ -203,7 +209,7 @@ function Home({ posts }) {
 								src="/img/sol_card2.svg"
 								alt="sol card 2"
 							/>
-							Science & Technology
+							Science
 						</div>
 						<div
 							style={{ maxWidth: 320 }}
@@ -298,102 +304,123 @@ function Home({ posts }) {
 						Our Build vs Buy Calculator
 					</div>
 					<div className={"my-3 lg:flex lg:space-x-2 lg:space-y-6"}>
-						<div className="lg:w-1/2 h-56 overflow-y-auto w-full border-2 border-gray-300 p-6 mb-3 md:mb-0">
-							<div className="text-blue-500">
+						<div className="lg:w-1/2 h-56 overflow-y-auto w-full border-2 border-gray-300 p-3 mb-3 md:mb-0">
+							<div className="text-blue-500 mb-2">
 								IF YOU USE DATANEURON
 							</div>
-							<table className="w-full">
-								<tr>
-									<td>TOTAL CLASSES</td>
-									<td>
-										<input
-											type="range"
-											className={style.slider}
-											min={2}
-											max={100}
-											name="classes"
-											onChange={(e) => handleChange(e)}
-											value={classes}
-										/>
-										<div className="flex w-full justify-between">
-											<p>2</p>
-											<p>100</p>
-										</div>
-									</td>
-									<td>
-										<div
-											className={
-												"border-2 border-gray-300 px-2 py-2"
-											}
-											style={{ width: "85px" }}
-										>
-											<div>{classes}</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>TOTAL PARAGRAPHS</td>
-									<td>
-										<input
-											type="range"
-											className={style.slider}
-											min={10000}
-											max={1000000}
-											name="paras"
-											onChange={(e) => handleChange(e)}
-											value={paras}
-										/>
-										<div className="flex w-full justify-between mr-3">
-											<p style={{ marginLeft: "-18px" }}>
-												10000
-											</p>
-											<p style={{ marginLeft: "18px" }}>
-												1000000
-											</p>
-										</div>
-									</td>
-									<td>
-										<td >
+							<div>
+								<div>
+									<div className={"text-sm md:text-md"}>
+										TOTAL CLASSES
+									</div>
+									<div>
+										<div className="flex items-center">
+											<div className={"flex-grow mr-2"}>
+												<input
+													type="range"
+													className={style.slider}
+													min={2}
+													max={100}
+													name="classes"
+													onChange={(e) =>
+														handleChange(e)
+													}
+													value={classes}
+												/>
+												<div className="flex text-sm w-full justify-between">
+													<p>2</p>
+													<p>100</p>
+												</div>
+											</div>
+
 											<div
 												className={
-													"border-2 border-gray-300 px-2 py-2"
+													"border-2 border-gray-300 rounded-md px-2 py-2"
+												}
+												style={{ width: "85px" }}
+											>
+												<div>{classes}</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<br />
+								<div>
+									<div className={"text-sm md:text-md"}>
+										TOTAL PARAGRAPHS
+									</div>
+									<div>
+										<div className="flex items-center">
+											<div className={"flex-grow mr-2"}>
+												<input
+													type="range"
+													className={style.slider}
+													min={10000}
+													max={1000000}
+													name="paras"
+													onChange={(e) =>
+														handleChange(e)
+													}
+													value={paras}
+												/>
+												<div className="flex w-full text-sm justify-between pl-3">
+													<p
+														style={{
+															marginLeft: "-18px",
+														}}
+													>
+														10000
+													</p>
+													<p
+														style={{
+															marginLeft: "18px",
+														}}
+													>
+														1000000
+													</p>
+												</div>
+											</div>
+
+											<div
+												className={
+													"border-2 border-gray-300 rounded-md px-2 py-2"
 												}
 												style={{ width: "85px" }}
 											>
 												<div>{paras}</div>
 											</div>
-										</td>
-									</td>
-								</tr>
-							</table>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<div className="lg:w-1/2 relative lg:-top-6 md:h-56 w-full border-2 border-gray-300 p-6">
-							<div className="flex h-full">
-								<div className="w-1/2 border-r-2 border-dotted border-gray-500 px-2 h-full">
-									<div className="py-3 px-3 w-full text-blue-600">
-										<p>Time taken to build an Solution</p>
-										<p className={"text-xl"}>
+							<div className="md:flex h-full">
+								<div className="md:w-1/2 md:border-r-2 border-dotted border-gray-500 md:px-2 h-full">
+									<div className="md:py-3 px-3 w-full text-blue-600">
+										<p>Human-in-loop annotation</p>
+										<p className={"text-xl font-bold"}>
 											{output.manual_time} hrs
 										</p>
 									</div>
 									<div className="py-3 px-3 w-full text-blue-600">
 										<p>Using DataNeuron</p>
-										<p className={"text-xl"}>
+										<p className={"text-xl font-bold"}>
 											{output.dataNeuron_time} hrs
 										</p>
 									</div>
 								</div>
-								<div className="w-1/2 px-2 h-full">
+								<div className="md:w-1/2 md:px-2 h-full">
 									<div className="py-3 px-3 w-full text-blue-600">
 										<p>% Time Reduction</p>
-										<p className={"text-xl"}>
-											{output.time_reduction}
+										<p className={"text-xl font-bold"}>
+											{output.time_reduction}%
 										</p>
 									</div>
 									<div className="py-3 px-3 w-full text-blue-600">
 										<p>ROI</p>
-										<p className={"text-xl"}>
-											{output.roi}
+										<p className={"text-xl font-bold"}>
+											{output.roi}%
 										</p>
 									</div>
 								</div>

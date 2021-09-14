@@ -27,11 +27,7 @@ const ResourcePage = ({ posts }) => {
 		>
 			<Layout>
 				<div className="w-full p-6 lg:px-20">
-					<dir className={"lg:hidden"}>
-						<br />
-						<br />
-						<br />
-					</dir>
+				
 					<div className="w-full">
 						<h1
 							className="flex justify-center w-full mb-5"
@@ -123,25 +119,73 @@ const ResourcePage = ({ posts }) => {
 								</div>
 							</div>
 						</div>
-						<div className="mt-14 space-y-6 md:space-y-0 w-full flex items-stretch justify-center lg:justify-start flex-wrap md:space-x-6">
-							{currentPostType !== null
-								? posts
-										.filter(
-											(details) =>
-												details.postType ===
-												currentPostType
-										)
-										.map((post) => {
+						<div className="flex justify-center">
+							<div className="w-full md:max-w-7xl mt-14 flex flex-wrap justify-center md:justify-start">
+								{currentPostType !== null
+									? posts
+											.filter(
+												(details) =>
+													details.postType ===
+													currentPostType
+											)
+											.map((post) => {
+												return (
+													<div
+														key={post.id}
+														onClick={() =>
+															router.push(
+																`/posts/${post.slug}`
+															)
+														}
+														style={{ width: 330 , margin : "20px 26px" }}
+														className="transform hover:scale-105 duration-300 cursor-pointer flex flex-col justify-between border-t border-b border-gray-300"
+													>
+														<div>
+															<p className="text-gray-400">
+																{post.postType ===
+																PostTypes.CASE_STUDY
+																	? "CASE STUDY"
+																	: post.postType ===
+																	  PostTypes.WHITEPAPERS
+																	? "WHITEPAPER"
+																	: "FEATURE CATUALOG"}
+															</p>
+															<ImageCard
+																title={
+																	post.title
+																}
+																imageUrl={
+																	post
+																		.coverImage
+																		.url
+																}
+															/>
+														</div>
+														<div className="flex flex-col justify-between">
+															<div className="flex justify-between">
+																<div className="text-sm text-gray-400">
+																	2021
+																</div>
+																<div className="text-sm text-gray-400">
+																	FINANCE
+																</div>
+															</div>
+														</div>
+													</div>
+												)
+											})
+									: posts.map((post) => {
 											return (
 												<div
+													
 													key={post.id}
 													onClick={() =>
 														router.push(
 															`/posts/${post.slug}`
 														)
 													}
-													style={{ width: 330 }}
-													className="cursor-pointer flex flex-col justify-between border-t border-b border-gray-300"
+													style={{ width: 330 , margin : "20px 26px" }}
+													className="cursor-pointer transform hover:scale-105 duration-300 flex flex-col justify-between border-t border-b border-gray-300"
 												>
 													<div>
 														<p className="text-gray-400">
@@ -173,49 +217,8 @@ const ResourcePage = ({ posts }) => {
 													</div>
 												</div>
 											)
-										})
-								: posts.map((post) => {
-										return (
-											<div
-												key={post.id}
-												onClick={() =>
-													router.push(
-														`/posts/${post.slug}`
-													)
-												}
-												style={{ width: 330 }}
-												className="cursor-pointer flex flex-col justify-between border-t border-b border-gray-300"
-											>
-												<div>
-													<p className="text-gray-400">
-														{post.postType ===
-														PostTypes.CASE_STUDY
-															? "CASE STUDY"
-															: post.postType ===
-															  PostTypes.WHITEPAPERS
-															? "WHITEPAPER"
-															: "FEATURE CATUALOG"}
-													</p>
-													<ImageCard
-														title={post.title}
-														imageUrl={
-															post.coverImage.url
-														}
-													/>
-												</div>
-												<div className="flex flex-col justify-between">
-													<div className="flex justify-between">
-														<div className="text-sm text-gray-400">
-															2021
-														</div>
-														<div className="text-sm text-gray-400">
-															FINANCE
-														</div>
-													</div>
-												</div>
-											</div>
-										)
-								  })}
+									  })}
+							</div>
 						</div>
 					</div>
 				</div>

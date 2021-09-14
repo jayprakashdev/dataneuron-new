@@ -14,7 +14,8 @@ const Layout = ({ children }) => {
 					<Navbar />
 					<div
 						style={{
-							paddingBottom: 100,
+							paddingTop : 150,
+							paddingBottom : 100,
 							overflowX: "hidden",
 							width: "100%",
 						}}
