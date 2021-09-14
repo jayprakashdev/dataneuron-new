@@ -1,11 +1,14 @@
 import { useState } from "react"
-import ButtonComponent from "../components/buttonComponent"
 import ImageSequence from "../components/ImageSequence"
 import Layout from "../components/layout"
 import style from "../styles/product.module.css"
-import Link from 'next/link'
+import Link from "next/link"
+import Carousel from "react-simply-carousel"
 
 const Product = () => {
+	let [activeSlide, setActiveSlide] = useState(0)
+	let [whyActiveSlide, setWhyActiveSlide] = useState(0)
+
 	let pipeline = [
 		"/img/pipeline/pipe1.svg",
 		"/img/pipeline/pipe2.svg",
@@ -81,8 +84,8 @@ const Product = () => {
 			title: "Explainable Data Validation",
 			imageUrl: [
 				"img/animation/validate/validate1.png",
-				"img/animation/validate/validate2.png",
 				"img/animation/validate/validate3.png",
+				"img/animation/validate/validate2.png",
 				"img/animation/validate/validate4.png",
 			],
 			para: (
@@ -107,7 +110,11 @@ const Product = () => {
 		{
 			id: 2757,
 			title: "AutoML",
-			imageUrl: ["/img/howitworks/work4.gif"],
+			imageUrl: [
+				"/img/animation/train/train1.svg",
+				"/img/animation/train/train2.svg",
+				"/img/animation/train/train3.svg",
+			],
 			para: (
 				<>
 					<p>
@@ -258,23 +265,16 @@ const Product = () => {
 
 	return (
 		<Layout>
-			<dir className={"lg:hidden"}>
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-			</dir>
+		
 			<div className={"px-3 md:px-5 lg:px-10 lg:pt-20"}>
-				<div className="text-center" style={{ fontSize: "40px" }}>
+				<div className="text-center text-3xl px-3 md:text-4xl">
 					Use the Time Machine for AI to accelerate your model
 					deployment.
 				</div>
 				<div className="flex justify-center my-3">
 					<div
-						className="text-center w-full"
+						className="text-center text-xl w-full"
 						style={{
-							fontSize: 22,
 							maxWidth: 849,
 							color: "#7a7a7a",
 						}}
@@ -284,124 +284,221 @@ const Product = () => {
 						minutes without writing any code!
 					</div>
 				</div>
-				<br />
-				<div className="flex flex-col md:flex-row p-5 justify-center md:space-x-6">
-					<a href="https://alpclientofficial.azurewebsites.net/">
-						<ButtonComponent filled={true} text={"Get Started"} />
-					</a>
-					<br />
-					<Link href={"/contact"}>
-						<a>
-							<ButtonComponent fill={false} text={"View demo"} />
+
+				<div className={"hidden md:block"}>
+					<div className="flex flex-col md:flex-row p-5 justify-center md:space-x-6">
+						<a
+							href="https://alpclientofficial.azurewebsites.net/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<button className="bg-blue-600 duration-300 text-white  border border-blue-600 hover:bg-white hover:text-blue-600 py-2 px-7 rounded-full text-lg">
+								Get Started
+							</button>
 						</a>
-					</Link>
+						<br />
+						<Link href={"/contact"}>
+							<a>
+								<button className="bg-white duration-300 text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg">
+									View Demo
+								</button>
+							</a>
+						</Link>
+					</div>
 				</div>
 				<div
-					className={"p-2 md:p-3 lg:p-6 my-14"}
+					className={"p-2 md:p-3 lg:p-6 border-2 border-gray-200"}
 					style={{
 						boxSizing: "border-box",
 						margin: "60px 30px",
-						boxShadow: "1px 4px 4px rgba(0 , 0 , 0 , 0.25)",
 					}}
 				>
-					<div className="text-xl">The DataNeuron Pipeline</div>
+					<div className="text-xl mb-6 text-center md:text-left">The DataNeuron Pipeline</div>
 
-					<div
-						className={
-							"flex lg:space-x-3 flex-wrap lg:justify-between justify-center"
-						}
-					>
-						{pipeline.map((imgUrl, i) => {
-							return (
-								<img
-									key={i * Math.random()}
-									style={{ margin: 10 }}
-									src={imgUrl}
-									className={"w-full md:w-36 lg:w-40"}
-								/>
-							)
-						})}
+					<div className={"block md:hidden"}>
+						<div className={"flex justify-center"}>
+							<img
+								src="/img/back.svg"
+								className={"pr-3"}
+								alt="back"
+								onClick={() => setActiveSlide(activeSlide - 1)}
+							/>
+							<Carousel
+								itemsToShow={1}
+								itemsToScroll={1}
+								activeSlideIndex={activeSlide}
+								onRequestChange={setActiveSlide}
+								backwardBtnProps={true}
+								forwardBtnProps={true}
+							>
+								{pipeline.map((imgUrl, i) => {
+									return (
+										<div
+											key={i * Math.random()}
+											style={{ width: 200, height: 300 }}
+										>
+											<img src={imgUrl} alt={i} />
+										</div>
+									)
+								})}
+							</Carousel>
+							<img
+								src="/img/forward.svg"
+								alt="forward"
+								onClick={() => setActiveSlide(activeSlide + 1)}
+							/>
+						</div>
 					</div>
-				</div>
-				<div className={"m-3 lg:m-14"}>
-					<div className="text-gray-500" style={{ fontSize: 25 }}>
-						How it Works ?
-					</div>
-					<div className="flex justify-end">
+
+					<div className={"hidden md:block"}>
 						<div
-							className={`flex p-3 my-5 overflow-scroll hide-scroll ${style.hide_scroll}`}
+							className={`scroll_custom flex overflow-x-auto xl:justify-center`}
 						>
-							{tabs.map((tab, i) => {
+							{pipeline.map((imgUrl, i) => {
 								return (
-									<div
+									<img
 										key={i * Math.random()}
-										onClick={() => setActive(i)}
-										style={{
-											marginLeft: 25,
-											fontSize: 24,
-											color:
-												active === i
-													? "blue"
-													: "#7a7a7a",
-											textDecoration:
-												active === i
-													? "underline"
-													: "none",
-										}}
-										className={`cursor-pointer`}
-									>
-										{tab.text}
-									</div>
+										style={{ margin: 10 }}
+										src={imgUrl}
+										className={"w-full md:w-36 lg:w-40"}
+									/>
 								)
 							})}
 						</div>
 					</div>
-
-					<div
-						style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
-						className="lg:flex justify-center lg:px-24 py-12"
-					>
-						<div className="lg:w-1/2 flex justify-center">
-							<ImageSequence
-								images={how_it_works[active].imageUrl}
-							/>
-						</div>
+				</div>
+				<div className={"m-3 lg:m-14 "}>
+					<div className="text-gray-500 text-xl md:text-2xl">
+						How it Works ?
+					</div>
+					<div className={" p-3"}>
 						<div
 							className={
-								"lg:w-1/2 p-3 flex flex-col justify-center items-center"
+								"flex justify-center items-center mt-6 md:hidden"
 							}
 						>
-							<div
-								className="font-bold w-full"
-								style={{ fontSize: 25 }}
+							<img
+								src="/img/back.svg"
+								onClick={() =>
+									setWhyActiveSlide(whyActiveSlide - 1)
+								}
+								className={"pr-3"}
+								alt="back"
+							/>
+							<Carousel
+								onRequestChange={setWhyActiveSlide}
+								activeSlideIndex={whyActiveSlide}
+								itemsToScroll={1}
+								itemsToShow={1}
 							>
-								{how_it_works[active].title}
+								{how_it_works.map((data, i) => {
+									return (
+										<div
+											key={Math.random() * i}
+											style={{ width: 340 }}
+										>
+											<ImageSequence
+												width={320}
+												images={data.imageUrl}
+											/>
+
+											<div
+												className="font-bold w-full text-center"
+												style={{ fontSize: 25 }}
+											>
+												{data.title}
+											</div>
+											<div
+												className="text-lg m-2"
+												style={{ fontSize: 22 }}
+											>
+												{data.para}
+											</div>
+										</div>
+									)
+								})}
+							</Carousel>
+							<img
+								src="/img/forward.svg"
+								onClick={() =>
+									setWhyActiveSlide(whyActiveSlide + 1)
+								}
+								alt="forward"
+							/>
+						</div>
+						<div className={"hidden md:block"}>
+							<div className="flex justify-start">
+								<div
+									className={`flex py-5 overflow-scroll hide-scroll ${style.hide_scroll}`}
+								>
+									{tabs.map((tab, i) => {
+										return (
+											<div
+												key={i * Math.random()}
+												onClick={() => setActive(i)}
+												style={{
+													fontSize: 24,
+													color:
+														active === i
+															? "blue"
+															: "#7a7a7a",
+													textDecoration:
+														active === i
+															? "underline"
+															: "none",
+												}}
+												className={`cursor-pointer hover:bg-gray-100 px-3`}
+											>
+												{tab.text}
+											</div>
+										)
+									})}
+								</div>
 							</div>
-							<div
-								className="text-lg m-2"
-								style={{ fontSize: 22 }}
-							>
-								{how_it_works[active].para}
+
+							<div className="border-2 border-gray-300 lg:flex justify-between lg:px-24 py-12">
+								<div className="lg:w-1/2 flex justify-center">
+									<ImageSequence
+										style={{ width: "100%" }}
+										images={how_it_works[active].imageUrl}
+									/>
+								</div>
+								<div
+									className={
+										"lg:w-1/2 p-3 flex flex-col justify-center items-center"
+									}
+								>
+									<div
+										className="font-bold w-full"
+										style={{ fontSize: 25 }}
+									>
+										{how_it_works[active].title}
+									</div>
+									<div
+										className="text-lg m-2"
+										style={{ fontSize: 22 }}
+									>
+										{how_it_works[active].para}
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
 				<div className={"p-3 lg:px-20"}>
-					<div
-						className="my-6"
-						style={{ fontSize: 25, color: "#7a7a7a" }}
-					>
+					<div className="my-6 text-center text-xl md:text-2xl md:text-left text-gray-600">
 						Why choose DataNeuron?
 					</div>
-					<div className="flex lg:justify-between flex-wrap justify-center">
+					<div className="md:flex md:space-x-6 pb-3 xl:justify-center scroll_custom md:overflow-x-auto">
 						{why_schoose.map((data, i) => {
 							return (
 								<div
 									key={i * Math.random()}
 									className={
-										"p-3 mt-3 border-2 border-gray-300"
+										"p-3 w-full md:w-3/12 mt-3 border-2 border-gray-200"
 									}
-									style={{ width: "24%", minWidth: 234 }}
+									style={{ minWidth: 234 }}
 								>
 									<img
 										width={35}
@@ -424,15 +521,33 @@ const Product = () => {
 							className="my-6"
 							style={{ fontSize: 25, color: "#7a7a7a" }}
 						>
-							User Cases
+							Use Cases
 						</div>
-						<div className="flex flex-wrap justify-center">
-							{use_cases.map((use, i) => {
+						<div className="flex md:items-stretch flex-col md:flex-row items-center justify-center xl:justify-start">
+							{use_cases.slice(0, 4).map((use, i) => {
 								return (
 									<div
-										style={{maxWidth : 290}}
 										key={Math.random() * i}
-										className="w-full lg:w-96 rounded-md flex border-2 border-blue-600 p-3 items-center justify-center md:space-x-3 m-3"
+										className="w-full rounded-md flex border-2 border-blue-600 p-3 items-center justify-center md:space-x-3 m-3"
+									>
+										<img
+											src={use.imageUrl}
+											alt={use.imageUrl}
+											className={"mr-3"}
+										/>
+										<div className={"text-blue-800"}>
+											{use.title}
+										</div>
+									</div>
+								)
+							})}
+						</div>
+						<div className="flex flex-col md:items-stretch md:flex-row items-center justify-center xl:justify-start">
+							{use_cases.slice(4, 8).map((use, i) => {
+								return (
+									<div
+										key={Math.random() * i}
+										className="w-full rounded-md flex border-2 border-blue-600 p-3 items-center justify-center md:space-x-3 m-3"
 									>
 										<img
 											src={use.imageUrl}

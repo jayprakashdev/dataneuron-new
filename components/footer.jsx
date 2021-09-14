@@ -9,7 +9,7 @@ let Footer = () => {
 		<div>
 			<div
 				className={
-					"w-full hidden lg:flex border-t-2 border-b-2 border-gray-500"
+					"w-full hidden lg:flex border-t-2 border-b-2 border-black"
 				}
 			>
 				<div
@@ -18,7 +18,7 @@ let Footer = () => {
 					}}
 					style={{ width: 312, fontSize: 32 }}
 					className={
-						"flex text-xl justify-center cursor-pointer items-center"
+						"flex text-xl justify-center cursor-pointer items-center flex-grow"
 					}
 				>
 					DataNeuron
@@ -28,7 +28,7 @@ let Footer = () => {
 						<Link href={"/product"}>
 							<a
 								className={
-									"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-l-2 border-b-2 border-r-2  border-black"
+									"w-1/2 p-6 hover:bg-gray-100 cursor-pointer text-gray-500 flex justify-center items-center border-l-2 border-b-2 border-r-2  border-black"
 								}
 							>
 								<div
@@ -45,7 +45,7 @@ let Footer = () => {
 						<Link href={"/about"}>
 							<a
 								className={
-									"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-r-2 border-black border-b-2"
+									"w-1/2 p-6 hover:bg-gray-100 cursor-pointer text-gray-500 flex justify-center items-center border-r-2 border-black border-b-2"
 								}
 							>
 								<div
@@ -63,7 +63,7 @@ let Footer = () => {
 						<Link href={"/resources"}>
 							<a
 								className={
-									"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-l-2 border-black border-r-2"
+									"w-1/2 p-6 hover:bg-gray-100 cursor-pointer text-gray-500 flex justify-center items-center border-l-2 border-black border-r-2"
 								}
 							>
 								<div
@@ -79,7 +79,7 @@ let Footer = () => {
 						<Link href={"/pricing"}>
 							<a
 								className={
-									"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-r-2 border-black"
+									"w-1/2 p-6 hover:bg-gray-100 cursor-pointer text-gray-500 flex justify-center items-center border-r-2 border-black"
 								}
 							>
 								<div style={{ fontSize: 20 }}>Pricing</div>
@@ -90,16 +90,20 @@ let Footer = () => {
 						<Link href={"/contact"}>
 							<a
 								className={
-									"w-1/2 p-6 cursor-pointer text-gray-500 flex justify-center items-center border-2 border-black"
+									"w-1/2 p-6 hover:bg-gray-100 cursor-pointer text-gray-500 flex justify-center items-center border-2 border-black"
 								}
 							>
 								<div style={{ fontSize: 20 }}>Contact</div>
 							</a>
 						</Link>
-						<Link href={"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"}>
+						<Link
+							href={
+								"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"
+							}
+						>
 							<a
 								className={
-									"w-1/2 p-6 cursor-pointer text-gray-500 flex border-t-2 justify-center items-center border-b-2 border-r-2 border-black"
+									"w-1/2 hover:bg-gray-100 p-6 cursor-pointer text-gray-500 flex border-t-2 justify-center items-center border-b-2 border-r-2 border-black"
 								}
 							>
 								<div style={{ fontSize: 20 }}>Careers</div>
@@ -107,14 +111,17 @@ let Footer = () => {
 						</Link>
 					</div>
 				</div>
-				<div className="flex-grow flex flex-col justify-end">
+				<div
+					className="flex-grow hover:bg-gray-100 flex flex-col justify-end"
+					style={{ maxWidth: 500 }}
+				>
 					<div>
 						<Marquee style={{ width: 500 }} direction={"left"}>
 							<img src="/img/flow.svg" alt="flow image" />
 						</Marquee>
 					</div>
 					<Link href={"mailto:mail@dataneuron.ai"}>
-						<a className="border-r-2 border-t-2 border-b-2 border-black p-4 text-center">
+						<a className="hover:bg-gray-100 border-r-2 border-t-2 border-b-2 border-black p-4 text-center">
 							<div>mail@dataneuron.ai</div>
 						</a>
 					</Link>
@@ -197,7 +204,11 @@ let Footer = () => {
 							</div>
 						</a>
 					</Link>
-					<Link href={"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"}>
+					<Link
+						href={
+							"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"
+						}
+					>
 						<a
 							className={
 								"w-1/2 text-center p-3 border-r-2 border-black"
@@ -211,7 +222,9 @@ let Footer = () => {
 				</div>
 				<Link href={"mailto:mail@dataneuron.ai"}>
 					<a
-						className={"p-3 flex justify-center font-bold border-l-2 border-black border-b-2 border-r-2"}
+						className={
+							"p-3 flex justify-center font-bold border-l-2 border-black border-b-2 border-r-2"
+						}
 					>
 						<div style={{ fontSize: 18 }}>mail@dataneuron.ai</div>
 					</a>

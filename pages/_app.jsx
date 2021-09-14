@@ -2,13 +2,11 @@ import "tailwindcss/tailwind.css"
 import "../styles/globals.css"
 import SmoothScroll from "../components/SmoothScroll"
 
-
 function MyApp({ Component, pageProps }) {
-	
 	return (
-		<div>
+		//<SmoothScroll>
 			<Component {...pageProps} />
-		</div>
+		//</SmoothScroll>
 	)
 }
 

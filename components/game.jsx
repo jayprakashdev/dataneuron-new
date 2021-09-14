@@ -4,6 +4,9 @@ import style from "../styles/product.module.css"
 let Game = () => {
 	let [scenePos, setScenePos] = useState(0)
 	let [ballPos, setBallPos] = useState(100)
+	let [direction, setDirection] = useState("forward")
+
+	let [windowWidth, setWindowWidth] = useState(0)
 
 	let [gameData, setGameData] = useState([
 		{
@@ -64,14 +67,22 @@ let Game = () => {
 		},
 	])
 
-	let [windowWidth, setWindowWidth] = useState(0)
-
-	let [interaction, setInteraction] = useState(false)
+	let [interaction, setInteraction] = useState(true)
+	let [backDown, setBackdown] = useState(false)
+	let [frontDown, setFrontDown] = useState(false)
 
 	useEffect(() => {
-		
+		setWindowWidth(window.innerWidth)
+		window.onresize = (e) => {
+			setScenePos(0)
+			setBallPos(0)
+			setWindowWidth(window.innerWidth)
+		}
+	}, [])
+
+	useEffect(() => {
 		for (let i = 0; i < 7; i++) {
-			if (ballPos + scenePos - 100 > 300 * i) {
+			if (scenePos + ballPos > i + 300 * i + 450) {
 				gameData[i].show = true
 				setGameData(gameData)
 			} else {
@@ -79,54 +90,47 @@ let Game = () => {
 				setGameData(gameData)
 			}
 		}
-	}, [ballPos, scenePos])
+	}, [scenePos, ballPos])
 
-	useEffect(() => {
-		setWindowWidth(window.innerWidth)
-	}, [])
+	let nextFrame = () => {
+		if (ballPos < windowWidth / 2) {
+			setBallPos(ballPos + 10)
+		} else {
+			if (scenePos < 2400) {
+				setScenePos(scenePos + 10)
+			}
+		}
+	}
 
-	// useEffect(() => {
-	// 	let interval = null
-	// 	if (interaction === false) {
-	// 		interval = setInterval(() => {
-	// 			if (ballPos < window.innerWidth / 2 - 100) {
-	// 				setBallPos(ballPos + 2)
-	// 			} else {
-	// 				if (scenePos < 1900) {
-	// 					setScenePos(scenePos + 1)
-	// 				}
-	// 			}
-	// 		}, 10)
-	// 	}
-	// 	return () => {
-	// 		if (interval !== null) {
-	// 			clearInterval(interval)
-	// 		}
-	// 	}
-	// }, [ballPos, scenePos])
+	let previousFrame = () => {
+		if (scenePos <= 0) {
+			if(ballPos > 0){
+				setBallPos(ballPos - 10)
+			}
+		} else {
+			setScenePos(scenePos - 10)
+		}
+	}
 
 	useEffect(() => {
 		window.onkeydown = (e) => {
 			if (e.key === "ArrowRight") {
+				setFrontDown(false)
+				setBackdown(true)
 				setInteraction(true)
-				if (ballPos < window.innerWidth / 2) {
-					setBallPos(ballPos + 30)
-				} else {
-					if (scenePos < 2400) {
-						setScenePos(scenePos + 30)
-					}
-				}
+				nextFrame()
 			}
 			if (e.key === "ArrowLeft") {
+				setFrontDown(true)
+				setBackdown(false)
 				setInteraction(true)
-				if (scenePos < 0) {
-					if (ballPos > 100) {
-						setBallPos(ballPos - 30)
-					}
-				} else {
-					setScenePos(scenePos - 30)
-				}
+				previousFrame()
 			}
+		}
+
+		window.onkeyup = (e) => {
+			setFrontDown(false)
+			setBackdown(false)
 		}
 
 		return () => {
@@ -135,16 +139,31 @@ let Game = () => {
 		}
 	}, [scenePos, ballPos])
 
-	useEffect(() => {}, [])
+	useEffect(() => {
+		let interval = null
+		if (interaction === false) {
+			interval = setInterval(() => {
+				if (direction === "forward") {
+					nextFrame()
+				} else {
+					previousFrame()
+				}
+			}, 155)
+		}
+		return () => {
+			if (interval !== null) {
+				clearInterval(interval)
+			}
+		}
+	}, [interaction, ballPos, scenePos])
 
 	return (
-		<div>
+		<div style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}>
 			<div
 				onScroll={(e) => {
 					setScenePos(e.target.scrollLeft)
 				}}
-				className={`w-full h-80 overflow-y-hidden mt-6 p-6 ${style.hide_scroll}`}
-				style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}
+				className={`w-full h-80 overflow-x-hidden mt-6 p-6 ${style.hide_scroll}`}
 			>
 				<div
 					id={"ball"}
@@ -163,7 +182,7 @@ let Game = () => {
 						left: -scenePos,
 					}}
 				>
-					<div style={{ fontSize: 21, width: 500 }}>
+					<div style={{ fontSize: 21 }}>
 						This Journey will take you through the{" "}
 						<span style={{ color: "#0000FF" }}>DataNeuron</span>{" "}
 						Pipeline.
@@ -218,25 +237,108 @@ let Game = () => {
 						)
 					})}
 				</div>
-
+			</div>
+			<div className="flex justify-between">
 				<img
 					title={"Play from start"}
 					onClick={() => {
-						setScenePos(0)
-						setBallPos(100)
-						setInteraction(false)
+						if (interaction === true) {
+							setScenePos(0)
+							setBallPos(100)
+							setDirection("forward")
+							setInteraction(false)
+						}else{
+							setInteraction(true)
+						}
 					}}
-					src="/img/play.svg"
+					src={interaction === false ? "/img/play_blue.svg" : "/img/play_black.svg"}
 					className={"m-3"}
 					alt="play btn"
 					width={20}
 					height={20}
 				/>
+				<div className={"flex p-3"}>
+					<div
+						onTouchStart={() => {
+							setFrontDown(true)
+							setDirection("backward")
+							setInteraction(false)
+							window.ontouchend = (e) => {
+								setFrontDown(false)
+								setInteraction(true)
+								window.ontouchend = null
+							}
+						}}
+						onMouseDown={() => {
+							setFrontDown(true)
+							setDirection("backward")
+							setInteraction(false)
+							window.onmouseup = (e) => {
+								setFrontDown(false)
+								setInteraction(true)
+								window.onmouseup = null
+							}
+						}}
+					>
+						<svg
+							width="23"
+							height="23"
+							viewBox="0 0 15 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M14.462 0.114713C14.3005 0.0297793 14.1188 -0.00925627 13.9367 0.00185115C13.7545 0.0129586 13.5789 0.0737838 13.429 0.177713L0.428977 9.17771C0.296536 9.27014 0.188374 9.39319 0.113688 9.53639C0.0390014 9.67959 0 9.83871 0 10.0002C0 10.1617 0.0390014 10.3208 0.113688 10.464C0.188374 10.6072 0.296536 10.7303 0.428977 10.8227L13.429 19.8227C13.579 19.9265 13.7546 19.9873 13.9367 19.9985C14.1188 20.0097 14.3004 19.9708 14.462 19.8862C14.6237 19.8015 14.759 19.6742 14.8535 19.5182C14.9479 19.3621 14.9979 19.1832 14.998 19.0007V1.00071C14.998 0.818176 14.9481 0.639113 14.8536 0.482932C14.7591 0.326751 14.6237 0.199411 14.462 0.114713ZM12.998 17.0917L2.75498 10.0007L12.998 2.90971V17.0917Z"
+								fill={
+									frontDown === false ? "#000000" : "#0000FF"
+								}
+							/>
+						</svg>
+					</div>
+
+					<div
+						onTouchStart={() => {
+							setBackdown(true)
+							setDirection("forward")
+							setInteraction(false)
+							window.ontouchend = (e) => {
+								setBackdown(false)
+								setInteraction(true)
+								window.ontouchend = null
+							}
+						}}
+						onMouseDown={() => {
+							setBackdown(true)
+							setDirection("forward")
+							setInteraction(false)
+							window.onmouseup = (e) => {
+								setBackdown(false)
+								setInteraction(true)
+								window.onmouseup = null
+							}
+						}}
+					>
+						<svg
+							width="23"
+							height="23"
+							viewBox="0 0 15 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M0.536006 19.8875C0.697771 19.9716 0.879397 20.0101 1.06139 19.9989C1.24338 19.9876 1.41886 19.927 1.56901 19.8235L14.569 10.8235C14.7018 10.7315 14.8104 10.6086 14.8854 10.4654C14.9604 10.3223 14.9995 10.1631 14.9995 10.0015C14.9995 9.83989 14.9604 9.68069 14.8854 9.53753C14.8104 9.39438 14.7018 9.27152 14.569 9.17949L8.06901 4.67949L1.56901 0.179492C1.41915 0.0749467 1.24346 0.0135505 1.0611 0.00199721C0.878744 -0.00955605 0.696714 0.0291771 0.534858 0.113974C0.373002 0.19877 0.237532 0.326375 0.143218 0.482877C0.0489047 0.639379 -0.000633163 0.81877 6.10981e-06 1.00149V19.0015C-2.39712e-05 19.184 0.0499091 19.3631 0.144393 19.5193C0.238878 19.6755 0.374308 19.8028 0.536006 19.8875ZM2.00001 2.91049L12.243 10.0015L2.00001 17.0925V2.91049Z"
+								fill={
+									backDown === false ? "#000000" : "#0000FF"
+								}
+							/>
+						</svg>
+					</div>
+				</div>
 			</div>
 			<div
 				style={{
 					width: "100%",
-					transform: `translateY(-69px)`,
+					transform: `translateY(-115px)`,
 				}}
 			>
 				<div className={"border-b-2 border-black"}></div>

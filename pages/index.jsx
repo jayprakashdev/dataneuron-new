@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 import ImageCard from "../components/imageCard"
 import { Fade } from "react-reveal"
 import { PostTypes } from "./resources"
-import Link from 'next/link'
+import Link from "next/link"
 
 function Home({ posts }) {
 	const router = useRouter()
@@ -21,8 +21,8 @@ function Home({ posts }) {
 	let Cost_of_manual_annotation_per_hour = 10
 	let data_science_team_size = 5
 	let avg_salary_of_each_data_scientist = 13494
-	let [paras, setParas] = useState(0)
-	let [classes, setClasses] = useState(0)
+	let [paras, setParas] = useState(10000)
+	let [classes, setClasses] = useState(2)
 	let [output, setOutput] = useState({
 		roi: 0,
 		time_reduction: 0,
@@ -112,13 +112,15 @@ function Home({ posts }) {
 	}, [classes, paras])
 	return (
 		<Layout>
+		
 			<div className={"px-5 lg:px-14 pt-24 lg:pt-0"}>
 				<div className="flex justify-center w-full lg:pt-0">
 					<div
-						style={{ fontSize: 40 }}
-						className={"lg:w-4/5 text-center lg:text-4xl w-full"}
+						className={
+							"lg:w-4/5 text-center lg:text-4xl text-3xl w-full"
+						}
 					>
-						An advanced platform for complex data annotations, model
+						Advanced platform for complex data annotations, model
 						training, prediction & lifecycle management.
 					</div>
 				</div>
@@ -129,7 +131,7 @@ function Home({ posts }) {
 					<div className={"text-gray-500 mt-14 mb-2 text-lg"}>
 						What is DataNeuron?
 					</div>
-					<p style={{ fontSize: "35px", lineHeight: "40px" }}>
+					<p className={"text-2xl md:text-4xl"}>
 						DataNeuron helps you accelerate and automate
 						human-in-loop labeling for developing AI solutions.
 						Powered by a data-centric platform, we automate data
@@ -144,26 +146,30 @@ function Home({ posts }) {
 					>
 						Our Mission
 					</div>
-					<div className="lg:flex justify-between">
+					<div className="xl:flex justify-between">
 						<div>
-							<div
-								style={{ fontSize: "40px", lineHeight: "48px" }}
-							>
+							<div className={"text-2xl md:text-4xl"}>
 								Our Aim is to accelerate the development of AI{" "}
-								<br /> models and provide explainability of AI.
+								 models and provide explainability of AI.
 							</div>
+
 							<div className={"flex my-5"}>
 								<div
 									className={
-										"border border-blue-600 px-8 py-1 my-3 rounded-full text-blue-600"
+										"border duration-500 border-blue-600 px-8 py-2 my-3 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white cursor-pointer"
 									}
+									onClick={() => router.push("/about")}
 								>
 									Learn More
 								</div>
 							</div>
 						</div>
-						<div>
-							<img src="/img/cir_ani.gif" alt="goals" />
+						<div className={"flex justify-center"}>
+							<img
+								width={400}
+								src="/img/animation.gif"
+								alt="goals"
+							/>
 						</div>
 					</div>
 				</Fade>
@@ -176,8 +182,9 @@ function Home({ posts }) {
 				Legal/Tax, Finance, Healthcare, Insurance, News, Data Science,
 				ITeS, Chatbot, Job Portals, CRM Providers
 			</div> */}
-					<div className="flex flex-wrap my-3 justify-center lg:justify-between">
+					<div className="flex flex-col md:flex-row items-center  my-3 justify-center">
 						<div
+							style={{ maxWidth: 320 }}
 							className={
 								"flex w-full m-3 rounded-lg text-blue-600 lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
@@ -191,6 +198,7 @@ function Home({ posts }) {
 							Finance
 						</div>
 						<div
+							style={{ maxWidth: 320 }}
 							className={
 								"flex w-full  m-3 rounded-lg text-blue-600 lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
@@ -201,9 +209,10 @@ function Home({ posts }) {
 								src="/img/sol_card2.svg"
 								alt="sol card 2"
 							/>
-							Science & Technology
+							Science
 						</div>
 						<div
+							style={{ maxWidth: 320 }}
 							className={
 								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
@@ -217,6 +226,7 @@ function Home({ posts }) {
 							Emotion
 						</div>
 						<div
+							style={{ maxWidth: 320 }}
 							className={
 								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
@@ -229,7 +239,10 @@ function Home({ posts }) {
 							/>
 							Media
 						</div>
+					</div>
+					<div className="flex flex-col md:flex-row items-center  my-3 justify-center">
 						<div
+							style={{ maxWidth: 320 }}
 							className={
 								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
@@ -243,6 +256,7 @@ function Home({ posts }) {
 							Healthcare
 						</div>
 						<div
+							style={{ maxWidth: 320 }}
 							className={
 								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
@@ -256,6 +270,7 @@ function Home({ posts }) {
 							Legal & Tax
 						</div>
 						<div
+							style={{ maxWidth: 320 }}
 							className={
 								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
@@ -269,6 +284,7 @@ function Home({ posts }) {
 							Philosophy
 						</div>
 						<div
+							style={{ maxWidth: 320 }}
 							className={
 								"flex m-3 rounded-lg text-blue-600 w-full lg:w-72 justify-center py-6 border-2 border-blue-600"
 							}
@@ -288,100 +304,124 @@ function Home({ posts }) {
 						Our Build vs Buy Calculator
 					</div>
 					<div className={"my-3 lg:flex lg:space-x-2 lg:space-y-6"}>
-						<div
-							className="lg:w-1/2 h-56 w-full border border-gray-300 p-6"
-							style={{
-								boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-							}}
-						>
-							<div className="text-blue-500">
+						<div className="lg:w-1/2 h-56 overflow-y-auto w-full border-2 border-gray-300 p-3 mb-3 md:mb-0">
+							<div className="text-blue-500 mb-2">
 								IF YOU USE DATANEURON
 							</div>
-							<div className="flex space-x-3">
-								<div className="w-2/5">NUMBER OF CLASSES</div>
-								<div className={"w-3/6"}>
-									<input
-										type="range"
-										className={style.slider}
-										min={1}
-										max={100}
-										name="classes"
-										onChange={(e) => handleChange(e)}
-										value={classes}
-									/>
-									<div className="flex w-full justify-between">
-										<p>0</p>
-										<p>100</p>
+							<div>
+								<div>
+									<div className={"text-sm md:text-md"}>
+										TOTAL CLASSES
+									</div>
+									<div>
+										<div className="flex items-center">
+											<div className={"flex-grow mr-2"}>
+												<input
+													type="range"
+													className={style.slider}
+													min={2}
+													max={100}
+													name="classes"
+													onChange={(e) =>
+														handleChange(e)
+													}
+													value={classes}
+												/>
+												<div className="flex text-sm w-full justify-between">
+													<p>2</p>
+													<p>100</p>
+												</div>
+											</div>
+
+											<div
+												className={
+													"border-2 border-gray-300 rounded-md px-2 py-2"
+												}
+												style={{ width: "85px" }}
+											>
+												<div>{classes}</div>
+											</div>
+										</div>
 									</div>
 								</div>
-								<div
-									className={
-										"border-2 border-gray-300 px-2 py-2"
-									}
-									style={{ width: "85px" }}
-								>
-									<div>{classes}</div>
-								</div>
-							</div>
-							<br />
-							<div className="flex space-x-3">
-								<div className="w-2/5">
-									NUMBER OF PARAGRAPHS
-								</div>
-								<div className={"w-3/6"}>
-									<input
-										type="range"
-										className={style.slider}
-										min={10000}
-										max={1000000}
-										name="paras"
-										onChange={(e) => handleChange(e)}
-										value={paras}
-									/>
-									<div className="flex w-full justify-between mr-3">
-										<p style={{ marginLeft: "-18px" }}>
-											10000
-										</p>
-										<p style={{ marginLeft: "18px" }}>
-											1000000
-										</p>
+								<br />
+								<div>
+									<div className={"text-sm md:text-md"}>
+										TOTAL PARAGRAPHS
 									</div>
-								</div>
-								<div
-									className={
-										"border-2 border-gray-300 px-2 py-2"
-									}
-									style={{ width: "85px" }}
-								>
-									<div>{paras}</div>
+									<div>
+										<div className="flex items-center">
+											<div className={"flex-grow mr-2"}>
+												<input
+													type="range"
+													className={style.slider}
+													min={10000}
+													max={1000000}
+													name="paras"
+													onChange={(e) =>
+														handleChange(e)
+													}
+													value={paras}
+												/>
+												<div className="flex w-full text-sm justify-between pl-3">
+													<p
+														style={{
+															marginLeft: "-18px",
+														}}
+													>
+														10000
+													</p>
+													<p
+														style={{
+															marginLeft: "18px",
+														}}
+													>
+														1000000
+													</p>
+												</div>
+											</div>
+
+											<div
+												className={
+													"border-2 border-gray-300 rounded-md px-2 py-2"
+												}
+												style={{ width: "85px" }}
+											>
+												<div>{paras}</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div
-							className="lg:w-1/2 relative lg:-top-6 h-56 w-full border border-gray-300 p-6"
-							style={{
-								boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-							}}
-						>
-							<div className="flex h-full">
-								<div className="w-1/2 border-r-2 border-dotted border-gray-500 px-2 h-full">
-									<div className="py-3 px-3 flex w-full justify-between text-blue-600">
-										<p>Time taken to build an Solution</p>
-										<p>{output.manual_time} hrs</p>
+						<div className="lg:w-1/2 relative lg:-top-6 md:h-56 w-full border-2 border-gray-300 p-6">
+							<div className="md:flex h-full">
+								<div className="md:w-1/2 md:border-r-2 border-dotted border-gray-500 md:px-2 h-full">
+									<div className="md:py-3 px-3 w-full text-blue-600">
+										<p>Human-in-loop annotation</p>
+										<p className={"text-xl font-bold"}>
+											{output.manual_time} hrs
+										</p>
 									</div>
-									<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+									<div className="py-3 px-3 w-full text-blue-600">
 										<p>Using DataNeuron</p>
-										<p>{output.dataNeuron_time} hrs</p>
+										<p className={"text-xl font-bold"}>
+											{output.dataNeuron_time} hrs
+										</p>
 									</div>
 								</div>
-								<div className="w-1/2 px-2 h-full">
-									<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+								<div className="md:w-1/2 md:px-2 h-full">
+									<div className="py-3 px-3 w-full text-blue-600">
 										<p>% Time Reduction</p>
-										<p>{output.time_reduction}</p>
+										<p className={"text-xl font-bold"}>
+											{output.time_reduction}%
+										</p>
 									</div>
-									<div className="py-3 px-3 flex w-full justify-between text-blue-600">
+									<div className="py-3 px-3 w-full text-blue-600">
 										<p>ROI</p>
-										<p>{output.roi}</p>
+										<p className={"text-xl font-bold"}>
+											{output.roi}%
+										</p>
 									</div>
 								</div>
 							</div>
@@ -389,7 +429,7 @@ function Home({ posts }) {
 					</div>
 				</Fade>
 				<div className="mt-14 text-gray-500 text-xl">Our Articles</div>
-				<div className="flex space-x-6 flex-wrap w-full p-3 justify-center lg:justify-start">
+				<div className="flex space-x-6 scroll_custom overflow-x-auto w-full p-3">
 					{posts.map((post) => {
 						return (
 							<div
@@ -398,21 +438,23 @@ function Home({ posts }) {
 									router.push(`/posts/${post.slug}`)
 								}
 								style={{ width: 330 }}
-								className="cursor-pointer border-t border-b border-gray-300"
+								className="cursor-pointer flex flex-col justify-between border-t border-b border-gray-300"
 							>
-								<p className="text-gray-400">
-									{post.postType === PostTypes.CASE_STUDY
-										? "CASE STUDY"
-										: post.postType ===
-										  PostTypes.WHITEPAPERS
-										? "WHITEPAPER"
-										: "FEATURE CATUALOG"}
-								</p>
-								<div className="flex flex-col justify-between">
+								<div>
+									<p className="text-gray-400">
+										{post.postType === PostTypes.CASE_STUDY
+											? "CASE STUDY"
+											: post.postType ===
+											  PostTypes.WHITEPAPERS
+											? "WHITEPAPER"
+											: "FEATURE CATUALOG"}
+									</p>
 									<ImageCard
 										title={post.title}
 										imageUrl={post.coverImage.url}
 									/>
+								</div>
+								<div className="flex flex-col justify-between">
 									<div className="flex justify-between">
 										<div className="text-sm text-gray-400">
 											2021
@@ -426,15 +468,15 @@ function Home({ posts }) {
 						)
 					})}
 				</div>
-				<div className="flex m-6 w-full justify-center lg:justify-start">
-					<Link href={'/resources'}>
+				<div className="flex w-full mt-2 justify-center lg:justify-start">
+					<Link href={"/resources"}>
 						<a
 							style={{ width: "177px" }}
 							className={
-								"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3"
+								"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3 hover:bg-blue-600 hover:text-white"
 							}
 						>
-							<div >View all</div>
+							<div>View all</div>
 						</a>
 					</Link>
 				</div>
