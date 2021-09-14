@@ -333,6 +333,7 @@ const Product = () => {
 								{pipeline.map((imgUrl, i) => {
 									return (
 										<div
+											key={Math.random() * i}
 											style={{ width: 200, height: 300 }}
 											key={i * Math.random()}
 										>
