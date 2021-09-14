@@ -21,8 +21,8 @@ function Home({ posts }) {
 	let Cost_of_manual_annotation_per_hour = 10
 	let data_science_team_size = 5
 	let avg_salary_of_each_data_scientist = 13494
-	let [paras, setParas] = useState(0)
-	let [classes, setClasses] = useState(0)
+	let [paras, setParas] = useState(10000)
+	let [classes, setClasses] = useState(2)
 	let [output, setOutput] = useState({
 		roi: 0,
 		time_reduction: 0,
@@ -304,14 +304,14 @@ function Home({ posts }) {
 									<input
 										type="range"
 										className={style.slider}
-										min={1}
+										min={2}
 										max={100}
 										name="classes"
 										onChange={(e) => handleChange(e)}
 										value={classes}
 									/>
 									<div className="flex w-full justify-between">
-										<p>0</p>
+										<p>2</p>
 										<p>100</p>
 									</div>
 								</div>
@@ -327,7 +327,7 @@ function Home({ posts }) {
 							<br />
 							<div className="flex space-x-3">
 								<div className="w-2/5">
-									NUMBER OF PARAGRAPHS
+									TOTAL PARAGRAPHS
 								</div>
 								<div className={"w-3/6"}>
 									<input
