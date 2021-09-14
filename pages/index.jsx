@@ -119,7 +119,7 @@ function Home({ posts }) {
 							"lg:w-4/5 text-center lg:text-4xl text-3xl w-full"
 						}
 					>
-						An advanced platform for complex data annotations, model
+						Advanced platform for complex data annotations, model
 						training, prediction & lifecycle management.
 					</div>
 				</div>
