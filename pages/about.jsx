@@ -260,6 +260,7 @@ const About = () => {
 						<div>
 							<div className={"flex my-5"}>
 								<a
+									without rel="noreferrer"
 									target={"_blank"}
 									href={
 										"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"
