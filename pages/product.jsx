@@ -334,9 +334,8 @@ const Product = () => {
 								{pipeline.map((imgUrl, i) => {
 									return (
 										<div
-											key={Math.random() * i}
-											style={{ width: 200, height: 300 }}
 											key={i * Math.random()}
+											style={{ width: 200, height: 300 }}
 										>
 											<img src={imgUrl} alt={i} />
 										</div>
@@ -394,7 +393,7 @@ const Product = () => {
 							>
 								{how_it_works.map((data, i) => {
 									return (
-										<div style={{ width: 340 }}>
+										<div key={Math.random() * i} style={{ width: 340 }}>
 											<ImageSequence
 												width={320}
 												images={data.imageUrl}
