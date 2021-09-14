@@ -9,11 +9,6 @@ const About = () => {
 
 	return (
 		<Layout>
-			<dir className={"lg:hidden"}>
-				<br />
-				<br />
-				<br />
-			</dir>
 			<div className={"p-6"}>
 				<div className={"p-0 md:p-3 lg:p-6"}>
 					<p className="mb-2 text-gray-500" style={{ fontSize: 25 }}>

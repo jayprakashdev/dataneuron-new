@@ -428,7 +428,7 @@ function Home({ posts }) {
 						</div>
 					</div>
 				</Fade>
-				<div className="mt-14 text-gray-500 text-xl">Our Articles</div>
+				<div className="mt-14 text-gray-500 text-xl">Resources</div>
 				<div className="flex space-x-6 scroll_custom overflow-x-auto w-full p-3">
 					{posts.map((post) => {
 						return (

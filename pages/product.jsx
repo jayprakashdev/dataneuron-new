@@ -396,6 +396,7 @@ const Product = () => {
 										<div
 											key={Math.random() * i}
 											style={{ width: 340 }}
+											className={"border-2 border-gray-200 p-3"}
 										>
 											<ImageSequence
 												width={320}

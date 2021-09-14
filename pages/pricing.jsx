@@ -6,11 +6,6 @@ const Pricing = () => {
 	return (
 		<div className="w-full" style={{ background: "#fafafa" }}>
 			<Layout>
-				<dir className={"lg:hidden"}>
-					<br />
-					<br />
-					<br />
-				</dir>
 				<div
 					className="text-center text-3xl md:text-4xl"
 					style={{ marginBottom: 25 }}
