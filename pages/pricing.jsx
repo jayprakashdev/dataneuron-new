@@ -237,7 +237,7 @@ const Pricing = () => {
 						Why DataNeuron?
 					</div>
 					
-					<div className="flex flex-wrap justify-center lg:justify-between space-x-3">
+					<div className="flex flex-wrap justify-center space-x-3">
 						<div
 							className="p-3 lg:border-r-2 lg:border-b-0 border-gray-300 flex md:block items-center flex-col"
 							style={{ width: 240 }}
