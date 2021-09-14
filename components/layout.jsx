@@ -13,8 +13,8 @@ const Layout = ({ children }) => {
 				<div>
 					<Navbar />
 					<div
+						className={"pt-24 md:pt-36"}
 						style={{
-							paddingTop : 150,
 							paddingBottom : 100,
 							overflowX: "hidden",
 							width: "100%",
