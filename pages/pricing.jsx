@@ -10,17 +10,15 @@ const Pricing = () => {
 					<br />
 					<br />
 					<br />
-					<br />
-					<br />
 				</dir>
 				<div
-					className="text-center"
-					style={{ fontSize: 40, marginBottom: 25 }}
+					className="text-center text-3xl md:text-4xl"
+					style={{ marginBottom: 25 }}
 				>
 					Ready to Start with DataNeuron?
 				</div>
 				<div
-					className="text-gray-500 text-center mt-5"
+					className="text-gray-500 text-center mt-5 px-3"
 					style={{ fontSize: 20 }}
 				>
 					Use The Time Machine for AI to accelerate your model
@@ -29,12 +27,12 @@ const Pricing = () => {
 				<br />
 				<br />
 				<div
-					className="flex p-6 lg:p-0 flex-wrap space-y-6 lg:space-y-0 w-full justify-center lg:space-x-6"
+					className="p-3 space-y-3 flex flex-col md:flex-row md:space-x-3 md:space-y-0 justify-center items-center"
 					style={{ fontSize: 18 }}
 				>
 					<div
-						style={{ width: 400, height: 625,border:'1px solid #C4C4C4' }}
-						className={"rounded-lg p-4"}
+						style={{height : 625 , maxWidth : 400}}
+						className={" w-full md:w-70 border-2 rounded-lg border-gray-300 p-4"}
 					>
 						<div
 							className="text-xl"
@@ -54,13 +52,11 @@ const Pricing = () => {
 									"https://alpclientofficial.azurewebsites.net/"
 								}
 							>
-								<a style={{padding:'10px 0'}}>
-									<button 
-									className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 rounded-full text-lg"
-									style={{width:'200px'}}
-									>
-										Get Started
-									</button>
+								<a style={{ padding: '10px 20px' }}>
+									<ButtonComponent
+										text={"Get started"}
+										filled={false}
+									/>
 								</a>
 							</Link>
 						</div>
@@ -98,8 +94,8 @@ const Pricing = () => {
 						</div>
 					</div>
 					<div
-						style={{ width: 400, height: 625,border:'1px solid #C4C4C4' }}
-						className={"rounded-lg p-4"}
+						style={{height : 625 , maxWidth : 400}}
+						className={" w-full border-2 rounded-lg border-gray-300 p-4"}
 					>
 						<div
 							className="text-xl"
@@ -115,13 +111,11 @@ const Pricing = () => {
 						<br />
 						<div className="flex justify-center">
 							<Link href={"/contact"}>
-								<a style={{padding:'10px 0'}}>
-								<button 
-									className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 rounded-full text-lg"
-									style={{width:'200px'}}
-									>
-										Contact Sales
-									</button>
+								<a style={{ padding: '10px 20px' }}>
+									<ButtonComponent
+										text={"Contact sales"}
+										filled={false}
+									/>
 								</a>
 							</Link>
 						</div>
@@ -170,8 +164,8 @@ const Pricing = () => {
 						</div>
 					</div>
 					<div
-						style={{ width: 400, height: 625, border:'1px solid #C4C4C4' }}
-						className={"rounded-lg p-4"}
+						style={{height : 625 , maxWidth : 400}}
+						className={" w-full md:w-70 border-2 rounded-lg border-gray-300 p-4"}
 					>
 						<div
 							className="text-xl"
@@ -187,14 +181,12 @@ const Pricing = () => {
 						<br />
 						<div className="flex justify-center">
 							<Link href={"/contact"}>
-								<a style={{padding:'10px 0'}}>
-									<button 
-										className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 rounded-full text-lg"
-										style={{width:'200px'}}
-										>
-											Contact Sales
-										</button>
-									</a>
+								<a style={{ padding: '10px 20px' }}>
+									<ButtonComponent
+										text={"Contact sales"}
+										filled={false}
+									/>
+								</a>
 							</Link>
 						</div>
 						<br />
@@ -241,68 +233,136 @@ const Pricing = () => {
 				</div>
 				<br />
 				<div style={{ padding: 70 }}>
-					<div className="text-3xl text-gray-500">
+					<div className="text-xl md:text-3xl text-center md:text-left text-gray-500">
 						Why DataNeuron?
 					</div>
-					<br />
+					
 					<div className="flex flex-wrap justify-center lg:justify-between space-x-3">
 						<div
-							className="p-3 lg:border-r-2 border-b-2 lg:border-b-0 border-gray-300"
+							className="p-3 lg:border-r-2 lg:border-b-0 border-gray-300 flex md:block items-center flex-col"
 							style={{ width: 240 }}
 						>
-							<img src="/img/why2/why1.svg" alt="why2 image" />
-							<br />
-							<div className="text-2xl text-gray-400">01</div>
-							<div className="font-bold">No Code Prediction</div>
-							<div>
+							<img
+								width={50}
+								height={50}
+								src="/img/why2/why1.svg"
+								alt="why2 image"
+							/>
+
+							<div
+								className={
+									"my-1 flex md:block justify-center items-center"
+								}
+							>
+								<div className="text-2xl text-gray-400 pr-2">
+									01
+								</div>
+								<div className="font-bold">
+									No Code Prediction
+								</div>
+							</div>
+							<div className={"text-center md:text-left"}>
 								Natural Language Prediction without writing a
 								single line of code!
 							</div>
 						</div>
 						<div
-							className="p-3 lg:border-r-2 border-b-2 lg:border-b-0 border-gray-300"
+							className="p-3 lg:border-r-2 lg:border-b-0 border-gray-300 flex md:block items-center flex-col"
 							style={{ width: 240 }}
 						>
-							<img src="/img/why2/why2.svg" alt="why2 image" />
-							<br />
-							<div className="text-2xl text-gray-400">02</div>
-							<div className="font-bold">Secure Platform</div>
-							<div>
+							<img
+								width={50}
+								height={50}
+								src="/img/why2/why2.svg"
+								alt="why2 image"
+							/>
+							<div
+								className={
+									"my-1 flex md:block justify-center items-center"
+								}
+							>
+								<div className="text-2xl text-gray-400 pr-2">
+									02
+								</div>
+								<div className="font-bold">Secure Platform</div>
+							</div>
+
+							<div className={"text-center md:text-left"}>
 								Secure Data Platform for data exchange and model
 								creation.
 							</div>
 						</div>
 						<div
-							className="p-3 lg:border-r-2 border-b-2 lg:border-b-0 border-gray-300"
+							className="p-3 lg:border-r-2 lg:border-b-0 border-gray-300 flex md:block items-center flex-col"
 							style={{ width: 240 }}
 						>
-							<img src="/img/why2/why3.svg" alt="why2 image" />
-							<br />
-							<div className="text-2xl text-gray-400">03</div>
-							<div className="font-bold">Secure Platform</div>
-							<div>
+							<img
+								width={50}
+								height={50}
+								src="/img/why2/why3.svg"
+								alt="why2 image"
+							/>
+							<div
+								className={
+									"my-1 flex md:block justify-center items-center"
+								}
+							>
+								<div className="text-2xl text-gray-400 pr-2">
+									03
+								</div>
+								<div className="font-bold">Secure Platform</div>
+							</div>
+							<div className={"text-center md:text-left"}>
 								Secure Data Platform for data exchange and model
 								creation.
 							</div>
 						</div>
 						<div
-							className="p-3 lg:border-r-2 border-b-2 lg:border-b-0 border-gray-300"
+							className="p-3 lg:border-r-2 lg:border-b-0 border-gray-300 flex md:block items-center flex-col"
 							style={{ width: 240 }}
 						>
-							<img src="/img/why2/why4.svg" alt="why2 image" />
-							<br />
-							<div className="text-2xl text-gray-400">04</div>
-							<div className="font-bold">Scalable</div>
-							<div>
+							<img
+								width={50}
+								height={50}
+								src="/img/why2/why4.svg"
+								alt="why2 image"
+							/>
+							<div
+								className={
+									"my-1 flex md:block justify-center items-center"
+								}
+							>
+								<div className="text-2xl text-gray-400 pr-2">
+									04
+								</div>
+								<div className="font-bold">Scalable</div>
+							</div>
+							<div className={"text-center md:text-left"}>
 								Highly Scalable and High Performance Platform.
 							</div>
 						</div>
-						<div className="p-3 " style={{ width: 240 }}>
-							<img src="/img/why2/why5.svg" alt="why2 image" />
-							<br />
-							<div className="text-2xl text-gray-400">05</div>
-							<div className="font-bold">Evolving Model</div>
-							<div>
+						<div
+							className="p-3 flex md:block flex-col items-center"
+							style={{ width: 240 }}
+						>
+							<img
+								width={50}
+								height={50}
+								src="/img/why2/why5.svg"
+								alt="why2 image"
+							/>
+							<div
+								className={
+									"my-1 flex md:block justify-center items-center"
+								}
+							>
+								<div className="text-2xl text-gray-400 pr-2">
+									05
+								</div>
+								<div className="font-bold">Evolving Model</div>
+							</div>
+
+							<div className={"text-center md:text-left"}>
 								Incremental & Evolving Model in Real Time.
 							</div>
 						</div>

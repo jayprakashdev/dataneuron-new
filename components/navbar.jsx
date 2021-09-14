@@ -22,7 +22,7 @@ let MobileNavbar = () => {
 
 	return (
 		<div
-			className={`w-full top-0 fixed bg-white z-50 lg:hidden duration-500 ${
+			className={`w-full top-0 fixed bg-white z-50 xl:hidden duration-500 ${
 				onTop === false && "shadow-md"
 			}`}
 		>
@@ -82,7 +82,7 @@ let MobileNavbar = () => {
 const Navbar = () => {
 	return (
 		<div>
-			<div className={"hidden lg:block"}>
+			<div className={"hidden xl:block"}>
 				<div
 					style={{ padding: "52px 70px" }}
 					className={"w-full flex justify-between"}
@@ -104,7 +104,7 @@ const Navbar = () => {
 					<div className="flex items-center">
 						<Link href={"/product"}>
 							<a
-								className="font-thin"
+								className="font-thin hover:bg-gray-100 px-4 py-2"
 								style={{ marginLeft: 60, fontSize: 22 }}
 							>
 								Product
@@ -112,33 +112,33 @@ const Navbar = () => {
 						</Link>
 						<Link href={"/about"}>
 							<a
-								className="font-thin"
-								style={{ marginLeft: 60, fontSize: 22 }}
+								className="font-thin hover:bg-gray-100 px-4 py-2"
+								style={{ fontSize: 22 }}
 							>
 								About
 							</a>
 						</Link>
 						<Link href={"/pricing"}>
 							<a
-								className="font-thin"
-								style={{ marginLeft: 60, fontSize: 22 }}
+								className="font-thin hover:bg-gray-100 px-4 py-2"
+								style={{ fontSize: 22 }}
 							>
 								Pricing
 							</a>
 						</Link>
 						<Link href={"/resources"}>
 							<a
-								className="font-thin"
-								style={{ marginLeft: 60, fontSize: 22 }}
+								className="font-thin hover:bg-gray-100 px-4 py-2"
+								style={{ fontSize: 22 }}
 							>
 								Resources
 							</a>
 						</Link>
 						<Link href={"/contact"}>
 							<a
-								className="font-thin"
+								className="font-thin hover:bg-gray-100 px-4 py-2"
 								style={{
-									marginLeft: 60,
+								
 									marginRight: 60,
 									fontSize: 22,
 								}}

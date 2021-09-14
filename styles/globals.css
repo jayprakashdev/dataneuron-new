@@ -46,4 +46,22 @@ a {
 }
 
 
+/* width */
+.scroll_custom::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+.scroll_custom::-webkit-scrollbar-track {
+  background-color: transparent;
+  height: 5px;
+}
+
+/* Handle */
+.scroll_custom::-webkit-scrollbar-thumb {
+  background: rgb(216, 216, 216);
+  height: 5px;
+}
+
 
