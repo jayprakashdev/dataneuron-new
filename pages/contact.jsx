@@ -17,7 +17,7 @@ let Contact = () => {
 			[e.target.name]: e.target.value,
 		})
 	}
-	const handleSubmit = async (e) => {	
+	const handleSubmit = async (e) => {
 		e.preventDefault()
 		if (!isAgree) {
 			alert("You need to check agree")
@@ -48,8 +48,6 @@ let Contact = () => {
 				<br />
 				<br />
 				<br />
-				<br />
-				<br />
 			</dir>
 			<div className="flex flex-wrap space-y-6 lg:space-y-0 py-5 px-5 lg:px-20">
 				<div className=" lg:w-1/2 w-full">
@@ -57,7 +55,9 @@ let Contact = () => {
 						How can we <br />
 						help you &nbsp;
 						<span style={{ color: "#0047FF" }}>
-							<Typewriter words={["Transform?", "Build?", "Solve?"]} />
+							<Typewriter
+								words={["Transform?", "Build?", "Solve?"]}
+							/>
 						</span>
 					</div>
 					<br />
@@ -153,52 +153,60 @@ let Contact = () => {
 									padding: 10,
 									width: 30,
 								}}
-								type="radio"
+								type="checkbox"
 								className="w-full"
 								placeholder={"Message"}
 								onChange={() => setIsAgree(!isAgree)}
 							/>
-							I agree to the <a href={"/privacy"} className="text-blue-600">Terms & Conditions.</a>
+							I agree to the{" "}
+							<a href={"/privacy"} className="text-blue-600">
+								Terms & Conditions.
+							</a>
 						</div>
 						<button
 							className={
-								"px-3 py-2 border-2 border-black w-40 m-3"
+								"px-3 py-2 border-2 flex justify-center items-center  border-black w-40 m-3 "
 							}
 							onClick={(e) => handleSubmit(e)}
 						>
 							Send
+							<img width={20} height={20} src="/img/next.svg" className={"ml-2"} alt="next" />
 						</button>
 					</form>
 				</div>
 
-				<div className="lg:w-1/2 w-full">
+				<div className="lg:w-1/2 w-full flex flex-col items-center">
 					<div className={"w-4/5"}>
 						<div className="text-3xl">Contact Information</div>
 						<br />
-						<div className="text-gray-500 text-xl">
+						<div className="text-gray-500 text-xl text-center md:text-left">
 							Fill out the form and our team will get back to you
 							as soon as possible.
 						</div>
 						<br />
-						<div className="flex">
+						<div className="flex flex-col md:flex-row justify-center items-center">
 							<img src="/img/america.svg" alt="america markder" />
-							<div className={"text-xl ml-3"}>
+							<div className={"text-xl ml-3 text-center md:text-left"}>
 								HQ-Stanford Research Park, 3260, Hillview Ave,
 								Palo Alto, CA - 94304
 							</div>
 						</div>
 						<br />
-						<div className="flex">
+						<div className="flex flex-col md:flex-row justify-center items-center">
 							<img src="/img/india.svg" alt="india markder" />
-							<div className={"text-xl ml-3"}>
+							<div className={"text-xl ml-3 text-center md:text-left"}>
 								501, Incubation Centre - IIIT-D, Okhla
 								Industrial Estate, Phase III, New Delhi - 110020
 							</div>
 						</div>
 
 						<br />
-						<div className="flex space-x-6">
-							<a href="https://in.linkedin.com/company/precily" target="_blank">
+						<div className="flex space-x-6 justify-center md:justify-start">
+							<a
+								href="https://in.linkedin.com/company/precily"
+								target="_blank"
+								rel="noreferrer"
+							>
 								<img src="/img/linkedin.svg" alt="linkedin" />
 							</a>
 
@@ -208,7 +216,6 @@ let Contact = () => {
 							>
 								<img src="/img/email.svg" alt="email" />
 							</a>
-							
 						</div>
 					</div>
 				</div>

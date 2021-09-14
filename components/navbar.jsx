@@ -22,8 +22,8 @@ let MobileNavbar = () => {
 
 	return (
 		<div
-			className={`w-full top-0 fixed bg-white z-50 lg:hidden duration-500 ${
-				onTop === false && "shadow-md"
+			className={`w-full top-0 fixed bg-white z-50 xl:hidden duration-500 ${
+				onTop === false || expanded && "shadow-md"
 			}`}
 		>
 			<div
@@ -74,6 +74,18 @@ let MobileNavbar = () => {
 						<a>Contact</a>
 					</Link>
 				</div>
+				<div className="flex justify-center p-3">
+					<a
+						href={"https://alpclientofficial.azurewebsites.net/"}
+						className={
+							"bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg"
+						}
+						target="_blank"
+						rel="noreferrer"
+					>
+						Get Started
+					</a>
+				</div>
 			</div>
 		</div>
 	)
@@ -82,7 +94,7 @@ let MobileNavbar = () => {
 const Navbar = () => {
 	return (
 		<div>
-			<div className={"hidden lg:block"}>
+			<div className={"hidden xl:block"}>
 				<div
 					style={{ padding: "52px 70px" }}
 					className={"w-full flex justify-between"}
@@ -104,7 +116,7 @@ const Navbar = () => {
 					<div className="flex items-center">
 						<Link href={"/product"}>
 							<a
-								className="font-thin"
+								className="font-thin hover:bg-gray-100 px-4 py-2"
 								style={{ marginLeft: 60, fontSize: 22 }}
 							>
 								Product
@@ -112,33 +124,32 @@ const Navbar = () => {
 						</Link>
 						<Link href={"/about"}>
 							<a
-								className="font-thin"
-								style={{ marginLeft: 60, fontSize: 22 }}
+								className="font-thin hover:bg-gray-100 px-4 py-2"
+								style={{ fontSize: 22 }}
 							>
 								About
 							</a>
 						</Link>
 						<Link href={"/pricing"}>
 							<a
-								className="font-thin"
-								style={{ marginLeft: 60, fontSize: 22 }}
+								className="font-thin hover:bg-gray-100 px-4 py-2"
+								style={{ fontSize: 22 }}
 							>
 								Pricing
 							</a>
 						</Link>
 						<Link href={"/resources"}>
 							<a
-								className="font-thin"
-								style={{ marginLeft: 60, fontSize: 22 }}
+								className="font-thin hover:bg-gray-100 px-4 py-2"
+								style={{ fontSize: 22 }}
 							>
 								Resources
 							</a>
 						</Link>
 						<Link href={"/contact"}>
 							<a
-								className="font-thin"
+								className="font-thin hover:bg-gray-100 px-4 py-2"
 								style={{
-									marginLeft: 60,
 									marginRight: 60,
 									fontSize: 22,
 								}}
@@ -150,26 +161,13 @@ const Navbar = () => {
 							href={
 								"https://alpclientofficial.azurewebsites.net/"
 							}
+							className={
+								"bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg"
+							}
 							target="_blank"
+							rel="noreferrer"
 						>
-							<a>
-								{/* <ButtonComponent
-									style={{
-										minWidth: "150px",
-										display: "flex",
-										justifyContent: "center",
-									}}
-									filled={false}
-									text={"Get started"}
-								>
-									Get Started
-								</ButtonComponent> */}
-								<button 
-								className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg"
-								>
-									Get Started
-								</button>
-							</a>
+							Get Started
 						</a>
 					</div>
 				</div>

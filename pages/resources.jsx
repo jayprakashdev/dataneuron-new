@@ -71,8 +71,12 @@ const ResourcePage = ({ posts }) => {
 											currentPostType ===
 											PostTypes.CASE_STUDY
 										}
-										src={currentPostType ===
-											PostTypes.CASE_STUDY ? "/img/case_study_active.svg"  :"/img/case_study.svg"}
+										src={
+											currentPostType ===
+											PostTypes.CASE_STUDY
+												? "/img/case_study_active.svg"
+												: "/img/case_study.svg"
+										}
 									/>
 								</div>
 								<div style={{ minWidth: "180px" }}>
@@ -88,8 +92,12 @@ const ResourcePage = ({ posts }) => {
 											currentPostType ===
 											PostTypes.WHITEPAPERS
 										}
-										src={currentPostType ===
-											PostTypes.WHITEPAPERS ? "/img/whitepapers_active.svg" : "/img/whitepapers.svg"}
+										src={
+											currentPostType ===
+											PostTypes.WHITEPAPERS
+												? "/img/whitepapers_active.svg"
+												: "/img/whitepapers.svg"
+										}
 									/>
 								</div>
 								<div style={{ minWidth: "180px" }}>
@@ -105,13 +113,17 @@ const ResourcePage = ({ posts }) => {
 											currentPostType ===
 											PostTypes.FEATURE_CAT
 										}
-										src={currentPostType ===
-											PostTypes.FEATURE_CAT ? "/img/feature_catalog_active.svg" : "/img/feature_catalog.svg"}
+										src={
+											currentPostType ===
+											PostTypes.FEATURE_CAT
+												? "/img/feature_catalog_active.svg"
+												: "/img/feature_catalog.svg"
+										}
 									/>
 								</div>
 							</div>
 						</div>
-						<div className="mt-14 w-full flex justify-center lg:justify-start flex-wrap md:space-x-6">
+						<div className="mt-14 space-y-6 md:space-y-0 w-full flex items-stretch justify-center lg:justify-start flex-wrap md:space-x-6">
 							{currentPostType !== null
 								? posts
 										.filter(
@@ -129,18 +141,18 @@ const ResourcePage = ({ posts }) => {
 														)
 													}
 													style={{ width: 330 }}
-													className="cursor-pointer border-t border-b border-gray-300"
+													className="cursor-pointer flex flex-col justify-between border-t border-b border-gray-300"
 												>
-													<p className="text-gray-400">
-														{post.postType ===
-														PostTypes.CASE_STUDY
-															? "CASE STUDY"
-															: post.postType ===
-															  PostTypes.WHITEPAPERS
-															? "WHITEPAPER"
-															: "FEATURE CATUALOG"}
-													</p>
-													<div className="flex flex-col justify-between">
+													<div>
+														<p className="text-gray-400">
+															{post.postType ===
+															PostTypes.CASE_STUDY
+																? "CASE STUDY"
+																: post.postType ===
+																  PostTypes.WHITEPAPERS
+																? "WHITEPAPER"
+																: "FEATURE CATUALOG"}
+														</p>
 														<ImageCard
 															title={post.title}
 															imageUrl={
@@ -148,6 +160,8 @@ const ResourcePage = ({ posts }) => {
 																	.url
 															}
 														/>
+													</div>
+													<div className="flex flex-col justify-between">
 														<div className="flex justify-between">
 															<div className="text-sm text-gray-400">
 																2021
@@ -170,24 +184,26 @@ const ResourcePage = ({ posts }) => {
 													)
 												}
 												style={{ width: 330 }}
-												className="cursor-pointer border-t border-b border-gray-300"
+												className="cursor-pointer flex flex-col justify-between border-t border-b border-gray-300"
 											>
-												<p className="text-gray-400">
-													{post.postType ===
-													PostTypes.CASE_STUDY
-														? "CASE STUDY"
-														: post.postType ===
-														  PostTypes.WHITEPAPERS
-														? "WHITEPAPER"
-														: "FEATURE CATUALOG"}
-												</p>
-												<div className="flex flex-col justify-between">
+												<div>
+													<p className="text-gray-400">
+														{post.postType ===
+														PostTypes.CASE_STUDY
+															? "CASE STUDY"
+															: post.postType ===
+															  PostTypes.WHITEPAPERS
+															? "WHITEPAPER"
+															: "FEATURE CATUALOG"}
+													</p>
 													<ImageCard
 														title={post.title}
 														imageUrl={
 															post.coverImage.url
 														}
 													/>
+												</div>
+												<div className="flex flex-col justify-between">
 													<div className="flex justify-between">
 														<div className="text-sm text-gray-400">
 															2021

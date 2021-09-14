@@ -11,17 +11,17 @@ const About = () => {
 				<br />
 				<br />
 			</dir>
-			<div className={"p-3 lg:px-3"}>
+			<div className={"p-6"}>
 				<div className={"p-0 md:p-3 lg:p-6"}>
 					<p className="mb-2 text-gray-500" style={{ fontSize: 25 }}>
 						About DataNeuron
 					</p>
-					<p className="my-2" style={{ fontSize: 50 }}>
+					<p className="my-2 text-3xl md:text-5xl">
 						At DataNeuron, our aim is to accelerate the development
 						and provide explainability for AI.
 					</p>
 					<br />
-					<p className="my-2 font-thin" style={{ fontSize: 24 }}>
+					<p className="my-2 font-thin text-xl md:text-2xl">
 						The supervised learning approach is predominant in AI,
 						the need for labelled data has dramatically increased in
 						order to remove the constraints when developing AI
@@ -40,11 +40,12 @@ const About = () => {
 						>
 							Our Goals
 						</p>
-						<div className="flex w-full items-center space-x-3 md:justify-between justify-center flex-wrap md:space-x-3">
+						<div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-3">
 							<div
 								className={
-									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-72"
+									"border-2 border-gray-200 w-full p-3 flex flex-col items-center justify-center h-72"
 								}
+								
 							>
 								<div className="flex justify-center space-x-1">
 									<img
@@ -85,8 +86,9 @@ const About = () => {
 							</div>
 							<div
 								className={
-									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-72"
+									"border-2 border-gray-200 w-full p-3 flex flex-col items-center justify-center h-72"
 								}
+								
 							>
 								<img
 									src="/img/meter1.gif"
@@ -101,8 +103,9 @@ const About = () => {
 							</div>
 							<div
 								className={
-									"shadow-md w-full p-3 md:w-3/12 flex flex-col items-center justify-center h-72"
+									"border-2 border-gray-200 w-full p-3 flex flex-col items-center justify-center h-72"
 								}
+								
 							>
 								<img
 									src="/img/doc_ani.gif"
@@ -131,14 +134,14 @@ const About = () => {
 				</p>
 				<div className="flex justify-center w-full">
 					<div className="md:flex">
-						<a href={"https://www.windrose.capital/"} target="_blank">
+						<a href={"https://www.windrose.capital/"} target="_blank" rel="noreferrer">
 							<img
-								className={"m-3 w-11/12 md:w-auto"}
+								className={"m-3 w-11/12 md:w-auto "}
 								src="/img/aboutus1.svg"
 								alt="Windrose Captical"
 							></img>
 						</a>
-						<a href={"https://www.inventuslaw.com/"} target="_blank">
+						<a href={"https://www.inventuslaw.com/"} target="_blank" rel="noreferrer">
 							<img
 								className={"m-3 w-11/12 md:w-auto"}
 								src="/img/aboutus2.svg"

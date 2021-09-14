@@ -3,9 +3,10 @@ import Layout from '../components/layout';
 
 const PrivacyPage=()=>{
     return (
-        <div className="bg-white w-full ">
+        <div className="bg-white w-full p-5">
+            <br />
             <Layout>
-                <div className="w-full ml-5 text-lg mt-2 lg:px-8 md:px-5 sm:px-3 xs:px-1" >
+                <div>
                     <h1 className="text-2xl font-bold">Privacy Policies</h1>
                     <p className="my-8">
                     This Privacy Policy describes the manner in which Precily, Inc. (hereinafter individually and collectively referred to as “DataNeuron”) collects, stores and/or uses information or data provided by you or in relation to you while accessing and/or using the website www.dataneuron.ai (hereinafter referred to as “Website”) and any service offered on or through www.dataneuron.ai (hereinafter referred to as “Services”).
