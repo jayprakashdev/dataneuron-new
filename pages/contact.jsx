@@ -44,7 +44,7 @@ let Contact = () => {
 	}
 	return (
 		<Layout>
-			<dir className={"lg:hidden"}>
+			<dir className={"xl:hidden"}>
 				<br />
 				<br />
 				<br />
