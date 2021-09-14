@@ -23,7 +23,7 @@ let MobileNavbar = () => {
 	return (
 		<div
 			className={`w-full top-0 fixed bg-white z-50 xl:hidden duration-500 ${
-				onTop === false && "shadow-md"
+				onTop === false || expanded && "shadow-md"
 			}`}
 		>
 			<div
