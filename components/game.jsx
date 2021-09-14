@@ -6,7 +6,7 @@ let Game = () => {
 	let [ballPos, setBallPos] = useState(100)
 	let [direction, setDirection] = useState("forward")
 
-	let [windowWidth , setWindowWidth] = useState(0)
+	let [windowWidth, setWindowWidth] = useState(0)
 
 	let [gameData, setGameData] = useState([
 		{
@@ -72,6 +72,7 @@ let Game = () => {
 	let [frontDown, setFrontDown] = useState(false)
 
 	useEffect(() => {
+		setWindowWidth(window.innerWidth)
 		window.onresize = (e) => {
 			setScenePos(0)
 			setBallPos(0)
@@ -230,10 +231,14 @@ let Game = () => {
 				<img
 					title={"Play from start"}
 					onClick={() => {
-						setScenePos(0)
-						setBallPos(100)
-						setDirection("forward")
-						setInteraction(false)
+						if (interaction === true) {
+							setScenePos(0)
+							setBallPos(100)
+							setDirection("forward")
+							setInteraction(false)
+						}else{
+							setInteraction(true)
+						}
 					}}
 					src="/img/play.svg"
 					className={"m-3"}
