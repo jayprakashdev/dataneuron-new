@@ -74,6 +74,18 @@ let MobileNavbar = () => {
 						<a>Contact</a>
 					</Link>
 				</div>
+				<div className="flex justify-center p-3">
+					<a
+						href={"https://alpclientofficial.azurewebsites.net/"}
+						className={
+							"bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg"
+						}
+						target="_blank"
+						rel="noreferrer"
+					>
+						Get Started
+					</a>
+				</div>
 			</div>
 		</div>
 	)
@@ -138,7 +150,6 @@ const Navbar = () => {
 							<a
 								className="font-thin hover:bg-gray-100 px-4 py-2"
 								style={{
-								
 									marginRight: 60,
 									fontSize: 22,
 								}}
@@ -150,27 +161,13 @@ const Navbar = () => {
 							href={
 								"https://alpclientofficial.azurewebsites.net/"
 							}
+							className={
+								"bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg"
+							}
 							target="_blank"
 							rel="noreferrer"
 						>
-							<a>
-								{/* <ButtonComponent
-									style={{
-										minWidth: "150px",
-										display: "flex",
-										justifyContent: "center",
-									}}
-									filled={false}
-									text={"Get started"}
-								>
-									Get Started
-								</ButtonComponent> */}
-								<button 
-								className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg"
-								>
-									Get Started
-								</button>
-							</a>
+							Get Started
 						</a>
 					</div>
 				</div>
