@@ -116,6 +116,8 @@ const About = () => {
 									Increase efficiency by bringing 90%+ first-pass machine accuracy.
 								</div>
 							</div>
+
+							
 						</div>
 					</div>
 				</div>
