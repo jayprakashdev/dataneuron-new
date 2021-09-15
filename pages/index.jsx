@@ -132,9 +132,13 @@ function Home({ posts }) {
 				<br />
 				<Game />
 				<Fade>
-					<div className={"text-gray-500 mt-14 mb-2 text-lg"}>
+					<div
+						className={"text-gray-500 mt-14 mb-2"}
+						style={{ fontSize: 25 }}
+					>
 						What is DataNeuron?
 					</div>
+
 					<p className={"text-2xl md:text-4xl"}>
 						DataNeuron helps you accelerate and automate
 						human-in-loop labeling for developing AI solutions.
@@ -179,9 +183,13 @@ function Home({ posts }) {
 				</Fade>
 
 				<Fade>
-					<div className="mt-6 text-gray-500 text-lg">
+					<div
+						className={"text-gray-500 mt-14 mb-2"}
+						style={{ fontSize: 25 }}
+					>
 						Infinite Applications
 					</div>
+
 					{/* <div className="my-3">
 				Legal/Tax, Finance, Healthcare, Insurance, News, Data Science,
 				ITeS, Chatbot, Job Portals, CRM Providers
@@ -304,18 +312,22 @@ function Home({ posts }) {
 					</div>
 				</Fade>
 				<Fade>
-					<div className={"mt-14 text-gray-500 text-xl"}>
+					<div
+						className={"text-gray-500 mt-14 mb-2"}
+						style={{ fontSize: 25 }}
+					>
 						Our Build vs Buy Calculator
 					</div>
+
 					<div className={"my-3 lg:flex lg:space-x-2 lg:space-y-6"}>
 						<div className="lg:w-1/2 h-56 overflow-y-auto w-full border-2 border-gray-300 p-3 mb-3 md:mb-0">
 							<div className="text-blue-500 mb-2">
-								IF YOU USE DATANEURON
+								If you use DataNeuron
 							</div>
 							<div>
 								<div>
 									<div className={"text-sm md:text-md"}>
-										TOTAL CLASSES
+										Total Classes
 									</div>
 									<div>
 										<div className="flex items-center">
@@ -351,7 +363,7 @@ function Home({ posts }) {
 								<br />
 								<div>
 									<div className={"text-sm md:text-md"}>
-										TOTAL PARAGRAPHS
+										Total Paragraphs
 									</div>
 									<div>
 										<div className="flex items-center">
@@ -432,6 +444,12 @@ function Home({ posts }) {
 						</div>
 					</div>
 				</Fade>
+				<div
+					className={"text-gray-500 mt-14 mb-2"}
+					style={{ fontSize: 25 }}
+				>
+					Resources
+				</div>
 				<div className="flex space-x-6 scroll_custom overflow-x-auto w-full p-3">
 					{posts.map((post) => {
 						return (
@@ -450,7 +468,7 @@ function Home({ posts }) {
 											: post.postType ===
 											  PostTypes.WHITEPAPERS
 											? "WHITEPAPER"
-											: "FEATURE CATUALOG"}
+											: "FEATURE CATALOG"}
 									</p>
 									<ImageCard
 										title={post.title}
@@ -461,9 +479,6 @@ function Home({ posts }) {
 									<div className="flex justify-between">
 										<div className="text-sm text-gray-400">
 											2021
-										</div>
-										<div className="text-sm text-gray-400">
-											FINANCE
 										</div>
 									</div>
 								</div>
@@ -479,7 +494,7 @@ function Home({ posts }) {
 								"flex w-full duration-300 justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3 hover:bg-blue-600 hover:text-white"
 							}
 						>
-							<div>View all</div>
+							<div>View All</div>
 						</a>
 					</Link>
 				</div>
@@ -487,6 +502,7 @@ function Home({ posts }) {
 		</Layout>
 	)
 }
+
 
 export async function getStaticProps({ params, preview = false }) {
 	let appPosts = await getAllPosts()
