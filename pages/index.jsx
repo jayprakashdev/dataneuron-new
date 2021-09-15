@@ -112,9 +112,6 @@ function Home({ posts }) {
 	}, [classes, paras])
 	return (
 		<Layout
-			description={
-				"Advanced platform for complex data annotations, model training, prediction & lifecycle management."
-			}
 			title={"Home | Dataneuron"}
 			description={
 				"Advanced platform for complex data annotations, model training, prediction & lifecycle management."
