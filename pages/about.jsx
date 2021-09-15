@@ -1,16 +1,14 @@
+import { useEffect, useState } from "react"
 import ButtonComponent from "../components/buttonComponent"
 import Layout from "../components/layout"
 import Link from "next/link"
 import { Typewriter } from "react-simple-typewriter"
 
 const About = () => {
+
+
 	return (
 		<Layout>
-			<dir className={"lg:hidden"}>
-				<br />
-				<br />
-				<br />
-			</dir>
 			<div className={"p-6"}>
 				<div className={"p-0 md:p-3 lg:p-6"}>
 					<p className="mb-2 text-gray-500" style={{ fontSize: 25 }}>
@@ -43,13 +41,13 @@ const About = () => {
 						<div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-3">
 							<div
 								className={
-									"border-2 border-gray-200 w-full p-3 flex flex-col items-center justify-center h-72"
+									"border-2 border-gray-200 w-full p-3 flex flex-col items-center justify-between h-72 "
 								}
-								
 							>
-								<div className="flex justify-center space-x-1">
+								<div className="flex justify-center space-x-1 mt-16">
 									<img
-										src="/img/circle.gif"
+										id={"img1"}
+										src={'/img/circle.gif'}
 										alt="circle"
 										className={"w-2/12"}
 										height={60}
@@ -61,7 +59,8 @@ const About = () => {
 										height={60}
 									/>
 									<img
-										src="/img/circle.gif"
+										id={"img2"}
+										src={'/img/circle.gif'}
 										alt="circle"
 										height={60}
 										className={"w-2/12"}
@@ -73,26 +72,27 @@ const About = () => {
 										className={"w-2/12"}
 									/>
 									<img
-										src="/img/circle.gif"
+										id={"img3"}
+										src={'/img/circle.gif'}
 										alt="circle"
 										height={60}
 										className={"w-2/12"}
 									/>
 								</div>
 								<br />
-								<div className="text-center text-lg">
+								<div className="text-center text-lg mb-6">
 									Reduce Project Staffing by 70-90%.
 								</div>
 							</div>
 							<div
 								className={
-									"border-2 border-gray-200 w-full p-3 flex flex-col items-center justify-center h-72"
+									"border-2 border-gray-200 w-full p-3 flex flex-col items-center justify-between h-72"
 								}
-								
 							>
 								<img
 									src="/img/meter1.gif"
 									width={240}
+									className={"mt-6"}
 									alt="meter"
 								/>
 								<br />
@@ -103,9 +103,8 @@ const About = () => {
 							</div>
 							<div
 								className={
-									"border-2 border-gray-200 w-full p-3 flex flex-col items-center justify-center h-72"
+									"border-2 border-gray-200 w-full p-3 flex flex-col items-center justify-between h-72"
 								}
-								
 							>
 								<img
 									src="/img/doc_ani.gif"
@@ -134,16 +133,28 @@ const About = () => {
 				</p>
 				<div className="flex justify-center w-full">
 					<div className="md:flex">
-						<a href={"https://www.windrose.capital/"} target="_blank" rel="noreferrer">
+						<a
+							href={"https://www.windrose.capital/"}
+							target="_blank"
+							rel="noreferrer"
+						>
 							<img
-								className={"m-3 w-11/12 md:w-auto "}
+								className={
+									"m-3 w-11/12 md:w-auto transform hover:scale-105 duration-500 "
+								}
 								src="/img/aboutus1.svg"
 								alt="Windrose Captical"
 							></img>
 						</a>
-						<a href={"https://www.inventuslaw.com/"} target="_blank" rel="noreferrer">
+						<a
+							href={"https://www.inventuslaw.com/"}
+							target="_blank"
+							rel="noreferrer"
+						>
 							<img
-								className={"m-3 w-11/12 md:w-auto"}
+								className={
+									"m-3 w-11/12 md:w-auto transform hover:scale-105 duration-500"
+								}
 								src="/img/aboutus2.svg"
 								alt="Windrose Captical"
 							></img>
@@ -158,7 +169,7 @@ const About = () => {
 						<a href="https://www.linkedin.com/in/bharrao/">
 							<div
 								className={
-									"flex justify-center flex-col items-center"
+									"flex justify-center flex-col items-center transform hover:scale-105 duration-500"
 								}
 							>
 								<img
@@ -175,7 +186,7 @@ const About = () => {
 						<a href="ps://www.linkedin.com/in/rohit-goyal/">
 							<div
 								className={
-									"flex justify-center flex-col items-center"
+									"flex justify-center flex-col items-center transform hover:scale-105 duration-500"
 								}
 							>
 								<img
@@ -192,7 +203,7 @@ const About = () => {
 						<a href="https://www.linkedin.com/in/anadvani/">
 							<div
 								className={
-									"flex justify-center flex-col items-center"
+									"flex justify-center flex-col items-center transform hover:scale-105 duration-500"
 								}
 							>
 								<img
@@ -209,7 +220,7 @@ const About = () => {
 						<a href="https://www.linkedin.com/in/rohit-adlakha/">
 							<div
 								className={
-									"flex justify-center flex-col items-center"
+									"flex justify-center flex-col items-center transform hover:scale-105 duration-500"
 								}
 							>
 								<img
@@ -242,11 +253,20 @@ const About = () => {
 				>
 					<a>
 						<div>
-							<ButtonComponent
-								icon={true}
-								src={"/img/job_opening.svg"}
-								text="View Job Opening"
-							/>
+							<div className={"flex my-5"}>
+								<a
+									without rel="noreferrer"
+									target={"_blank"}
+									href={
+										"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"
+									}
+									className={
+										"border flex space-x-6 duration-500 border-blue-600 px-8 py-2 my-3 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white cursor-pointer"
+									}
+								>
+									View Job Openings
+								</a>
+							</div>
 						</div>
 					</a>
 				</Link>

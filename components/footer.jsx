@@ -9,7 +9,7 @@ let Footer = () => {
 		<div>
 			<div
 				className={
-					"w-full hidden lg:flex border-t-2 border-b-2 border-gray-500"
+					"w-full hidden lg:flex border-t-2 border-b-2 border-black"
 				}
 			>
 				<div
@@ -18,7 +18,7 @@ let Footer = () => {
 					}}
 					style={{ width: 312, fontSize: 32 }}
 					className={
-						"flex text-xl justify-center cursor-pointer items-center"
+						"flex text-xl justify-center cursor-pointer items-center flex-grow"
 					}
 				>
 					DataNeuron
@@ -96,7 +96,11 @@ let Footer = () => {
 								<div style={{ fontSize: 20 }}>Contact</div>
 							</a>
 						</Link>
-						<Link href={"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"}>
+						<Link
+							href={
+								"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"
+							}
+						>
 							<a
 								className={
 									"w-1/2 hover:bg-gray-100 p-6 cursor-pointer text-gray-500 flex border-t-2 justify-center items-center border-b-2 border-r-2 border-black"
@@ -107,7 +111,10 @@ let Footer = () => {
 						</Link>
 					</div>
 				</div>
-				<div className="flex-grow hover:bg-gray-100 flex flex-col justify-end">
+				<div
+					className="flex-grow hover:bg-gray-100 flex flex-col justify-end"
+					style={{ maxWidth: 500 }}
+				>
 					<div>
 						<Marquee style={{ width: 500 }} direction={"left"}>
 							<img src="/img/flow.svg" alt="flow image" />
@@ -197,7 +204,11 @@ let Footer = () => {
 							</div>
 						</a>
 					</Link>
-					<Link href={"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"}>
+					<Link
+						href={
+							"https://in.linkedin.com/jobs/precily-inc.-jobs?f_C=7797080&trk=top-card_top-card-primary-button-top-card-primary-cta&position=1&pageNum=0"
+						}
+					>
 						<a
 							className={
 								"w-1/2 text-center p-3 border-r-2 border-black"
@@ -211,7 +222,9 @@ let Footer = () => {
 				</div>
 				<Link href={"mailto:mail@dataneuron.ai"}>
 					<a
-						className={"p-3 flex justify-center font-bold border-l-2 border-black border-b-2 border-r-2"}
+						className={
+							"p-3 flex justify-center font-bold border-l-2 border-black border-b-2 border-r-2"
+						}
 					>
 						<div style={{ fontSize: 18 }}>mail@dataneuron.ai</div>
 					</a>

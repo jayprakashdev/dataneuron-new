@@ -22,12 +22,12 @@ let MobileNavbar = () => {
 
 	return (
 		<div
-			className={`w-full top-0 fixed bg-white z-50 xl:hidden duration-500 ${
+			className={`w-full top-0 fixed bg-white z-50 xl:hidden duration-300 ${
 				onTop === false || expanded && "shadow-md"
 			}`}
 		>
 			<div
-				className={`flex justify-between items-center duration-500 ${
+				className={`flex justify-between items-center duration-300 ${
 					onTop ? "p-6" : "p-3"
 				}`}
 			>
@@ -45,7 +45,7 @@ let MobileNavbar = () => {
 			</div>
 
 			<div
-				className={`duration-500 overflow-hidden ${
+				className={`duration-300 overflow-hidden ${
 					expanded ? "h-auto" : "h-0"
 				}`}
 			>
@@ -92,11 +92,27 @@ let MobileNavbar = () => {
 }
 
 const Navbar = () => {
+
+	let [onTop, setOnTop] = useState(true)
+
+	useEffect(() => {
+		window.onscroll = () => {
+			if (window.scrollY > 5) {
+				setOnTop(false)
+			} else {
+				setOnTop(true)
+			}
+		}
+		return () => {
+			window.onscroll = null
+		}
+	}, [])
+
 	return (
-		<div>
+		<div className={`${onTop === false && "shadow-md"} fixed top-0 left-0 right-0 bg-white z-50`}>
 			<div className={"hidden xl:block"}>
 				<div
-					style={{ padding: "52px 70px" }}
+					style={{ padding: `24px 70px` }}
 					className={"w-full flex justify-between"}
 				>
 					<Link href={"/"}>
@@ -116,7 +132,7 @@ const Navbar = () => {
 					<div className="flex items-center">
 						<Link href={"/product"}>
 							<a
-								className="font-thin hover:bg-gray-100 px-4 py-2"
+								className="font-thin hover:text-blue-700 duration-300 px-4 py-2"
 								style={{ marginLeft: 60, fontSize: 22 }}
 							>
 								Product
@@ -124,7 +140,7 @@ const Navbar = () => {
 						</Link>
 						<Link href={"/about"}>
 							<a
-								className="font-thin hover:bg-gray-100 px-4 py-2"
+								className="font-thin hover:text-blue-700 duration-300 px-4 py-2"
 								style={{ fontSize: 22 }}
 							>
 								About
@@ -132,7 +148,7 @@ const Navbar = () => {
 						</Link>
 						<Link href={"/pricing"}>
 							<a
-								className="font-thin hover:bg-gray-100 px-4 py-2"
+								className="font-thin hover:text-blue-700 duration-300 px-4 py-2"
 								style={{ fontSize: 22 }}
 							>
 								Pricing
@@ -140,7 +156,7 @@ const Navbar = () => {
 						</Link>
 						<Link href={"/resources"}>
 							<a
-								className="font-thin hover:bg-gray-100 px-4 py-2"
+								className="font-thin hover:text-blue-700 duration-300 px-4 py-2"
 								style={{ fontSize: 22 }}
 							>
 								Resources
@@ -148,7 +164,7 @@ const Navbar = () => {
 						</Link>
 						<Link href={"/contact"}>
 							<a
-								className="font-thin hover:bg-gray-100 px-4 py-2"
+								className="font-thin hover:text-blue-700 duration-300 px-4 py-2"
 								style={{
 									marginRight: 60,
 									fontSize: 22,
@@ -162,7 +178,7 @@ const Navbar = () => {
 								"https://alpclientofficial.azurewebsites.net/"
 							}
 							className={
-								"bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg"
+								"bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 duration-500 hover:text-white py-2 px-7 rounded-full text-lg"
 							}
 							target="_blank"
 							rel="noreferrer"

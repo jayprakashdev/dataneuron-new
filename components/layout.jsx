@@ -2,19 +2,25 @@ import Navbar from "./navbar"
 import Head from "next/head"
 import Footer from "./footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children , title , description , url }) => {
 	return (
 		<div>
 			<Head>
-				<title>DataNeuron</title>
+				<title>{title ? title : "DataNeuron"}</title>
 				<link rel="icon" type="image/png" href="/favicon.png" />
+				<meta name="description" content={description ? description : "Advanced platform for complex data annotations, model training, prediction & lifecycle management."}/>
+				<meta property="og:title" content={title ? title : "DataNeuron | Advanced platform for complex data annotations, model training, prediction & lifecycle management."} />
+				<meta property="og:description" content={description ? description : "Advanced platform for complex data annotations, model training, prediction & lifecycle management."} />
+				<meta property="og:url" content={"https://dataneuron.io" + url} />
+				<meta property="og:type" content="website" />
 			</Head>
 			<div className={"min-h-screen flex flex-col justify-between"}>
 				<div>
 					<Navbar />
 					<div
+						className={"pt-24 md:pt-36"}
 						style={{
-							paddingBottom: 100,
+							paddingBottom : 100,
 							overflowX: "hidden",
 							width: "100%",
 						}}

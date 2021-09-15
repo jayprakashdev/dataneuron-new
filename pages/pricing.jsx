@@ -5,12 +5,13 @@ import Link from "next/link"
 const Pricing = () => {
 	return (
 		<div className="w-full" style={{ background: "#fafafa" }}>
-			<Layout>
-				<dir className={"lg:hidden"}>
-					<br />
-					<br />
-					<br />
-				</dir>
+			<Layout
+				url={"/pricing"}
+				description={
+					"Ready to Start with DataNeuron? Use The Time Machine for AI to accelerate your model development!"
+				}
+				title={"Pricing | Dataneuron"}
+			>
 				<div
 					className="text-center text-3xl md:text-4xl"
 					style={{ marginBottom: 25 }}
@@ -27,12 +28,14 @@ const Pricing = () => {
 				<br />
 				<br />
 				<div
-					className="p-3 space-y-3 flex flex-col md:flex-row md:space-x-3 md:space-y-0 justify-center items-center"
+					className="p-3 space-y-3 flex flex-col lg:flex-row lg:space-x-3 lg:space-y-0 justify-center items-center"
 					style={{ fontSize: 18 }}
 				>
 					<div
-						style={{height : 625 , maxWidth : 400}}
-						className={" w-full md:w-70 border-2 rounded-lg border-gray-300 p-4"}
+						style={{ height: 625, maxWidth: 400 }}
+						className={
+							" w-full md:w-70 border-2 rounded-lg border-gray-300 p-4"
+						}
 					>
 						<div
 							className="text-xl"
@@ -52,7 +55,7 @@ const Pricing = () => {
 									"https://alpclientofficial.azurewebsites.net/"
 								}
 							>
-								<a style={{ padding: '10px 20px' }}>
+								<a style={{ padding: "10px 20px" }}>
 									<ButtonComponent
 										text={"Get started"}
 										filled={false}
@@ -94,8 +97,10 @@ const Pricing = () => {
 						</div>
 					</div>
 					<div
-						style={{height : 625 , maxWidth : 400}}
-						className={" w-full border-2 rounded-lg border-gray-300 p-4"}
+						style={{ height: 625, maxWidth: 400 }}
+						className={
+							" w-full border-2 rounded-lg border-gray-300 p-4"
+						}
 					>
 						<div
 							className="text-xl"
@@ -111,7 +116,7 @@ const Pricing = () => {
 						<br />
 						<div className="flex justify-center">
 							<Link href={"/contact"}>
-								<a style={{ padding: '10px 20px' }}>
+								<a style={{ padding: "10px 20px" }}>
 									<ButtonComponent
 										text={"Contact sales"}
 										filled={false}
@@ -164,8 +169,10 @@ const Pricing = () => {
 						</div>
 					</div>
 					<div
-						style={{height : 625 , maxWidth : 400}}
-						className={" w-full md:w-70 border-2 rounded-lg border-gray-300 p-4"}
+						style={{ height: 625, maxWidth: 400 }}
+						className={
+							" w-full md:w-70 border-2 rounded-lg border-gray-300 p-4"
+						}
 					>
 						<div
 							className="text-xl"
@@ -181,7 +188,7 @@ const Pricing = () => {
 						<br />
 						<div className="flex justify-center">
 							<Link href={"/contact"}>
-								<a style={{ padding: '10px 20px' }}>
+								<a style={{ padding: "10px 20px" }}>
 									<ButtonComponent
 										text={"Contact sales"}
 										filled={false}
@@ -236,8 +243,8 @@ const Pricing = () => {
 					<div className="text-xl md:text-3xl text-center md:text-left text-gray-500">
 						Why DataNeuron?
 					</div>
-					
-					<div className="flex flex-wrap justify-center lg:justify-between space-x-3">
+
+					<div className="flex flex-wrap justify-center space-x-3">
 						<div
 							className="p-3 lg:border-r-2 lg:border-b-0 border-gray-300 flex md:block items-center flex-col"
 							style={{ width: 240 }}
@@ -284,12 +291,14 @@ const Pricing = () => {
 								<div className="text-2xl text-gray-400 pr-2">
 									02
 								</div>
-								<div className="font-bold">Secure Platform</div>
+								<div className="font-bold">
+									Guided Annotation
+								</div>
 							</div>
 
 							<div className={"text-center md:text-left"}>
-								Secure Data Platform for data exchange and model
-								creation.
+								DataNeuron performs guided and automated
+								annotation on the data.
 							</div>
 						</div>
 						<div

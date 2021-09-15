@@ -84,8 +84,8 @@ const Product = () => {
 			title: "Explainable Data Validation",
 			imageUrl: [
 				"img/animation/validate/validate1.png",
-				"img/animation/validate/validate2.png",
 				"img/animation/validate/validate3.png",
+				"img/animation/validate/validate2.png",
 				"img/animation/validate/validate4.png",
 			],
 			para: (
@@ -110,7 +110,11 @@ const Product = () => {
 		{
 			id: 2757,
 			title: "AutoML",
-			imageUrl: ["/img/howitworks/work4.gif"],
+			imageUrl: [
+				"/img/animation/train/train1.svg",
+				"/img/animation/train/train2.svg",
+				"/img/animation/train/train3.svg",
+			],
 			para: (
 				<>
 					<p>
@@ -260,12 +264,13 @@ const Product = () => {
 	]
 
 	return (
-		<Layout>
-			<dir className={"xl:hidden"}>
-				<br />
-				<br />
-				<br />
-			</dir>
+		<Layout
+			url={"/product"}
+			description={
+				"Use the Time Machine for AI to accelerate your model deployment."
+			}
+			title={"Product | Dataneuron"}
+		>
 			<div className={"px-3 md:px-5 lg:px-10 lg:pt-20"}>
 				<div className="text-center text-3xl px-3 md:text-4xl">
 					Use the Time Machine for AI to accelerate your model
@@ -292,14 +297,14 @@ const Product = () => {
 							target="_blank"
 							rel="noreferrer"
 						>
-							<button className="bg-blue-600 text-white  border border-blue-600 hover:bg-white hover:text-blue-600 py-2 px-7 rounded-full text-lg">
+							<button className="bg-blue-600 duration-300 text-white  border border-blue-600 hover:bg-white hover:text-blue-600 py-2 px-7 rounded-full text-lg">
 								Get Started
 							</button>
 						</a>
 						<br />
 						<Link href={"/contact"}>
 							<a>
-								<button className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg">
+								<button className="bg-white duration-300 text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white py-2 px-7 rounded-full text-lg">
 									View Demo
 								</button>
 							</a>
@@ -313,7 +318,9 @@ const Product = () => {
 						margin: "60px 30px",
 					}}
 				>
-					<div className="text-xl mb-6">The DataNeuron Pipeline</div>
+					<div className="text-xl mb-6 text-center md:text-left">
+						The DataNeuron Pipeline
+					</div>
 
 					<div className={"block md:hidden"}>
 						<div className={"flex justify-center"}>
@@ -393,14 +400,20 @@ const Product = () => {
 							>
 								{how_it_works.map((data, i) => {
 									return (
-										<div key={Math.random() * i} style={{ width: 340 }}>
+										<div
+											key={Math.random() * i}
+											style={{ width: 340 }}
+											className={
+												"border-2 border-gray-200 p-3"
+											}
+										>
 											<ImageSequence
 												width={320}
 												images={data.imageUrl}
 											/>
 
 											<div
-												className="font-bold w-full"
+												className="font-bold w-full text-center"
 												style={{ fontSize: 25 }}
 											>
 												{data.title}
@@ -424,9 +437,9 @@ const Product = () => {
 							/>
 						</div>
 						<div className={"hidden md:block"}>
-							<div className="flex justify-end">
+							<div className="flex justify-start">
 								<div
-									className={`flex p-3 my-5 overflow-scroll hide-scroll ${style.hide_scroll}`}
+									className={`flex py-5 overflow-scroll hide-scroll ${style.hide_scroll}`}
 								>
 									{tabs.map((tab, i) => {
 										return (
@@ -444,7 +457,7 @@ const Product = () => {
 															? "underline"
 															: "none",
 												}}
-												className={`cursor-pointer hover:bg-gray-100 px-3 py-2`}
+												className={`cursor-pointer hover:bg-gray-100 px-3`}
 											>
 												{tab.text}
 											</div>
@@ -484,9 +497,7 @@ const Product = () => {
 				</div>
 
 				<div className={"p-3 lg:px-20"}>
-					<div
-						className="my-6 text-center text-xl md:text-2xl md:text-left text-gray-600"
-					>
+					<div className="my-6 text-center text-xl md:text-2xl md:text-left text-gray-600">
 						Why choose DataNeuron?
 					</div>
 					<div className="md:flex md:space-x-6 pb-3 xl:justify-center scroll_custom md:overflow-x-auto">
@@ -523,10 +534,9 @@ const Product = () => {
 							Use Cases
 						</div>
 						<div className="flex md:items-stretch flex-col md:flex-row items-center justify-center xl:justify-start">
-							{use_cases.slice(0,4).map((use, i) => {
+							{use_cases.slice(0, 4).map((use, i) => {
 								return (
 									<div
-										
 										key={Math.random() * i}
 										className="w-full rounded-md flex border-2 border-blue-600 p-3 items-center justify-center md:space-x-3 m-3"
 									>
@@ -543,10 +553,9 @@ const Product = () => {
 							})}
 						</div>
 						<div className="flex flex-col md:items-stretch md:flex-row items-center justify-center xl:justify-start">
-							{use_cases.slice(4,8).map((use, i) => {
+							{use_cases.slice(4, 8).map((use, i) => {
 								return (
 									<div
-									
 										key={Math.random() * i}
 										className="w-full rounded-md flex border-2 border-blue-600 p-3 items-center justify-center md:space-x-3 m-3"
 									>
