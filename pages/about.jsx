@@ -113,8 +113,7 @@ const About = () => {
 								/>
 								<br />
 								<div className="text-center text-lg">
-									200%-400% customers’ ROI from DataNeuron’s
-									solution(s).
+									Increase efficiency by bringing 90%+ first-pass machine accuracy.
 								</div>
 							</div>
 						</div>

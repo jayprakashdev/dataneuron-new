@@ -476,7 +476,7 @@ function Home({ posts }) {
 						<a
 							style={{ width: "177px" }}
 							className={
-								"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3 hover:bg-blue-600 hover:text-white"
+								"flex w-full duration-300 justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3 hover:bg-blue-600 hover:text-white"
 							}
 						>
 							<div>View all</div>
