@@ -2,20 +2,24 @@ import { useRouter } from "next/dist/client/router"
 import React from "react"
 import Layout from "../../components/layout"
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/graphcms"
-import { RichText } from '@graphcms/rich-text-react-renderer'
-
+import { RichText } from "@graphcms/rich-text-react-renderer"
 
 const PostDetails = ({ post, morePosts, preview }) => {
 	let router = useRouter()
 
 	return (
-		<Layout>
+		<Layout
+			title={post.title}
+			description={post.title}
+			url={"/" + post.slug}
+		>
 			{router.isFallback ? (
 				<div className="text-xl">Loading ...</div>
 			) : (
 				<div className={"md:flex justify-center p-6"}>
-				
-					<main className={"lg:w-4/6 pt-20 flex flex-col md:space-y-6"}>
+					<main
+						className={"lg:w-4/6 pt-20 flex flex-col md:space-y-6"}
+					>
 						<div className="text-4xl">{post.title}</div>
 						<div className={"text-gray-500"}>
 							Written by{" "}
@@ -30,12 +34,64 @@ const PostDetails = ({ post, morePosts, preview }) => {
 							<RichText
 								content={post.content.raw.children}
 								renderers={{
-									img : (props) => <div style={{display : 'flex', width : "100%" , justifyContent : "center"}}><img src={props.src} /></div>,
-									p : (props) => <div> <p style={{fontSize : 18}}>{props.children}</p><br/> </div>,
-									h3 : (props) => <div style={{fontWeight : "bold" , fontSize : 26}}>{props.children}</div>,
-									table : (props) => <div style={{overflowX : "auto"}}><table style={{border : "1px solid #000"}}>{props.children}</table></div>,
-									table_row : (props) => <tr style={{border : "1px solid #000"}}>{props.children}</tr>,
-									table_cell : (props) => <td style={{border : "1px solid #000" , textAlign : "center"}}>{props.children}</td>,
+									img: (props) => (
+										<div
+											style={{
+												display: "flex",
+												width: "100%",
+												justifyContent: "center",
+											}}
+										>
+											<img src={props.src} />
+										</div>
+									),
+									p: (props) => (
+										<div>
+											{" "}
+											<p style={{ fontSize: 18 }}>
+												{props.children}
+											</p>
+											<br />{" "}
+										</div>
+									),
+									h3: (props) => (
+										<div
+											style={{
+												fontWeight: "bold",
+												fontSize: 26,
+											}}
+										>
+											{props.children}
+										</div>
+									),
+									table: (props) => (
+										<div style={{ overflowX: "auto" }}>
+											<table
+												style={{
+													border: "1px solid #000",
+												}}
+											>
+												{props.children}
+											</table>
+										</div>
+									),
+									table_row: (props) => (
+										<tr
+											style={{ border: "1px solid #000" }}
+										>
+											{props.children}
+										</tr>
+									),
+									table_cell: (props) => (
+										<td
+											style={{
+												border: "1px solid #000",
+												textAlign: "center",
+											}}
+										>
+											{props.children}
+										</td>
+									),
 								}}
 							/>
 						</div>

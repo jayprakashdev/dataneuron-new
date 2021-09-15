@@ -111,8 +111,16 @@ function Home({ posts }) {
 		updateValue()
 	}, [classes, paras])
 	return (
-		<Layout>
-		
+		<Layout
+			description={
+				"Advanced platform for complex data annotations, model training, prediction & lifecycle management."
+			}
+			title={"Home | Dataneuron"}
+			description={
+				"Advanced platform for complex data annotations, model training, prediction & lifecycle management."
+			}
+			url={"/"}
+		>
 			<div className={"px-5 lg:px-14 pt-24 lg:pt-0"}>
 				<div className="flex justify-center w-full lg:pt-0">
 					<div
@@ -150,7 +158,7 @@ function Home({ posts }) {
 						<div>
 							<div className={"text-2xl md:text-4xl"}>
 								Our Aim is to accelerate the development of AI{" "}
-								 models and provide explainability of AI.
+								models and provide explainability of AI.
 							</div>
 
 							<div className={"flex my-5"}>
@@ -428,7 +436,9 @@ function Home({ posts }) {
 						</div>
 					</div>
 				</Fade>
-				<div className="mt-14 text-gray-500 text-xl">Resources</div>
+				<div className="mt-14 text-gray-500 text-xl">
+					<Resources></Resources>
+				</div>
 				<div className="flex space-x-6 scroll_custom overflow-x-auto w-full p-3">
 					{posts.map((post) => {
 						return (

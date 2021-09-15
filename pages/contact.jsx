@@ -47,8 +47,13 @@ let Contact = () => {
 		}
 	}
 	return (
-		<Layout>
-		
+		<Layout
+			title={"Contact us | DataNeuron"}
+			description={
+				"Contact us page. Contact us for demo or for knowing more about how you can do data annotations, model training, prediction & lifecycle management."
+			}
+			url={"/contact"}
+		>
 			<div className="flex flex-wrap space-y-6 lg:space-y-0 py-5 px-5 lg:px-20">
 				<div className=" xl:w-1/2 w-full">
 					<div className="text-3xl">
