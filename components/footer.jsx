@@ -72,7 +72,7 @@ let Footer = () => {
 									}}
 									style={{ fontSize: 20 }}
 								>
-									Resouces
+									Resources
 								</div>
 							</a>
 						</Link>

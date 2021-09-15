@@ -25,9 +25,14 @@ const ResourcePage = ({ posts }) => {
 				minHeight: "100vh",
 			}}
 		>
-			<Layout>
+			<Layout
+				title={"Resources | DataNeuron"}
+				description={
+					"Find Resources for DataNeuron - Case Studies, Whitepapers and Feature Catalog"
+				}
+				url={"/resources"}
+			>
 				<div className="w-full p-6 lg:px-20">
-				
 					<div className="w-full">
 						<h1
 							className="flex justify-center w-full mb-5"
@@ -137,7 +142,10 @@ const ResourcePage = ({ posts }) => {
 																`/posts/${post.slug}`
 															)
 														}
-														style={{ width: 330 , margin : "20px 26px" }}
+														style={{
+															width: 330,
+															margin: "20px 26px",
+														}}
 														className="transform hover:scale-105 duration-300 cursor-pointer flex flex-col justify-between border-t border-b border-gray-300"
 													>
 														<div>
@@ -177,14 +185,16 @@ const ResourcePage = ({ posts }) => {
 									: posts.map((post) => {
 											return (
 												<div
-													
 													key={post.id}
 													onClick={() =>
 														router.push(
 															`/posts/${post.slug}`
 														)
 													}
-													style={{ width: 330 , margin : "20px 26px" }}
+													style={{
+														width: 330,
+														margin: "20px 26px",
+													}}
 													className="cursor-pointer transform hover:scale-105 duration-300 flex flex-col justify-between border-t border-b border-gray-300"
 												>
 													<div>

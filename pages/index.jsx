@@ -1,6 +1,5 @@
 import Game from "../components/game"
 import Layout from "../components/layout"
-import { Typewriter } from "react-simple-typewriter"
 import { getAllPosts } from "../lib/graphcms"
 import style from "../styles/homepage.module.css"
 import { useRouter } from "next/router"
@@ -103,16 +102,21 @@ function Home({ posts }) {
 		setOutput({
 			roi: ROI.toFixed(2),
 			time_reduction: time_reduction.toFixed(2),
-			dataNeuron_time: Math.round(Total_Dataneuron_ALP_cost),
-			manual_time: Math.round(total_in_house_team_cost),
+			dataNeuron_time: Math.round(total_time_data_neuron_tool),
+			manual_time: Math.round(total_time_in_house),
 		})
 	}
 	useEffect(() => {
 		updateValue()
 	}, [classes, paras])
 	return (
-		<Layout>
-		
+		<Layout
+			title={"Homepage | DataNeuron"}
+			url={"/"}
+			description={
+				"Advanced platform for complex data annotations, model training, prediction & lifecycle management"
+			}
+		>
 			<div className={"px-5 lg:px-14 pt-24 lg:pt-0"}>
 				<div className="flex justify-center w-full lg:pt-0">
 					<div
@@ -150,7 +154,7 @@ function Home({ posts }) {
 						<div>
 							<div className={"text-2xl md:text-4xl"}>
 								Our Aim is to accelerate the development of AI{" "}
-								 models and provide explainability of AI.
+								models and provide explainability of AI.
 							</div>
 
 							<div className={"flex my-5"}>
@@ -428,7 +432,6 @@ function Home({ posts }) {
 						</div>
 					</div>
 				</Fade>
-				<div className="mt-14 text-gray-500 text-xl">Resources</div>
 				<div className="flex space-x-6 scroll_custom overflow-x-auto w-full p-3">
 					{posts.map((post) => {
 						return (
@@ -473,7 +476,7 @@ function Home({ posts }) {
 						<a
 							style={{ width: "177px" }}
 							className={
-								"flex w-full justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3 hover:bg-blue-600 hover:text-white"
+								"flex w-full duration-300 justify-center border-2 border-blue-600 rounded-full cursor-pointer text-blue-600 py-3 hover:bg-blue-600 hover:text-white"
 							}
 						>
 							<div>View all</div>

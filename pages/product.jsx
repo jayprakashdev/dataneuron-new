@@ -264,8 +264,13 @@ const Product = () => {
 	]
 
 	return (
-		<Layout>
-		
+		<Layout
+			url={"/product"}
+			description={
+				"Use the Time Machine for AI to accelerate your model deployment."
+			}
+			title={"Product | Dataneuron"}
+		>
 			<div className={"px-3 md:px-5 lg:px-10 lg:pt-20"}>
 				<div className="text-center text-3xl px-3 md:text-4xl">
 					Use the Time Machine for AI to accelerate your model
@@ -313,7 +318,9 @@ const Product = () => {
 						margin: "60px 30px",
 					}}
 				>
-					<div className="text-xl mb-6 text-center md:text-left">The DataNeuron Pipeline</div>
+					<div className="text-xl mb-6 text-center md:text-left">
+						The DataNeuron Pipeline
+					</div>
 
 					<div className={"block md:hidden"}>
 						<div className={"flex justify-center"}>
@@ -396,7 +403,9 @@ const Product = () => {
 										<div
 											key={Math.random() * i}
 											style={{ width: 340 }}
-											className={"border-2 border-gray-200 p-3"}
+											className={
+												"border-2 border-gray-200 p-3"
+											}
 										>
 											<ImageSequence
 												width={320}

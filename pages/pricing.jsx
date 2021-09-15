@@ -5,7 +5,13 @@ import Link from "next/link"
 const Pricing = () => {
 	return (
 		<div className="w-full" style={{ background: "#fafafa" }}>
-			<Layout>
+			<Layout
+				url={"/pricing"}
+				description={
+					"Ready to Start with DataNeuron? Use The Time Machine for AI to accelerate your model development!"
+				}
+				title={"Pricing | Dataneuron"}
+			>
 				<div
 					className="text-center text-3xl md:text-4xl"
 					style={{ marginBottom: 25 }}
