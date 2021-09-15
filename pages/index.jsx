@@ -1,6 +1,5 @@
 import Game from "../components/game"
 import Layout from "../components/layout"
-import { Typewriter } from "react-simple-typewriter"
 import { getAllPosts } from "../lib/graphcms"
 import style from "../styles/homepage.module.css"
 import { useRouter } from "next/router"
@@ -112,11 +111,11 @@ function Home({ posts }) {
 	}, [classes, paras])
 	return (
 		<Layout
-			title={"Home | Dataneuron"}
-			description={
-				"Advanced platform for complex data annotations, model training, prediction & lifecycle management."
-			}
+			title={"Homepage | DataNeuron"}
 			url={"/"}
+			description={
+				"Advanced platform for complex data annotations, model training, prediction & lifecycle management"
+			}
 		>
 			<div className={"px-5 lg:px-14 pt-24 lg:pt-0"}>
 				<div className="flex justify-center w-full lg:pt-0">
@@ -433,9 +432,6 @@ function Home({ posts }) {
 						</div>
 					</div>
 				</Fade>
-				<div className="mt-14 text-gray-500 text-xl">
-					<Resources></Resources>
-				</div>
 				<div className="flex space-x-6 scroll_custom overflow-x-auto w-full p-3">
 					{posts.map((post) => {
 						return (
