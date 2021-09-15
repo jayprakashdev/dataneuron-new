@@ -103,8 +103,8 @@ function Home({ posts }) {
 		setOutput({
 			roi: ROI.toFixed(2),
 			time_reduction: time_reduction.toFixed(2),
-			dataNeuron_time: Math.round(Total_Dataneuron_ALP_cost),
-			manual_time: Math.round(total_in_house_team_cost),
+			dataNeuron_time: Math.round(total_time_data_neuron_tool),
+			manual_time: Math.round(total_time_in_house),
 		})
 	}
 	useEffect(() => {
