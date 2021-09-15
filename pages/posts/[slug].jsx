@@ -9,9 +9,9 @@ const PostDetails = ({ post, morePosts, preview }) => {
 
 	return (
 		<Layout
-			title={post.title}
-			description={post.title}
-			url={"/" + post.slug}
+			title={post.title ? post.title : "Post | Dataneuron"}
+			description={post.title ? post.title : "Post | Dataneuron"}
+			url={post.slug ? "/" + post.slug : "/"}
 		>
 			{router.isFallback ? (
 				<div className="text-xl">Loading ...</div>
