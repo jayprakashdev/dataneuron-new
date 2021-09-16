@@ -1,0 +1,154 @@
+Validating found git in: git
+Using git 2.17.1 from git
+> git rev-parse --git-dir
+Open repository: /home/hp-precily/shubham/dailywork/alp
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :logs.txt
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/logs.txt
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/hp-precily/shubham/dailywork/alp/logs.txt
+> git check-ignore -v -z --stdin
+> git show --textconv :app/flaskapp.py
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/app/flaskapp.py
+> git cat-file -s ea1c0f7098b8c42c731cc3f933fb4d8608de1b54
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/hp-precily/shubham/dailywork/alp/app/flaskapp.py
+> git show --textconv :param_bounds.py
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/param_bounds.py
+> git cat-file -s 934a5aa4f6002eed7bd2e952b688ded0f635cb55
+> git show --textconv :logs.txt
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/logs.txt
+> git show --textconv :app_requirements.txt
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/app_requirements.txt
+> git cat-file -s 7e7307c512813453382b8a0442d3b8ec139dd4ef
+> git check-ignore -v -z --stdin
+> git show --textconv :dockerfiles/alp.Dockerfile
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/alp.Dockerfile
+> git cat-file -s 4cde338c5824aef4598a56107a71fbad04de1e04
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/alp.Dockerfile
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :prod.env
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/prod.env
+> git cat-file -s 2bba837fbe984efa69cfd5e30db34e26f7068042
+> git show --textconv :dockerfiles/alp.Dockerfile
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/alp.Dockerfile
+> git cat-file -s 4cde338c5824aef4598a56107a71fbad04de1e04
+> git show --textconv :dockerfiles/alp.Dockerfile
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/alp.Dockerfile
+> git cat-file -s 4cde338c5824aef4598a56107a71fbad04de1e04
+> git show --textconv :dockerfiles/alpworker.Dockerfile
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/alpworker.Dockerfile
+> git cat-file -s be04f11040d27a11abd83865756e45c34116dbde
+> git show --textconv :dockerfiles/automl.Dockerfile
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/automl.Dockerfile
+> git cat-file -s ee3a469b7cfae5064b1b4e81e63e23ee84da5aab
+> git show --textconv :dockerfiles/automlworker.Dockerfile
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/automlworker.Dockerfile
+> git cat-file -s 6d09d82fc4a37fa9c41bee35ca0b5da0b342a1ef
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv HEAD:prod.env
+> git ls-tree -l HEAD -- /home/hp-precily/shubham/dailywork/alp/prod.env
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/prod.env
+> git cat-file -s a776ee6b7737ab1d62171f824e8e6e1eb7acbd53
+> git show --textconv :prod.env
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/prod.env
+> git cat-file -s a776ee6b7737ab1d62171f824e8e6e1eb7acbd53
+> git show --textconv :prod.env
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/prod.env
+> git status -z -u
+> git cat-file -s a776ee6b7737ab1d62171f824e8e6e1eb7acbd53
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/prod.env
+> git show --textconv :prod.env
+> git cat-file -s a776ee6b7737ab1d62171f824e8e6e1eb7acbd53
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv HEAD:prod.env
+> git ls-tree -l HEAD -- /home/hp-precily/shubham/dailywork/alp/prod.env
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-tree -l HEAD -- /home/hp-precily/shubham/dailywork/alp/prod.env
+> git show --textconv :app/flaskapp.py
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/app/flaskapp.py
+> git cat-file -s ea1c0f7098b8c42c731cc3f933fb4d8608de1b54
+> git show --textconv :dockerfiles/alp.Dockerfile
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/alp.Dockerfile
+> git cat-file -s 82ccaead022e04f874216e153d103527de6552d6
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/alp.Dockerfile
+> git cat-file -s 82ccaead022e04f874216e153d103527de6552d6
+> git show --textconv :dockerfiles/alp.Dockerfile
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/alp.Dockerfile
+> git config --get commit.template
+> git cat-file -s 82ccaead022e04f874216e153d103527de6552d6
+> git show --textconv :dockerfiles/alp.Dockerfile
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/alp/dockerfiles/alp.Dockerfile
+> git cat-file -s 82ccaead022e04f874216e153d103527de6552d6
+> git show --textconv :dockerfiles/alp.Dockerfile
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/dev refs/remotes/dev
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template

@@ -39,6 +39,8 @@ let Contact = () => {
 						messsage: contactDetails.message,
 					}),
 				})
+
+				
 				console.log(data)
 				setShowMsg(true)
 			} catch (err) {

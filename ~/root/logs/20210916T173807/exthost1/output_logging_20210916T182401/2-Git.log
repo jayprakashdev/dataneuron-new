@@ -1,0 +1,31 @@
+Validating found git in: git
+Using git 2.17.1 from git
+> git rev-parse --git-dir
+Open repository: /home/hp-precily/shubham/dailywork/dataneuron_official_website
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git -c user.useConfigOnly=true commit --quiet --allow-empty-message --file -
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+> git show --textconv HEAD:pages/contact.jsx
+> git show --textconv :pages/contact.jsx
+> git ls-tree -l HEAD -- /home/hp-precily/shubham/dailywork/dataneuron_official_website/pages/contact.jsx
+> git ls-files --stage -- /home/hp-precily/shubham/dailywork/dataneuron_official_website/pages/contact.jsx
+> git cat-file -s 3a94554384d2969f0531e5fd70954fe5041ad293
+> git check-ignore -v -z --stdin
+> git show --textconv :1:.github/workflows/nextjs_deployment_workflow.yaml
+> git show --textconv :2:.github/workflows/nextjs_deployment_workflow.yaml
+> git ls-tree -l :1 -- /home/hp-precily/shubham/dailywork/dataneuron_official_website/.github/workflows/nextjs_deployment_workflow.yaml
+> git ls-tree -l :2 -- /home/hp-precily/shubham/dailywork/dataneuron_official_website/.github/workflows/nextjs_deployment_workflow.yaml
+fatal: Not a valid object name :1
+fatal: Not a valid object name :2
+> git check-ignore -v -z --stdin
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/hp-precily/shubham/dailywork/dataneuron_official_website/.github/workflows/nextjs_deployment_workflow.yaml
