@@ -1,5 +1,0 @@
-[2021-09-16 17:38:11.542] [sharedprocess] [info] Deleted from disk ms-python.python /root/.vscode/extensions/ms-python.python-2021.9.1218897484
-[2021-09-16 17:38:20.001] [sharedprocess] [info] [logs cleanup]: Starting to clean up old logs.
-[2021-09-16 17:38:40.000] [sharedprocess] [info] [code cache cleanup]: Starting to clean up old code cache folders.
-[2021-09-16 17:38:40.001] [sharedprocess] [info] [storage cleanup]: Starting to clean up storage folders.
-[2021-09-16 17:38:50.000] [sharedprocess] [info] [language pack cache cleanup]: Starting to clean up unused language packs.
