@@ -156,7 +156,7 @@ const ResourcePage = ({ posts }) => {
 																	: post.postType ===
 																	  PostTypes.WHITEPAPERS
 																	? "WHITEPAPER"
-																	: "FEATURE CATUALOG"}
+																	: "FEATURE CATALOG"}
 															</p>
 															<ImageCard
 																title={
@@ -174,9 +174,7 @@ const ResourcePage = ({ posts }) => {
 																<div className="text-sm text-gray-400">
 																	2021
 																</div>
-																<div className="text-sm text-gray-400">
-																	FINANCE
-																</div>
+															
 															</div>
 														</div>
 													</div>
@@ -205,7 +203,7 @@ const ResourcePage = ({ posts }) => {
 																: post.postType ===
 																  PostTypes.WHITEPAPERS
 																? "WHITEPAPER"
-																: "FEATURE CATUALOG"}
+																: "FEATURE CATALOG"}
 														</p>
 														<ImageCard
 															title={post.title}
@@ -220,9 +218,7 @@ const ResourcePage = ({ posts }) => {
 															<div className="text-sm text-gray-400">
 																2021
 															</div>
-															<div className="text-sm text-gray-400">
-																FINANCE
-															</div>
+															
 														</div>
 													</div>
 												</div>

@@ -184,7 +184,7 @@ const Product = () => {
 		{
 			id: 1747,
 			title: "DataNeuron’s Intuitive Interface",
-			imageUrl: ["/img/howitworks/interface.svg"],
+			imageUrl: ["/img/interface.svg"],
 			para: (
 				<>
 					<p>
@@ -437,7 +437,7 @@ const Product = () => {
 							/>
 						</div>
 						<div className={"hidden md:block"}>
-							<div className="flex justify-start">
+							<div className="flex justify-end">
 								<div
 									className={`flex py-5 overflow-scroll hide-scroll ${style.hide_scroll}`}
 								>
@@ -467,7 +467,7 @@ const Product = () => {
 							</div>
 
 							<div className="border-2 border-gray-300 lg:flex justify-between lg:px-24 py-12">
-								<div className="lg:w-1/2 flex justify-center">
+								<div className="lg:w-1/2 flex justify-center mr-12">
 									<ImageSequence
 										style={{ width: "100%" }}
 										images={how_it_works[active].imageUrl}

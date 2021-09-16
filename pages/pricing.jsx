@@ -55,11 +55,13 @@ const Pricing = () => {
 									"https://alpclientofficial.azurewebsites.net/"
 								}
 							>
-								<a style={{ padding: "10px 20px" }}>
-									<ButtonComponent
-										text={"Get started"}
-										filled={false}
-									/>
+								<a
+									style={{ padding: "10px 20px" }}
+									className={
+										"px-3 py-1 duration-300 border-2 border-blue-700 rounded-full hover:bg-blue-700 hover:text-white text-blue-700"
+									}
+								>
+									Get Started
 								</a>
 							</Link>
 						</div>
@@ -116,11 +118,13 @@ const Pricing = () => {
 						<br />
 						<div className="flex justify-center">
 							<Link href={"/contact"}>
-								<a style={{ padding: "10px 20px" }}>
-									<ButtonComponent
-										text={"Contact sales"}
-										filled={false}
-									/>
+								<a
+									style={{ padding: "10px 20px" }}
+									className={
+										"px-3 py-1 duration-300 border-2 border-blue-700 rounded-full hover:bg-blue-700 hover:text-white text-blue-700"
+									}
+								>
+									Contact Sales
 								</a>
 							</Link>
 						</div>
@@ -188,11 +192,13 @@ const Pricing = () => {
 						<br />
 						<div className="flex justify-center">
 							<Link href={"/contact"}>
-								<a style={{ padding: "10px 20px" }}>
-									<ButtonComponent
-										text={"Contact sales"}
-										filled={false}
-									/>
+								<a
+									style={{ padding: "10px 20px" }}
+									className={
+										"px-3 py-1 duration-300 border-2 border-blue-700 rounded-full hover:bg-blue-700 hover:text-white text-blue-700"
+									}
+								>
+									Contact Sales
 								</a>
 							</Link>
 						</div>
