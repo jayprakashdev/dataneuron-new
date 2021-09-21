@@ -7,6 +7,8 @@ import { RichText } from "@graphcms/rich-text-react-renderer"
 const PostDetails = ({ post, morePosts, preview }) => {
 	let router = useRouter()
 
+
+	
 	return (
 		<Layout
 			title={post ? post.title : "Post | Dataneuron"}

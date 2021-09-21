@@ -6,6 +6,11 @@ let Game = () => {
 	let [ballPos, setBallPos] = useState(100)
 	let [direction, setDirection] = useState("forward")
 
+
+
+
+
+	
 	let [windowWidth, setWindowWidth] = useState(0)
 
 	let [gameData, setGameData] = useState([
