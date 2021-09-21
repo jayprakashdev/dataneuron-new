@@ -12,7 +12,7 @@ const PostDetails = ({ post, morePosts, preview }) => {
 			title={post ? post.title : "Post | Dataneuron"}
 			description={post ? post.title : "Post | Dataneuron"}
 			url={post ? "/" + post.slug : "/"}
-			photo={post.coverImage.url ? "/" + post.cover : "/"}
+			photo={post ? post.coverImage.url : "/dataneuron.jpg"}
 		>
 			{router.isFallback ? (
 				<div className="text-xl">Loading ...</div>
