@@ -2,12 +2,16 @@ import Navbar from "./navbar"
 import Head from "next/head"
 import Footer from "./footer"
 
-const Layout = ({ children , title , description , url }) => {
+const Layout = ({ children , title , description , url , photo }) => {
 	return (
 		<div>
 			<Head>
 				<title>{title ? title : "DataNeuron"}</title>
 				<link rel="icon" type="image/png" href="/favicon.png" />
+	
+				<meta name="twitter:card" content="summary" />
+			
+        		<meta property="og:image" content={photo ? photo : "/img/dataneuron.jpg"} />
 				<meta name="description" content={description ? description : "Advanced platform for complex data annotations, model training, prediction & lifecycle management."}/>
 				<meta property="og:title" content={title ? title : "DataNeuron | Advanced platform for complex data annotations, model training, prediction & lifecycle management."} />
 				<meta property="og:description" content={description ? description : "Advanced platform for complex data annotations, model training, prediction & lifecycle management."} />
