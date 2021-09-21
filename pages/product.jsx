@@ -166,7 +166,7 @@ const Product = () => {
 				<>
 					<p>
 						Continue to the deployment stage if the trained model is
-						able to match his expectations
+						able to match the expectations
 					</p>
 					<br />
 

@@ -43,15 +43,15 @@ const PostDetails = ({ post, morePosts, preview }) => {
 											}}
 										>
 											<img src={props.src} />
+											<br />
 										</div>
 									),
 									p: (props) => (
 										<div>
-											{" "}
 											<p style={{ fontSize: 18 }}>
 												{props.children}
 											</p>
-											<br />{" "}
+											<br />
 										</div>
 									),
 									h3: (props) => (
@@ -59,13 +59,14 @@ const PostDetails = ({ post, morePosts, preview }) => {
 											style={{
 												fontWeight: "bold",
 												fontSize: 26,
+												marginBottom : 5
 											}}
 										>
 											{props.children}
 										</div>
 									),
 									table: (props) => (
-										<div style={{ overflowX: "auto" }}>
+										<div style={{ overflowX: "auto"}}>
 											<table
 												style={{
 													border: "1px solid #000",
@@ -92,6 +93,27 @@ const PostDetails = ({ post, morePosts, preview }) => {
 											{props.children}
 										</td>
 									),
+									h6: (props) => (
+										<div
+											style={{
+												fontWeight: "bold",
+												fontSize: 20,
+												marginTop : 30
+											}}
+										>
+											{props.children}
+										</div>
+									),
+									ul : (props) => (
+										<ol>
+											{props.children}
+										</ol>
+									),
+									li : (props) => (
+										<li>
+											{props.children}
+										</li>
+									)
 								}}
 							/>
 						</div>
