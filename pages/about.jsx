@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import ButtonComponent from "../components/buttonComponent";
 import Layout from "../components/layout";
 import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
@@ -168,6 +166,22 @@ const About = () => {
                   alt="Windrose Captical"
                 />
                 <p className="my-2 w-full text-center font-bold">Bharath Rao</p>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/sheetaldarekar/">
+              <div
+                className={
+                  "flex justify-center flex-col items-center transform hover:scale-105 duration-500"
+                }
+              >
+                <img
+                  className={"rounded-full"}
+                  width={200}
+                  height={200}
+                  src="/img/sheetal.jpg"
+                  alt="Sheetal Darekar"
+                />
+                <p className="my-2 w-full text-center font-bold">Sheetal Darekar</p>
               </div>
             </a>
             <a href="ps://www.linkedin.com/in/rohit-goyal/">
