@@ -165,7 +165,7 @@ const About = () => {
                 />
                 <p className="my-2 w-full text-center font-bold">
                   Bharath Rao <br />
-                  <div className="text-gray-400">Cofounder / CEO</div>
+                  <div className="text-gray-400">Founder / CEO</div>
                 </p>
               </div>
             </a>
