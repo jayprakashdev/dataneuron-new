@@ -158,12 +158,15 @@ const About = () => {
                 }
               >
                 <img
-                  width={200}
-                  height={200}
+                  width={180}
+                  height={180}
                   src="/img/bharath.svg"
                   alt="Windrose Captical"
                 />
-                <p className="my-2 w-full text-center font-bold">Bharath Rao</p>
+                <p className="my-2 w-full text-center font-bold">
+                  Bharath Rao <br />
+                  <div className="text-gray-400">Cofounder / CEO</div>
+                </p>
               </div>
             </a>
             <a href="https://www.linkedin.com/in/sheetaldarekar/">
@@ -174,29 +177,34 @@ const About = () => {
               >
                 <img
                   className={"rounded-full"}
-                  width={200}
-                  height={200}
+                  width={180}
+                  height={180}
                   src="/img/sheetal.jpg"
                   alt="Sheetal Darekar"
                 />
                 <p className="my-2 w-full text-center font-bold">
                   Sheetal Darekar
+                  <br />
+                  <div className="text-gray-400">Cofounder</div>
                 </p>
               </div>
             </a>
-            <a href="ps://www.linkedin.com/in/rohit-goyal/">
+            <a href="https://www.linkedin.com/in/rohit-adlakha/">
               <div
                 className={
                   "flex justify-center flex-col items-center transform hover:scale-105 duration-500"
                 }
               >
                 <img
-                  width={200}
-                  height={200}
-                  src="/img/rohit_goyal.svg"
+                  width={180}
+                  height={180}
+                  src="/img/rohit_adhlaka.svg"
                   alt="Windrose Captical"
                 ></img>
-                <p className="my-2 w-full text-center font-bold">Rohit Goyal</p>
+                <p className="my-2 w-full text-center font-bold">
+                  Rohit Adlakha <br />
+                  <div className="text-gray-400">Executive Advisor</div>
+                </p>
               </div>
             </a>
             <a href="https://www.linkedin.com/in/anadvani/">
@@ -206,12 +214,16 @@ const About = () => {
                 }
               >
                 <img
-                  width={200}
-                  height={200}
+                  width={180}
+                  height={180}
                   src="/img/anil_advani.svg"
                   alt="Windrose Captical"
                 ></img>
-                <p className="my-2 w-full text-center font-bold">Anil Advani</p>
+                <p className="my-2 w-full text-center font-bold">
+                  Anil Advani
+                  <br />
+                  <div className="text-gray-400">Investor / Legal Counsel</div>
+                </p>
               </div>
             </a>
           </div>
