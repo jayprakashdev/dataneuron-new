@@ -255,13 +255,13 @@ const Product = () => {
     <Layout
       url={"/product"}
       description={
-        "Use the Time Machine for AI to accelerate your model deployment."
+        "Power your Data for AI to accelerate your model deployment."
       }
       title={"Product | Dataneuron"}
     >
       <div className={"px-3 md:px-5 lg:px-10 lg:pt-20"}>
         <div className="text-center text-3xl px-3 md:text-4xl">
-          Use the Time Machine for AI to accelerate your model deployment.
+          Power your Data for AI to accelerate your model deployment.
         </div>
         <div className="flex justify-center my-3">
           <div

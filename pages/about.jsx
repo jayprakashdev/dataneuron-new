@@ -148,9 +148,7 @@ const About = () => {
             </a>
           </div>
         </div>
-        <p className="w-full text-center py-3 text-lg">
-          Our Company Leadership
-        </p>
+        <p className="w-full text-center py-3 text-lg">Our Team</p>
         <div className="lg:flex justify-center mb-3 w-full">
           <div className="lg:flex lg:space-x-12 justify-between">
             <a href="https://www.linkedin.com/in/bharrao/">
@@ -181,7 +179,9 @@ const About = () => {
                   src="/img/sheetal.jpg"
                   alt="Sheetal Darekar"
                 />
-                <p className="my-2 w-full text-center font-bold">Sheetal Darekar</p>
+                <p className="my-2 w-full text-center font-bold">
+                  Sheetal Darekar
+                </p>
               </div>
             </a>
             <a href="ps://www.linkedin.com/in/rohit-goyal/">
@@ -212,23 +212,6 @@ const About = () => {
                   alt="Windrose Captical"
                 ></img>
                 <p className="my-2 w-full text-center font-bold">Anil Advani</p>
-              </div>
-            </a>
-            <a href="https://www.linkedin.com/in/rohit-adlakha/">
-              <div
-                className={
-                  "flex justify-center flex-col items-center transform hover:scale-105 duration-500"
-                }
-              >
-                <img
-                  width={200}
-                  height={200}
-                  src="/img/rohit_adhlaka.svg"
-                  alt="Windrose Captical"
-                ></img>
-                <p className="my-2 w-full text-center font-bold">
-                  Rohit Adlakha
-                </p>
               </div>
             </a>
           </div>
